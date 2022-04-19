@@ -148,4 +148,8 @@ fmod_editor.log
 /Library/CurrentLayout-default.dwlt
 /Library/SourceAssetDB
 /Logs/shadercompiler-UnityShaderCompiler.exe0.log
+node_modules
+.eslintrc.js
+tools
+
 
