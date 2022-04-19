@@ -152,4 +152,7 @@ node_modules
 .eslintrc.js
 tools
 
+# keep the *.asset files from Library
+!/[Ll]ibrary/*.asset
+
 

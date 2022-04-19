@@ -76,3 +76,10 @@ Mandatory5/Library/CurrentLayout-default.dwlt
 Mandatory5/Library/SourceAssetDB
 Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
+node_modules
+.eslintrc.js
+tools
+Mandatory5/Library/SourceAssetDB
+
+# keep the *.asset files from Library
+!/[Ll]ibrary/*.asset
