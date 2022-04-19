@@ -71,3 +71,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Mandatory5/Library/Artifacts/02/02436a998fcb80d81c8c3842384a3faa
+Mandatory5/Library/ArtifactDB
+Mandatory5/Library/CurrentLayout-default.dwlt
+Mandatory5/Library/SourceAssetDB
+Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
