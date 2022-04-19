@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MiddleRegion/Scenes/TestPlane.unity
+- path: Assets/MiddleRegion/_Scenes/TestPlane.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
