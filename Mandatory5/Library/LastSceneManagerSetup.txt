@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MiddleRegion/_Scenes/NewTest.unity
+- path: Assets/MiddleRegion/_Scenes/World.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
