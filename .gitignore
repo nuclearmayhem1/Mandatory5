@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-Mandatory5/[Ll]ibrary/
-Mandatory5/[Tt]emp/
-Mandatory5/[Oo]bj/
-Mandatory5/[Bb]uild/
-Mandatory5/[Bb]uilds/
-Mandatory5/[Ll]ogs/
-Mandatory5/[Uu]ser[Ss]ettings/
+/Mandatory5/[Ll]ibrary/
+/Mandatory5/[Tt]emp/
+/Mandatory5/[Oo]bj/
+/Mandatory5/[Bb]uild/
+/Mandatory5/[Bb]uilds/
+/Mandatory5/[Ll]ogs/
+/Mandatory5/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -70,8 +70,16 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Mandatory5/Logs/shadercompiler-AssetImportWorker0.log
-Mandatory5/Logs/AssetImportWorker0.log
-Mandatory5/Library/SourceAssetDB
+Mandatory5/Library/Artifacts/02/02436a998fcb80d81c8c3842384a3faa
 Mandatory5/Library/ArtifactDB
+Mandatory5/Library/CurrentLayout-default.dwlt
+Mandatory5/Library/SourceAssetDB
+Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+*.log
+node_modules
+.eslintrc.js
+tools
+Mandatory5/Library/SourceAssetDB
+
+# keep the *.asset files from Library
+!/[Ll]ibrary/*.asset
