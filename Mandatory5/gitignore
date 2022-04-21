@@ -5,7 +5,7 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-/[Ll]ibrary/
+!/[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -147,5 +147,15 @@ fmod_editor.log
 /Library/ArtifactDB
 /Library/CurrentLayout-default.dwlt
 /Library/SourceAssetDB
+/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+node_modules
+.eslintrc.js
+tools
+
+# keep the *.asset files from Library
+!/[Ll]ibrary/*.asset
+
+/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+/.idea/.idea.Mandatory5/.idea/workspace.xml
 /Logs/shadercompiler-UnityShaderCompiler.exe0.log
 

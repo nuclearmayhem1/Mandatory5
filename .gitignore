@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Mandatory5/[Ll]ibrary/
+!/Mandatory5/[Ll]ibrary/
 /Mandatory5/[Tt]emp/
 /Mandatory5/[Oo]bj/
 /Mandatory5/[Bb]uild/
