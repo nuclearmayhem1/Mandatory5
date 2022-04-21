@@ -84,3 +84,5 @@ Mandatory5/Library/SourceAssetDB
 # keep the *.asset files from Library
 !/[Ll]ibrary/*.asset
 Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+Mandatory5/.idea/.idea.Mandatory5/.idea/workspace.xml
+Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log

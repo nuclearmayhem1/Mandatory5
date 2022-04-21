@@ -155,4 +155,7 @@ tools
 # keep the *.asset files from Library
 !/[Ll]ibrary/*.asset
 
+/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+/.idea/.idea.Mandatory5/.idea/workspace.xml
+/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 
