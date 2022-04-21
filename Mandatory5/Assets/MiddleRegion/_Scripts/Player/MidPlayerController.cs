@@ -52,14 +52,14 @@ public class MidPlayerController : MonoBehaviour
 
     private void Respawn()
     {
+        Time.timeScale = 0.99f;
         GetComponent<ThirdPersonController>().Respawn(respawnPosition);
-        Debug.Log("Respawning at" + respawnPosition);
+        //Debug.Log("Respawning at" + respawnPosition);
+        Invoke("ResetTimeScale",0.1f);
     }
-    
-    
-    
-    
-    
-    
-    
+
+    private void ResetTimeScale()
+    {
+        Time.timeScale = 1;
+    }
 }
