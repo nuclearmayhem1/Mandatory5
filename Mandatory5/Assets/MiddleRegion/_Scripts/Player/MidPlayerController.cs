@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 
 public class MidPlayerController : MonoBehaviour
@@ -11,13 +12,16 @@ public class MidPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        respawnPosition = transform.parent.transform.position;
+        respawnPosition = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Respawn();
+        }
     }
 
 
@@ -48,8 +52,14 @@ public class MidPlayerController : MonoBehaviour
 
     private void Respawn()
     {
-        transform.parent.transform.position = respawnPosition;
+        GetComponent<ThirdPersonController>().Respawn(respawnPosition);
         Debug.Log("Respawning at" + respawnPosition);
     }
+    
+    
+    
+    
+    
+    
     
 }
