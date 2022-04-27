@@ -5,6 +5,7 @@ public class PressurePlate : MonoBehaviour
 {
     public Animator plateAnim;
     public float getOffDelay = 0;
+    public bool singleActivation = false;
     public UnityEvent onPressurePlate;
     public UnityEvent offPressurePlate;
 
@@ -20,7 +21,11 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Invoke("Off", getOffDelay);
+            if (!singleActivation)
+            {
+                Invoke("Off", getOffDelay);
+            }
+            
         }
     }
     private void Off()
