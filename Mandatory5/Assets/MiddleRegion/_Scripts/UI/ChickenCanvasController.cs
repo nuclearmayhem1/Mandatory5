@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChickenCanvasController : MonoBehaviour
 {
 
-    public GameObject initiateIcon, speechBubble, speechBubbleText;
+    public GameObject initiateIcon, speechBubble, speechBubbleText, dialogueTrigger;
     
     // Start is called before the first frame update
     void Start()
@@ -23,5 +23,13 @@ public class ChickenCanvasController : MonoBehaviour
         speechBubble.GetComponent<Animator>().SetBool("StartAnim", true);
         
         //speechBubble.SetActive(true);
+    }
+
+    public void resetSpeech()
+    {
+        initiateIcon.SetActive(true);
+        
+        dialogueTrigger.GetComponent<ChickenDialogueTrigger>().dialogueAlreadyStarted = false;
+        
     }
 }

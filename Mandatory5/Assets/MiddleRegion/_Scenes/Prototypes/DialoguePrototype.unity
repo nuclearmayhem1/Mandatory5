@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 78511115}
   - component: {fileID: 78511117}
   - component: {fileID: 78511116}
+  - component: {fileID: 78511118}
   m_Layer: 5
   m_Name: SpeechIcon
   m_TagString: Untagged
@@ -203,6 +204,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78511114}
   m_CullTransparentMesh: 1
+--- !u!95 &78511118
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78511114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b5712f65f21320488d3b31f09f929c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &191633522
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +463,7 @@ GameObject:
   - component: {fileID: 904899299}
   - component: {fileID: 904899301}
   - component: {fileID: 904899300}
+  - component: {fileID: 904899302}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -464,8 +485,8 @@ RectTransform:
   m_Father: {fileID: 1873498349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.055116203, y: 0.28999147}
-  m_AnchorMax: {x: 0.9485325, y: 0.91689867}
+  m_AnchorMin: {x: 0.06168433, y: 0.31064034}
+  m_AnchorMax: {x: 0.9302546, y: 0.8971247}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -489,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bababooei
+  m_text: Example text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0307f147c518474aa9f7964f86e28c1, type: 2}
   m_sharedMaterial: {fileID: -3844709191027243080, guid: d0307f147c518474aa9f7964f86e28c1, type: 2}
@@ -516,8 +537,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95.45
-  m_fontSizeBase: 95.45
+  m_fontSize: 64.02
+  m_fontSizeBase: 64.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -526,7 +547,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -1.5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -566,6 +587,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904899298}
   m_CullTransparentMesh: 1
+--- !u!114 &904899302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904899298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fb75d5cb1093a4f9797f5e4630338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialogue:
+  - Hi there, welcome to the chick republic!
+  - We want to teach you about this beautiful land.
+  - Hello first
+  - Hello second
+  - this text should dissapear after this
 --- !u!1001 &942879321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2137,6 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132561311ebbab543936509206899aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueAlreadyStarted: 0
 --- !u!65 &1098161481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3010,7 +3050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initiateIcon: {fileID: 78511114}
   speechBubble: {fileID: 1873498348}
-  speechBubbleText: {fileID: 0}
+  speechBubbleText: {fileID: 904899298}
+  dialogueTrigger: {fileID: 1098161478}
 --- !u!225 &1801761565
 CanvasGroup:
   m_ObjectHideFlags: 0
