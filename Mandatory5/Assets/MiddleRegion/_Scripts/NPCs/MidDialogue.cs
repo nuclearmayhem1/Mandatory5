@@ -14,15 +14,17 @@ public class MidDialogue : MonoBehaviour
     public string[] _dialogue;
     private int dialogueNumber = 0;
 
-    private bool isRunning;
+    private bool isRunning, resetting;
     
     // Animator Anim;
  
     void Start()
     {
-        Text = gameObject.GetComponent<TMP_Text>();
-        CurrentText = gameObject.GetComponent<TMP_Text>().text;
         dialogueNumber = 0;
+        
+        resetting = false;
+        
+        Text = gameObject.GetComponent<TMP_Text>();
         CurrentText = _dialogue[0];
         StartCoroutine(DisplayText());
         
@@ -95,6 +97,7 @@ public class MidDialogue : MonoBehaviour
         }
         else
         {
+            resetting = false;
             StopAllCoroutines();
             
             dialogueNumber += 1;
@@ -118,8 +121,18 @@ public class MidDialogue : MonoBehaviour
 
     public void skipAllDialogue()
     {
-        StopAllCoroutines();
-        gameObject.transform.parent.gameObject.SetActive(false);
+        if (!resetting)
+        {
+            resetting = true;
+            StopAllCoroutines();
+        
+            dialogueNumber = 0;
+        
+            gameObject.transform.parent.parent.gameObject.GetComponent<ChickenCanvasController>().resetSpeech();
+        
+            transform.parent.GetComponent<Animator>().SetBool("StartAnim", false);
+            
+        }
         
         
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChickenDialogueTrigger : MonoBehaviour
 {
-    [HideInInspector]public bool dialogueAlreadyStarted = false;
+    public bool dialogueAlreadyStarted = false;
     private GameObject chickenCanvas;
     private GameObject speechBubbleText;
     
@@ -23,7 +23,7 @@ public class ChickenDialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && dialogueAlreadyStarted)
+        if (Input.GetKeyDown(KeyCode.E) && dialogueAlreadyStarted && !chickenCanvas.GetComponent<ChickenCanvasController>().resetting)
         {
             
             if (speechBubbleText.activeSelf)
@@ -37,7 +37,7 @@ public class ChickenDialogueTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E) && !dialogueAlreadyStarted)
+        if (other.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E) && !dialogueAlreadyStarted && !chickenCanvas.GetComponent<ChickenCanvasController>().resetting)
         {
             
             //Debug.Log("Initialized Dialogue");
@@ -49,4 +49,12 @@ public class ChickenDialogueTrigger : MonoBehaviour
 
         }
     }
+
+    public void ResetDialogue()
+    {
+        dialogueAlreadyStarted = false;
+        chickenCanvas.GetComponent<ChickenCanvasController>().resetting = false;
+        Debug.Log("YOYOY222OYO");
+    }
+    
 }
