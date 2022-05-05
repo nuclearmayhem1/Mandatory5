@@ -20,4 +20,12 @@ public class CheckpointController : MonoBehaviour
             transform.position = startPosition;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("DeathPlane"))
+        {
+            transform.position = startPosition;
+        }
+    }
 }
