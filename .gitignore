@@ -77,3 +77,4 @@ Mandatory5/Library/SourceAssetDB
 Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
 Mandatory5/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+*.asset
