@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - DeathCollider
+  - Bean
+  - JumpTrigger
   layers:
   - Default
   - TransparentFX
