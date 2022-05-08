@@ -24,6 +24,7 @@ public class DrugController : MonoBehaviour
             var step = speed * Time.deltaTime;
             transform.localScale = Vector3.MoveTowards(transform.localScale, fullScale, step);
             isIn = true;
+            PlayerDrugChecker.isHigh = true;
         }
     }
 
@@ -32,6 +33,7 @@ public class DrugController : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isIn = false;
+            PlayerDrugChecker.isHigh = false;
         }
     }
 

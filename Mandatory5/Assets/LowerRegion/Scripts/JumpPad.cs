@@ -6,7 +6,7 @@ public class JumpPad : MonoBehaviour
 {
     Material selfMaterial;
     Color originalColor;
-    bool inSporeZone = false, jumpCountdown = false;
+    bool jumpCountdown = false;
     public float bounceHeight = 10;
     private float speed = 2f;
 
@@ -17,37 +17,22 @@ public class JumpPad : MonoBehaviour
         originalColor = selfMaterial.color;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.CompareTag("SporeZone"))
-        {
-            inSporeZone = true;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            if(inSporeZone == true)
+            if(PlayerDrugChecker.isHigh == true)
             {
                 jumpCountdown = true;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("SporeZone"))
-        {
-            inSporeZone = false;
-        }
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(inSporeZone == true)
+        if(PlayerDrugChecker.isHigh == true)
         {
             selfMaterial.SetColor("_Color", Color.green);
         }
