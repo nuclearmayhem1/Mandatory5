@@ -11,6 +11,10 @@ public class ToggleShroom : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             sporeZone.SetActive(!sporeZone.activeSelf);
+            if (!sporeZone.activeSelf)
+            {
+                PlayerDrugChecker.isHigh = false;
+            }
         }
     }
 
