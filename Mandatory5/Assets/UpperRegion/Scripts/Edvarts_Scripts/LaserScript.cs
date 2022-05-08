@@ -33,6 +33,10 @@ public class LaserScript : MonoBehaviour
                     hitParticle.SetActive(true);
                     hitParticle.transform.position = hit.point+hitParticle.transform.up * 0.1f;
                     laser.SetPosition(1, hit.point);
+                    if(hit.collider.gameObject.tag == "Mirror")
+                    {
+                        Debug.Log("Yes");
+                    }
                 }
             }
             else
