@@ -35,6 +35,7 @@ public class LaserScript : MonoBehaviour
                     {
                         mirrorScript = hit.collider.GetComponentInParent<Mirror>();
                         mirrorScript.ReflectLaser(true, transform, hit.point);
+                        hitParticle.SetActive(false);
                     }
                     else
                     {
@@ -48,10 +49,7 @@ public class LaserScript : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
-                if(mirrorScript != null)
-                {
-                    mirrorScript.ReflectLaser(false, null, Vector3.zero);
-                }
+                mirrorScript.ReflectLaser(false, null, Vector3.zero);
                 
             }
         }
