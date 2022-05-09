@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - DeathCollider
+  - Mirror
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class LaserScript : MonoBehaviour
     public GameObject hitParticle;
 
     private LineRenderer laser;
+    private Mirror mirrorScript;
     private bool laserActive;
 
     private void Start()
@@ -21,7 +22,6 @@ public class LaserScript : MonoBehaviour
     {
         if (laserActive)
         {
-            Debug.Log("Active");
             laserStart.SetActive(true);
             energyBall.material.EnableKeyword("_EMISSION");
             laser.SetPosition(0, laserStart.transform.position);
@@ -30,12 +30,17 @@ public class LaserScript : MonoBehaviour
             {
                 if (hit.collider)
                 {
-                    hitParticle.SetActive(true);
-                    hitParticle.transform.position = hit.point+hitParticle.transform.up * 0.1f;
                     laser.SetPosition(1, hit.point);
                     if(hit.collider.gameObject.tag == "Mirror")
                     {
-                        Debug.Log("Yes");
+                        mirrorScript = hit.collider.GetComponentInParent<Mirror>();
+                        mirrorScript.ReflectLaser(true, transform, hit.point);
+                    }
+                    else
+                    {
+                        mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                        hitParticle.SetActive(true);
+                        hitParticle.transform.position = hit.point + hitParticle.transform.up * 0.1f;
                     }
                 }
             }
@@ -43,11 +48,15 @@ public class LaserScript : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
+                if(mirrorScript != null)
+                {
+                    mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                }
+                
             }
         }
         else
         {
-            Debug.Log("Not Active");
             laserStart.SetActive(false);
             energyBall.material.DisableKeyword("_EMISSION");
         }
