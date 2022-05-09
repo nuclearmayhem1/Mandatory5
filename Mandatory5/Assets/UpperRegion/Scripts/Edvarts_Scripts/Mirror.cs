@@ -12,7 +12,7 @@ public class Mirror : MonoBehaviour
     private LineRenderer laser;
     private Transform incomingLaser;
     private Vector3 mirrorHitLocation;
-    private bool reflecting;
+    public bool reflecting;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class Mirror : MonoBehaviour
     {
         if (reflecting)
         {
-            laserStart.transform.localEulerAngles = new Vector3(0, Vector3.SignedAngle(transform.forward, -incomingLaser.forward, -laserStart.transform.up) * 2, 0);
+            laserStart.transform.localEulerAngles = new Vector3(0, Vector3.SignedAngle(transform.forward, -incomingLaser.forward, -laserStart.transform.up), 0);
             laserStart.SetActive(true);
             laser.SetPosition(0, mirrorHitLocation);
             mirrorRenderer.material = glowMat;
@@ -42,7 +42,12 @@ public class Mirror : MonoBehaviour
                     }
                     else
                     {
-                        mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                        if (mirrorScript != null)
+                        {
+                            mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                            mirrorScript = null;
+                            Debug.Log("1");
+                        }
                         hitParticle.SetActive(true);
                         hitParticle.transform.position = hit.point + hitParticle.transform.up * -0.1f;
                     }
@@ -52,13 +57,22 @@ public class Mirror : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
-                mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                //if (mirrorScript != null)
+                //{
+                //    mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                //    Debug.Log("2");
+                //}
             }
         }
         else
         {
             laserStart.SetActive(false);
             mirrorRenderer.material = mirrorMat;
+            if (mirrorScript != null)
+            {
+                mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                Debug.Log("3");
+            }
         }
     }
     public void ReflectLaser(bool state, Transform pillar, Vector3 point)

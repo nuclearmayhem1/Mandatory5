@@ -39,7 +39,10 @@ public class LaserScript : MonoBehaviour
                     }
                     else
                     {
-                        mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                        if (mirrorScript != null)
+                        {
+                            mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                        }
                         hitParticle.SetActive(true);
                         hitParticle.transform.position = hit.point + hitParticle.transform.up * 0.1f;
                     }
@@ -49,7 +52,11 @@ public class LaserScript : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
-                mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                if(mirrorScript != null)
+                {
+                    mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                }
+
                 
             }
         }
