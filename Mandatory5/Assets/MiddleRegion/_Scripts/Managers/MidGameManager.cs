@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MidGameManager : MonoBehaviour
@@ -37,6 +38,16 @@ public class MidGameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Cursor.lockState = Cursor.lockState switch
+            {
+                CursorLockMode.Locked => CursorLockMode.None,
+                CursorLockMode.None => CursorLockMode.Locked,
+                _ => Cursor.lockState
+            };
         }
     }
 

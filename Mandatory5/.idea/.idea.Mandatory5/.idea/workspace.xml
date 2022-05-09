@@ -249,6 +249,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/MidSwitchScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../2021/Exams/Rarity-Project (1)/Assets/_Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
@@ -313,6 +314,8 @@
       <workItem from="1651142920152" duration="1683000" />
       <workItem from="1651216832044" duration="8673000" />
       <workItem from="1651231326973" duration="2217000" />
+      <workItem from="1651748352647" duration="1896000" />
+      <workItem from="1652078520455" duration="1119000" />
     </task>
     <servers />
   </component>
