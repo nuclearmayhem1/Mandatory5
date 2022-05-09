@@ -21,10 +21,8 @@ public class Mirror : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Vector3.Angle(transform.forward, -incomingLaser.forward * 2));
         if (reflecting)
         {
-
             laserStart.transform.localEulerAngles = new Vector3(0, Vector3.SignedAngle(transform.forward, -incomingLaser.forward, -laserStart.transform.up) * 2, 0);
             laserStart.SetActive(true);
             laser.SetPosition(0, mirrorHitLocation);
@@ -54,7 +52,7 @@ public class Mirror : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
-                    mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                mirrorScript.ReflectLaser(false, null, Vector3.zero);
             }
         }
         else
