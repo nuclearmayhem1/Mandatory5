@@ -7,14 +7,14 @@ public class Mirror : MonoBehaviour
     public GameObject hitParticle;
     public Material glowMat, mirrorMat;
     public Renderer mirrorRenderer;
-
-    public GameObject reference;
+    [HideInInspector] public bool reflecting;
 
     private Mirror mirrorScript;
     private LineRenderer laser;
-    private Transform incomingLaser;
+    private float hitAngle;
     private Vector3 mirrorHitLocation;
-    public bool reflecting;
+    private bool canReflect;
+
 
     private void Start()
     {
@@ -23,13 +23,11 @@ public class Mirror : MonoBehaviour
     }
     private void Update()
     {
-        
         if (reflecting)
         {
-            Debug.Log(Vector3.SignedAngle(transform.forward, -incomingLaser.forward, -laserStart.transform.up));
             laserStart.SetActive(true);
             laserStart.transform.position = mirrorHitLocation + transform.forward * 0.1f;
-            laserStart.transform.localEulerAngles = new Vector3(0, Vector3.SignedAngle(transform.forward, -incomingLaser.forward, -laserStart.transform.up), 0);
+            laserStart.transform.localEulerAngles = new Vector3(0, hitAngle, 0);
             laser.SetPosition(0, laserStart.transform.position);
             mirrorRenderer.material = glowMat;
             RaycastHit hit;
@@ -45,7 +43,11 @@ public class Mirror : MonoBehaviour
                         hitParticle.SetActive(false);
                         if (!mirrorScript.reflecting)
                         {
-                            mirrorScript.ReflectLaser(true, transform, hit.point);
+                            canReflect = true;
+                        }
+                        if (canReflect)
+                        {
+                            mirrorScript.ReflectLaser(true, Vector3.SignedAngle(hit.normal, -laserStart.transform.forward, -transform.up), hit.point);
                         }
 
                     }
@@ -53,8 +55,9 @@ public class Mirror : MonoBehaviour
                     {
                         if (mirrorScript != null)
                         {
-                            mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                            mirrorScript.ReflectLaser(false, 0, Vector3.zero);
                             mirrorScript = null;
+                            canReflect = false;
                         }
                         hitParticle.SetActive(true);
                         hitParticle.transform.position = hit.point + hitParticle.transform.up * -0.1f;
@@ -73,14 +76,15 @@ public class Mirror : MonoBehaviour
             mirrorRenderer.material = mirrorMat;
             if (mirrorScript != null)
             {
-                mirrorScript.ReflectLaser(false, null, Vector3.zero);
+                mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+                canReflect = false;
             }
         }
     }
-    public void ReflectLaser(bool state, Transform pillar, Vector3 point)
+    public void ReflectLaser(bool state, float angle, Vector3 point)
     {
         reflecting = state;
-        incomingLaser = pillar;
+        hitAngle = angle;
         mirrorHitLocation = point;
     }
 }
