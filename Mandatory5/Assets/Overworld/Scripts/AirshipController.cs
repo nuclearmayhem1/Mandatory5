@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AirshipController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class AirshipController : MonoBehaviour
     [SerializeField] [Range(0,-1)] private float maxReverseThrotthle;
     private float throtthle = 0;
 
+    [SerializeField] private Image throtthleBar, reverseBar;
 
     private void Awake()
     {
@@ -45,8 +47,16 @@ public class AirshipController : MonoBehaviour
         {
             throtthle -= throtthleChangeSpeed * Time.deltaTime;
         }
+        else
+        {
+            if (throtthle > -0.025f && throtthle < 0.025f)
+            {
+                throtthle = 0;
+            }
+        }
 
         throtthle = Mathf.Clamp(throtthle, maxReverseThrotthle, 1);
+
     }
 
     [SerializeField] [Range(0,1)] private float rotationSmooth = 0.9f;
@@ -64,7 +74,21 @@ public class AirshipController : MonoBehaviour
 
     private void UpdateUI()
     {
-
+        if (throtthle == 0)
+        {
+            throtthleBar.fillAmount = 0;
+            reverseBar.fillAmount = 0;
+        }
+        else if (throtthle > 0)
+        {
+            reverseBar.fillAmount = 0;
+            throtthleBar.fillAmount = throtthle;
+        }
+        else if (throtthle < 0)
+        {
+            throtthleBar.fillAmount = 0;
+            reverseBar.fillAmount = Mathf.Abs(throtthle);
+        }
 
 
     }
