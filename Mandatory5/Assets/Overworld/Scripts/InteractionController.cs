@@ -18,11 +18,24 @@ public class InteractionController : MonoBehaviour
     }
 
     private bool hasPressed = false;
+    private float timeUntilForget = 0;
     private void Update()
     {
         if (!hasPressed)
         {
-            hasPressed = Input.GetKeyDown(interactKey);
+            if (Input.GetKeyDown(interactKey))
+            {
+                hasPressed = true;
+                timeUntilForget = 1f;
+            }
+        }
+        if (timeUntilForget > 0)
+        {
+            timeUntilForget -= Time.deltaTime;
+        }
+        else
+        {
+            hasPressed = false;
         }
     }
 
