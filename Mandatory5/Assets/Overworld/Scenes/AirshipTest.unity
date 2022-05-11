@@ -929,6 +929,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1757121295}
+  - component: {fileID: 1757121296}
+  - component: {fileID: 1757121297}
   m_Layer: 0
   m_Name: Airship
   m_TagString: Untagged
@@ -944,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757121294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6, y: 2.4953566, z: -13.5}
+  m_LocalPosition: {x: 14.44, y: 0, z: -12.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6847715749879621478}
@@ -955,6 +957,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1757121296
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757121294}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 1
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!114 &1757121297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757121294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1471062f102554641828063feabc63a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.1
+  throtthleForce: 100
+  throtthleChangeSpeed: 1
+  maxReverseThrotthle: -0.25
+  rotationSmooth: 0.01
 --- !u!1 &1819633284
 GameObject:
   m_ObjectHideFlags: 0
