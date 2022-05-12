@@ -42,7 +42,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
     {
         doorMat = gameObject.GetComponent<Renderer>();
         gameObject.GetComponent<Renderer>().material = doorTrans;
-        backWall = GameObject.Find("Walls/BackWall");
+        //backWall = GameObject.Find("Walls/BackWall");
         textPressE = GameObject.Find("TextPressE");
         textPressE.SetActive(false);
         doorSplash = GameObject.Find("DoorSplash").GetComponent<Mid_3_Splash>();
@@ -107,7 +107,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
     void ChangeDoorMat()
     {
         gameObject.GetComponent<Renderer>().material = doorFour;
-        backWall.SetActive(false);
+        //backWall.SetActive(false);
         gameObject.GetComponent<BoxCollider>().enabled = false; 
 
     }
