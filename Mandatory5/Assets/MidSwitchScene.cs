@@ -11,12 +11,17 @@ public class MidSwitchScene : MonoBehaviour
     }
     public void LoadPuzzle2()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     }
     public void LoadPuzzle3()
     {
         SceneManager.LoadScene(3);
     }
-    
-    
+
+    public void activateCharacter1()
+    {
+        RiddleManager.Instance.SpawnCharacter(1);
+        
+    }
+
 }
