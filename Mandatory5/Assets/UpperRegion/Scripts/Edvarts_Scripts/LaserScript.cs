@@ -71,5 +71,9 @@ public class LaserScript : MonoBehaviour
     public void LaserActive(bool state)
     {
         laserActive = state;
+        if (mirrorScript != null)
+        {
+            mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+        }
     }
 }
