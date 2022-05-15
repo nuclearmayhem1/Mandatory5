@@ -51,6 +51,10 @@ public class Mirror : MonoBehaviour
                         }
 
                     }
+                    else if(hit.collider.gameObject.tag == "Brazier")
+                    {
+                        hit.collider.GetComponentInParent<Brazier>().BrazierHit();
+                    }
                     else
                     {
                         if (mirrorScript != null)

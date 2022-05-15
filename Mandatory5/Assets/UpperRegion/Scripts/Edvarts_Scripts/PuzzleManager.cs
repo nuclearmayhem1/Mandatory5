@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
+    [HideInInspector] public bool puzzleDone; 
     public Text timerText;
     
     private float timer = 0;
@@ -21,10 +20,19 @@ public class PuzzleManager : MonoBehaviour
             timerText.text = "";
         }
 
+        if (puzzleDone)
+        {
+            Debug.Log("YES");
+        }
+
     }
 
     public void ResetTimer(float time)
     {
         timer = time;
+    }
+    public void PuzzleDone(bool state)
+    {
+        puzzleDone = state;
     }
 }
