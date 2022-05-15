@@ -71,13 +71,14 @@ public class Mirror : MonoBehaviour
             }
             else
             {
-                laser.SetPosition(1, laserStart.transform.forward * 5000);
-                hitParticle.SetActive(false);
                 if (mirrorScript != null)
                 {
                     mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+                    mirrorScript = null;
                     canReflect = false;
                 }
+                laser.SetPosition(1, laserStart.transform.forward * 5000);
+                hitParticle.SetActive(false);
             }
         }
         else
@@ -87,6 +88,7 @@ public class Mirror : MonoBehaviour
             if (mirrorScript != null)
             {
                 mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+                mirrorScript = null;
                 canReflect = false;
             }
         }
