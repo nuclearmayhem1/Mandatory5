@@ -6,7 +6,7 @@ public class Brazier : MonoBehaviour
     [Header("References")]
     public GameObject energyBall;
     public CinemachineVirtualCamera brazierCam;
-    public GameObject heatEffect;
+    public ParticleSystem heatEffect;
 
     private Renderer energyBallRenderer;
     private PuzzleManager manager;
@@ -25,7 +25,7 @@ public class Brazier : MonoBehaviour
         if (!brazierHit)
         {
             manager.PuzzleDone(true);
-            heatEffect.SetActive(true);
+            heatEffect.Play();
             brazierCam.m_Priority = 12;
             energyBallRenderer.material.EnableKeyword("_EMISSION");
             brazierAnim.SetTrigger("LightBrazier");
