@@ -27,6 +27,5 @@ public class Brazier : MonoBehaviour
     private void AnimationDone()
     {
         brazierCam.m_Priority = 9;
-        manager.PuzzleDone(true);
     }
 }
