@@ -14,7 +14,7 @@ public class Respawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && !manager.puzzleDone)
+        if(other.gameObject.tag == "Player")
         {
             if (!respawn)
             {

@@ -6,10 +6,12 @@ public class Brazier : MonoBehaviour
     [Header("References")]
     public GameObject energyBall;
     public CinemachineVirtualCamera brazierCam;
+    public GameObject heatEffect;
 
     private Renderer energyBallRenderer;
     private PuzzleManager manager;
     private Animator brazierAnim;
+    private bool brazierHit;
 
     void Start()
     {
@@ -20,9 +22,16 @@ public class Brazier : MonoBehaviour
 
     public void BrazierHit()
     {
-        brazierCam.m_Priority = 12;
-        energyBallRenderer.material.EnableKeyword("_EMISSION");
-        brazierAnim.SetTrigger("LightBrazier");
+        if (!brazierHit)
+        {
+            manager.PuzzleDone(true);
+            heatEffect.SetActive(true);
+            brazierCam.m_Priority = 12;
+            energyBallRenderer.material.EnableKeyword("_EMISSION");
+            brazierAnim.SetTrigger("LightBrazier");
+            brazierHit = true;
+        }
+        
     }
     private void AnimationDone()
     {

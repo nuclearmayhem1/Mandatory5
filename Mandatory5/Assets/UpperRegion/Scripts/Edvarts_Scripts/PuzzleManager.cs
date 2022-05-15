@@ -22,7 +22,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (puzzleDone)
         {
-            Debug.Log("YES");
+            timer = 0;
         }
 
     }

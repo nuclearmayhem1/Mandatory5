@@ -11,6 +11,7 @@ public class LaserScript : MonoBehaviour
     private Mirror mirrorScript;
     private Renderer energyBallRenderer;
     private bool laserActive;
+    private PuzzleManager manager;
 
     private void Start()
     {
@@ -18,11 +19,12 @@ public class LaserScript : MonoBehaviour
         laserStart.SetActive(false);
         hitParticle.SetActive(false);
         energyBallRenderer = energyBall.GetComponent<Renderer>();
+        manager = FindObjectOfType<PuzzleManager>();
     }
 
     private void Update()
     {
-        if (laserActive)
+        if (laserActive && !manager.puzzleDone)
         {
             laserStart.SetActive(true);
             energyBallRenderer.material.EnableKeyword("_EMISSION");
@@ -61,7 +63,7 @@ public class LaserScript : MonoBehaviour
                 }
             }
         }
-        else
+        else if(!manager.puzzleDone)
         {
             laserStart.SetActive(false);
             energyBallRenderer.material.DisableKeyword("_EMISSION");
@@ -70,10 +72,13 @@ public class LaserScript : MonoBehaviour
 
     public void LaserActive(bool state)
     {
-        laserActive = state;
-        if (mirrorScript != null)
+        if (!manager.puzzleDone)
         {
-            mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+            laserActive = state;
+            if (mirrorScript != null)
+            {
+                mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+            }
         }
     }
 }

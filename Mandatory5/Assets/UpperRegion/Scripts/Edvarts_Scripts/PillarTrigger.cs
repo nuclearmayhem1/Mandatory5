@@ -6,9 +6,15 @@ public class PillarTrigger : MonoBehaviour
     public Canvas pressE;
 
     private bool canRotate;
+    private PuzzleManager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<PuzzleManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && !manager.puzzleDone)
         {
             EnableE(true);
             canRotate = true;
@@ -16,7 +22,7 @@ public class PillarTrigger : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !manager.puzzleDone)
         {
             EnableE(false);
             canRotate = false;

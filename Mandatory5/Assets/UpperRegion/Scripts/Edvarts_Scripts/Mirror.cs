@@ -54,6 +54,7 @@ public class Mirror : MonoBehaviour
                     else if(hit.collider.gameObject.tag == "Brazier")
                     {
                         hit.collider.GetComponentInParent<Brazier>().BrazierHit();
+                        hitParticle.SetActive(false);
                     }
                     else
                     {
@@ -72,6 +73,11 @@ public class Mirror : MonoBehaviour
             {
                 laser.SetPosition(1, laserStart.transform.forward * 5000);
                 hitParticle.SetActive(false);
+                if (mirrorScript != null)
+                {
+                    mirrorScript.ReflectLaser(false, 0, Vector3.zero);
+                    canReflect = false;
+                }
             }
         }
         else
