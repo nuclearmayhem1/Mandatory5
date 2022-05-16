@@ -82,8 +82,8 @@ namespace Quests
                 case Quest.World.LowerWorld:
                     return "Lower-World quests";
 
-                case Quest.World.MiddleWorld:
-                    return "Middle-World quests";
+                case Quest.World.ChickRepublic:
+                    return "Chick Republic quests";
 
                 case Quest.World.UpperWorld:
                     return "Upper-World quests";
