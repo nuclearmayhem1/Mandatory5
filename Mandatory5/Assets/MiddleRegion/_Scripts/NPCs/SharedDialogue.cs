@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
  
-public class MidDialogue : MonoBehaviour
+public class SharedDialogue : MonoBehaviour
 {
     const string kAlphaCode = "<color=#00000000>";
     const float kMaxTextTime = 0.1f;
@@ -112,14 +112,6 @@ public class MidDialogue : MonoBehaviour
             if (dialogueNumber == _dialogue.Length)
             {
                 skipAllDialogue();
-            }
-
-            if (RiddleManager.Instance.currentRiddle == 0)
-            {
-                if (dialogueNumber == 3)
-                {
-                    RiddleManager.Instance.StartFirstRiddle(_dialogue[dialogueNumber]);
-                }
             }
         }
         

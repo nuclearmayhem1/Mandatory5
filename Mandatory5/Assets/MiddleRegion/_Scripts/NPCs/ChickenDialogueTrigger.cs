@@ -54,7 +54,6 @@ public class ChickenDialogueTrigger : MonoBehaviour
     {
         dialogueAlreadyStarted = false;
         chickenCanvas.GetComponent<ChickenCanvasController>().resetting = false;
-        Debug.Log("YOYOY222OYO");
     }
     
 }
