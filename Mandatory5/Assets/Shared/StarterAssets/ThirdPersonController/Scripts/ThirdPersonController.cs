@@ -159,7 +159,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-        }
+            }
 
         private void LateUpdate()
         {
@@ -270,6 +270,8 @@ namespace StarterAssets
             // move the player
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+            
 
             // update animator if using character
             if (_hasAnimator)
@@ -388,5 +390,19 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+        
+        
+        public void Respawn(Vector3 respawnPosition)
+        {
+            _controller.enabled = false;
+            transform.position = respawnPosition;
+            _controller.enabled = true;
+
+        }
+        
     }
+    
+   
+    
+    
 }
