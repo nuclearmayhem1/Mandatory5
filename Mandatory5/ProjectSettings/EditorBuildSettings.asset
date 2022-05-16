@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LowerRegion/Scenes/Main.unity
-    guid: 65ac4a813f5b00342b8bce08d07bb388
+    path: Assets/MiddleRegion/_Scenes/Forest.unity
+    guid: dd544e2cf0d478a4d8ebe57988236a5c
+  - enabled: 1
+    path: Assets/MiddleRegion/_Scenes/Volcano.unity
+    guid: 390abb74231b5445ca97d79cabcf1f8c
+  - enabled: 1
+    path: Assets/MiddleRegion/_Scenes/BirdPuzzle.unity
+    guid: b3d255d8a074eab4d9763fd6c1c55aff
+  - enabled: 1
+    path: Assets/MiddleRegion/_Scenes/Prototypes/Puzzle 3.unity
+    guid: 67fc2783cc3d1d14db1ebb19de9e1aa4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
