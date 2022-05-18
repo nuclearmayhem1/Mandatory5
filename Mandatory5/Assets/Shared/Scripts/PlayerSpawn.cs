@@ -9,8 +9,8 @@ public class PlayerSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string playerLocation = PlayerPrefs.GetString("plLoc", "OverWorld");
-        SceneManager.LoadScene(playerLocation);
+        int playerLocation = PlayerPrefs.GetInt("plLoc", 1);
+        SceneManager.LoadScene(playerLocation, LoadSceneMode.Single);
     }
 
     // Update is called once per frame

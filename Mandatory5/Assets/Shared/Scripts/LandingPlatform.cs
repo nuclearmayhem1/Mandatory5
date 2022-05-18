@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LandingPlatform : MonoBehaviour
 {
 
-    public string sceneName = "OverWorld";
     private bool plActive;
     [SerializeField] private Animator shipAnimator;
     private AnimatorClipInfo[] clipInfos;
@@ -53,7 +53,6 @@ public class LandingPlatform : MonoBehaviour
             pl.transform.localPosition = transform.forward * 3f;
         }
         pl.transform.rotation = transform.root.rotation;
-        PlayerPrefs.SetString("plLoc", sceneName);
     }
 
     private void LeaveRegion()
@@ -62,5 +61,12 @@ public class LandingPlatform : MonoBehaviour
         shipAnimator.SetBool("LeaveRegion", true);
         clipInfos = shipAnimator.GetCurrentAnimatorClipInfo(0);
         takeOffTime = clipInfos[0].clip.length;
+        Invoke("ChangeScene", takeOffTime);
+    }
+
+    private void ChangeScene()
+    {
+        PlayerPrefs.SetInt("plLoc", 1);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
