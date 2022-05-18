@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using UnityEditor;
 
 public class PlayerSpawn : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
+    public void SpawnAtLastCheckpoint()
     {
         int playerLocation = PlayerPrefs.GetInt("plLoc", 1);
         SceneManager.LoadScene(playerLocation, LoadSceneMode.Single);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitGame()
     {
-        
+        Application.Quit();
+        //EditorApplication.ExitPlaymode();
     }
 }
