@@ -16,6 +16,7 @@ public class Bookshelf : MonoBehaviour
     public Text title;
     public Text body;
     public Image image;
+    public GameObject[] Books;
     
     private void Start()
     {
@@ -28,6 +29,17 @@ public class Bookshelf : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
+        }
+        for (int i = 0; i < pages.Count; i++)
+        {
+            if (i >= Books.Length)
+            {
+                return;
+            }
+            else
+            {
+                Books[i].SetActive(true);
+            }
         }
     }
 

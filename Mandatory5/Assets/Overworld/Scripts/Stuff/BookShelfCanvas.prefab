@@ -475,7 +475,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: this is a book, here words will be written
+  m_Text: 'Hey, this is library.
+
+'
 --- !u!1 &6841465238378477354
 GameObject:
   m_ObjectHideFlags: 0
