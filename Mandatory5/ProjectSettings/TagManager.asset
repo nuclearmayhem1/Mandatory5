@@ -5,12 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
-<<<<<<< HEAD
-  - SporeZone
-  - DeathPlane
-=======
+  - DispenserColor
   - DeathCollider
->>>>>>> main
   layers:
   - Default
   - TransparentFX
