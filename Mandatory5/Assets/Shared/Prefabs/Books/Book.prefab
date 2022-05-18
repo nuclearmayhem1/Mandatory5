@@ -187,5 +187,5 @@ MonoBehaviour:
   title: A very old man
   body: Once upon a time my grandpa fell down the stairs, it was very sad
   image: {fileID: 21300000, guid: 751aa1b6637101946b2fdbb7aa27d6ad, type: 3}
-  cover: {fileID: 21300000, guid: 4e88dc85a04401c40b9cefeddafc3bf2, type: 3}
+  cover: {fileID: 21300000, guid: 83f5a604ad1a5014ebb6fe24e9ca19ac, type: 3}
   bookID: 0
