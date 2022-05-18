@@ -5,12 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
-<<<<<<< HEAD
-  - SporeZone
-  - DeathPlane
-=======
-  - DeathCollider
->>>>>>> main
+  - Airship
   layers:
   - Default
   - TransparentFX

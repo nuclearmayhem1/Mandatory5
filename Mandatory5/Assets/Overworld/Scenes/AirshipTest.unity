@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 1757121297}
   m_Layer: 0
   m_Name: Airship
-  m_TagString: Untagged
+  m_TagString: Airship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
