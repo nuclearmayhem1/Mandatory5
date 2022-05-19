@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Overworld/Scenes/Main Menu.unity
+    path: Assets/Shared/Scenes/Main Menu.unity
     guid: 315cb07c7ea6c5741b064e35890738a3
   - enabled: 0
     path: Assets/MiddleRegion/_Scenes/Forest.unity
