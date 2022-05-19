@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: ed20470a25e8d9d418e027a18ae19453
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - buttonPrefab: {fileID: 5799961723386870098, guid: 511c5ff7fdd8e3d44bfa50245517bbe5, type: 3}
+  - container: {fileID: 5931537212633870391, guid: d5ea1a4cf189fc9458254ba2f15fee38, type: 3}
+  - canvas: {fileID: 6841465237523559851, guid: 05c50208696149c438edb498f574799c, type: 3}
+  - title: {instanceID: 0}
+  - body: {instanceID: 0}
+  - image: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
