@@ -118,7 +118,7 @@ public class MidDialogue : MonoBehaviour
             {
                 if (dialogueNumber == 3)
                 {
-                    RiddleManager.Instance.StartFirstRiddle(_dialogue[dialogueNumber]);
+                    RiddleManager.Instance.StartNextRiddle(_dialogue[dialogueNumber], 0);
                 }
             }
         }
