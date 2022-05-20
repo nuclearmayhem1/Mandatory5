@@ -31,6 +31,7 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "key": "UnityEngine.ProBuilder.ProBuilderEditor-isUtilityWindow",
                 "value": "{\"m_Value\":false}"
             },
@@ -45,10 +46,14 @@
 =======
                 "key": "lightmapping.autoUnwrapLightmapUV",
 >>>>>>> puzzle-mechanics
+=======
+                "key": "lightmapping.autoUnwrapLightmapUV",
+>>>>>>> pr/2
                 "value": "{\"m_Value\":true}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "key": "editor.showSceneInfo",
                 "value": "{\"m_Value\":false}"
@@ -57,11 +62,14 @@
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
 =======
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "key": "mesh.newShapesSnapToGrid",
                 "value": "{\"m_Value\":true}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "key": "lightmapping.autoUnwrapLightmapUV",
                 "value": "{\"m_Value\":true}"
@@ -70,6 +78,8 @@
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
 =======
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "key": "editor.autoRecalculateCollisions",
                 "value": "{\"m_Value\":false}"
             },
@@ -81,8 +91,11 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "key": "editor.closeWindowAfterShapeCreation",
 =======
+=======
+>>>>>>> pr/2
                 "key": "UnityEngine.ProBuilder.ProBuilderEditor-isUtilityWindow",
                 "value": "{\"m_Value\":false}"
             },
@@ -99,7 +112,10 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "editor.showSceneInfo",
+<<<<<<< HEAD
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "value": "{\"m_Value\":false}"
             },
             {
@@ -109,6 +125,7 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "key": "smoothing.showPreview",
                 "value": "{\"m_Value\":false}"
@@ -137,6 +154,8 @@
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "FillHole.selectEntirePath",
 =======
+=======
+>>>>>>> pr/2
                 "key": "editor.stripProBuilderScriptsOnBuild",
                 "value": "{\"m_Value\":true}"
             },
@@ -148,7 +167,10 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "meshImporter.smoothing",
+<<<<<<< HEAD
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "value": "{\"m_Value\":true}"
             },
             {
@@ -157,6 +179,7 @@
                 "value": "{\"m_Value\":true}"
             },
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "SelectEdgeLoop.selectIterative",
@@ -185,6 +208,8 @@
             {
 =======
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "type": "UnityEngine.ProBuilder.PivotLocation, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "mesh.newShapePivotLocation",
                 "value": "{\"m_Value\":1}"
@@ -216,7 +241,10 @@
             },
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> pr/2
                 "type": "UnityEngine.ProBuilder.SelectionModifierBehavior, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "editor.rectSelectModifier",
                 "value": "{\"m_Value\":2}"
@@ -232,7 +260,10 @@
                 "value": "{\"m_Value\":8}"
             },
             {
+<<<<<<< HEAD
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
                 "type": "UnityEngine.ProBuilder.ExtrudeMethod, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "editor.extrudeMethod",
                 "value": "{\"m_Value\":2}"
@@ -245,6 +276,7 @@
             {
                 "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "key": "ExtrudeEdges.distance",
                 "value": "{\"m_Value\":0.5}"
             },
@@ -253,6 +285,8 @@
                 "key": "BevelEdges.size",
                 "value": "{\"m_Value\":0.20000000298023225}"
 =======
+=======
+>>>>>>> pr/2
                 "key": "meshImporter.smoothingAngle",
                 "value": "{\"m_Value\":1.0}"
             },
@@ -260,20 +294,29 @@
                 "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "ExtrudeEdges.distance",
                 "value": "{\"m_Value\":0.5}"
+<<<<<<< HEAD
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
             },
             {
                 "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "SubdivideEdges.subdivisions",
                 "value": "{\"m_Value\":1}"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> pr/2
             },
             {
                 "type": "UnityEditor.ProBuilder.Actions.DuplicateFaces+DuplicateFaceSetting, Unity.ProBuilder.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "DuplicateFaces.target",
                 "value": "{\"m_Value\":0}"
+<<<<<<< HEAD
 >>>>>>> puzzle-mechanics
+=======
+>>>>>>> pr/2
             }
         ]
     }
