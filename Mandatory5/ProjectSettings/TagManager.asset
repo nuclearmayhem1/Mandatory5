@@ -5,9 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+<<<<<<< HEAD
   - DeathCollider
+<<<<<<< HEAD
   - Mirror
   - Brazier
+=======
+  - Bean
+  - JumpTrigger
+=======
+  - Airship
+  - Manipulatable
+>>>>>>> upstream/main
+>>>>>>> puzzle-mechanics
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class MidPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        respawnPosition = transform.localPosition;
+        respawnPosition = transform.parent.transform.position;
     }
 
     // Update is called once per frame
