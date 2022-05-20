@@ -5,9 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+<<<<<<< HEAD
   - DeathCollider
   - Bean
   - JumpTrigger
+=======
+  - Airship
+  - Manipulatable
+>>>>>>> upstream/main
   layers:
   - Default
   - TransparentFX
