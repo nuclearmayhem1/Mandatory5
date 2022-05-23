@@ -11,6 +11,8 @@ public class ObjectManipulation : MonoBehaviour
     private float grabPointDistance = 3f;
     [SerializeField] private float grabPointMin, grabPointMax;
     [SerializeField] private ThirdPersonController playerController;
+    [SerializeField] private float rotateXMultiplier = 1, rotateYMultiplier = 1, rotateZMultiplier = 5;
+    [SerializeField] Transform carriedSlot;
 
     private void OnValidate()
     {
@@ -34,6 +36,7 @@ public class ObjectManipulation : MonoBehaviour
 
     private bool rightClick = false;
     private bool holding = false;
+    private GameObject carried = null;
     private void Update()
     {
         if (!holding && Input.GetMouseButtonDown(0))
@@ -45,9 +48,12 @@ public class ObjectManipulation : MonoBehaviour
             holding = DropObject();
         }
 
-        grabPointDistance += Input.GetAxis("Mouse ScrollWheel");
-        grabPointDistance = Mathf.Clamp(grabPointDistance, grabPointMin, grabPointMax);
-        grabPoint.transform.localPosition = new Vector3(0, 0, grabPointDistance);
+        if (!rightClick)
+        {
+            grabPointDistance += Input.GetAxis("Mouse ScrollWheel");
+            grabPointDistance = Mathf.Clamp(grabPointDistance, grabPointMin, grabPointMax);
+            grabPoint.transform.localPosition = new Vector3(0, 0, grabPointDistance);
+        }
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -59,7 +65,7 @@ public class ObjectManipulation : MonoBehaviour
             playerController.freezePlayerCamera = false;
             rightClick = false;
         }
-        
+        //Manipulate a held item
         if (holding)
         {
             Rigidbody heldRb = held.GetComponent<Rigidbody>();
@@ -68,9 +74,59 @@ public class ObjectManipulation : MonoBehaviour
 
             if (rightClick)
             {
-
+                float mouseX = Input.GetAxis("Mouse X") * rotateXMultiplier;
+                float mouseY = Input.GetAxis("Mouse Y") * rotateYMultiplier;
+                float scrollZ = Input.GetAxis("Mouse ScrollWheel") * rotateZMultiplier;
+                Vector3 newRot = new Vector3(mouseY, mouseX, scrollZ);
+                held.transform.Rotate(newRot);
             }
-
+            if (Input.GetMouseButtonDown(2))
+            {
+                held.transform.rotation = playerController.CinemachineCameraTarget.transform.rotation;
+            }
+        }
+        //Carry item on back
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (carried != null)
+            {
+                if (held != null)
+                {
+                    GameObject temp = held;
+                    held = carried;
+                    held.transform.position = grabPoint.transform.position;
+                    held.GetComponent<Rigidbody>().freezeRotation = true;
+                    held.GetComponent<Rigidbody>().isKinematic = false;
+                    held.transform.parent = null;
+                    carried = temp;
+                    carried.transform.parent = carriedSlot;
+                    carried.transform.localPosition = Vector3.zero;
+                    carried.GetComponent<Rigidbody>().freezeRotation = true;
+                    carried.GetComponent<Rigidbody>().isKinematic = true;
+                }
+                else
+                {
+                    held = carried;
+                    held.transform.parent = null;
+                    held.transform.position = grabPoint.transform.position;
+                    held.GetComponent<Rigidbody>().isKinematic = false;
+                    carried = null;
+                    holding = true;
+                }
+            }
+            else
+            {
+                if (held != null)
+                {
+                    carried = held;
+                    carried.transform.parent = carriedSlot;
+                    carried.transform.localPosition = Vector3.zero;
+                    carried.GetComponent<Rigidbody>().freezeRotation = true;
+                    carried.GetComponent<Rigidbody>().isKinematic = true;
+                    held = null;
+                    holding = false;
+                }
+            }
         }
     }
 
@@ -82,6 +138,12 @@ public class ObjectManipulation : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit, rayCastRange);
         if (hit.collider == null)
         {
+            return false;
+        }
+
+        if (hit.collider.transform.root.TryGetComponent<InteractOnClick>(out InteractOnClick onClick))
+        {
+            onClick.Clicked();
             return false;
         }
 
