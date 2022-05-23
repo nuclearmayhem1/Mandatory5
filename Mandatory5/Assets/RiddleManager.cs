@@ -10,7 +10,7 @@ public class RiddleManager : MonoBehaviour
    public static RiddleManager Instance;
 
 
-   public GameObject[] characters, /*The yellow bird is changed each riddle*/ findableObjects; //If riddle needs an object spawned, this is it
+   public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    public GameObject riddleHintUI; // On-screen instructions to the riddle
    public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on
    private void Awake() => Instance = this;
@@ -27,7 +27,7 @@ public class RiddleManager : MonoBehaviour
    {
       riddleHintUI.GetComponent<TMP_Text>().text = "- " + hint; //makes screen say the hint you wrote in the inspector
       riddleHintUI.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f);
-      findableObjects[spawnObject].SetActive(true); 
+      spawnedObject[spawnObject].SetActive(true); 
     //Set the hint and the object you want spawned in the inspector
    }
    public void RiddleSolved() //Lets the player know they're done and changes to next bird
@@ -37,10 +37,5 @@ public class RiddleManager : MonoBehaviour
       SpawnCharacter(currentRiddlemaster+1);
       currentRiddle = currentRiddle+1;
    }   
-
-    void StartSecondRiddle()
-    {
-        
-    }
 
 }
