@@ -3,26 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - DeathCollider
-<<<<<<< HEAD
-  - Mirror
-  - Brazier
-=======
-  - Bean
-  - JumpTrigger
-=======
-  - Airship
-  - Manipulatable
->>>>>>> upstream/main
->>>>>>> puzzle-mechanics
-=======
-  - Airship
-  - Manipulatable
->>>>>>> pr/2
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -30,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
