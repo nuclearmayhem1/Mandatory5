@@ -82,7 +82,7 @@ namespace Quests
 
             OverWorld = 1,
             LowerWorld = 2,
-            MiddleWorld = 3,
+            ChickRepublic = 3,
             UpperWorld = 4,
         }
     }

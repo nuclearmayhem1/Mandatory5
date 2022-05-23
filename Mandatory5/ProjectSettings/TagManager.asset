@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
+  tags:
+  - CinemachineTarget
+  - DispenserColor
+  - DeathCollider
+  - SporeZone
+  - DeathPlane
+  - Fox
+  - Chicken
+=======
   tags: []
+>>>>>>> upstream/main
   layers:
   - Default
   - TransparentFX

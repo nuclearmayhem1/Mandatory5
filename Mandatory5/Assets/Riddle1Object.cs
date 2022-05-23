@@ -9,7 +9,7 @@ public class Riddle1Object : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            RiddleManager.Instance.SolvedFirstRiddle();
+            RiddleManager.Instance.RiddleSolved();
             gameObject.SetActive(false);
         }
     }
