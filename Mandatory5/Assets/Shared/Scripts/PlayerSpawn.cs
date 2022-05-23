@@ -7,10 +7,17 @@ using UnityEngine.SceneManagement;
 public class PlayerSpawn : MonoBehaviour
 {
 
+    public int playerLocation;
+
     public void SpawnAtLastCheckpoint()
     {
-        int playerLocation = PlayerPrefs.GetInt("plLoc", 1);
+        playerLocation = PlayerPrefs.GetInt("plLoc", 1);
         SceneManager.LoadScene(playerLocation, LoadSceneMode.Single);
+    }
+
+    public void SpawnInScene(int sceneNum)
+    {
+        SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
     }
 
     public void ExitGame()
