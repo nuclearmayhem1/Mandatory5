@@ -14,11 +14,18 @@ public class LandingPlatform : MonoBehaviour
     public GameObject plPrefab;
     public GameObject exitText;
 
+    private Transform mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
         clipInfos = shipAnimator.GetCurrentAnimatorClipInfo(0);
         landingTime = clipInfos[0].clip.length;
+
+        mainCamera = Camera.main.transform;
+        mainCamera.parent = transform;
+        mainCamera.localPosition = new Vector3(0f, 3f, 10f);
+        mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);
         
         Invoke("PlayerSpawn", landingTime);
     }
@@ -39,6 +46,11 @@ public class LandingPlatform : MonoBehaviour
         {
             exitText.SetActive(false);
         }
+
+        if (pl == null)
+        {
+            mainCamera.LookAt(shipAnimator.transform);
+        }
     }
 
     private void PlayerSpawn()
@@ -53,10 +65,17 @@ public class LandingPlatform : MonoBehaviour
             pl.transform.localPosition = transform.forward * 3f;
         }
         pl.transform.rotation = transform.root.rotation;
+        mainCamera.parent = pl.transform;
+        mainCamera.localPosition = new Vector3(0f, 3f, 5f);
+        mainCamera.LookAt(pl.transform);
     }
 
     private void LeaveRegion()
     {
+        mainCamera.parent = transform;
+        mainCamera.localPosition = new Vector3(0f, 3f, 10f);
+        mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);
+        
         Destroy(pl);
         shipAnimator.SetBool("LeaveRegion", true);
         clipInfos = shipAnimator.GetCurrentAnimatorClipInfo(0);
