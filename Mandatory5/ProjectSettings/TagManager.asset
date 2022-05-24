@@ -4,19 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CinemachineTarget
-  - DispenserColor
-  - DeathCollider
-  - SporeZone
-  - DeathPlane
-  - Fox
-  - Chicken
   - Mirror
-  - JumpTrigger
   - Brazier
   - Bean
-  - Brother
-  - Sister
+  - Chicken
+  - Fox
+  - DeathCollider
+  - CinemachineTarget
+  - Boat
   layers:
   - Default
   - TransparentFX
