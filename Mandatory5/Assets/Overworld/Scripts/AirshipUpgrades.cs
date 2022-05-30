@@ -10,6 +10,23 @@ public class AirshipUpgrades : MonoBehaviour
 
     private void OnEnable()
     {
+        if (GameManager.Instance.GetItemValue("PartOne") == 1)
+        {
+            firstPart = true;
+        }
+        else
+        {
+            firstPart = false;
+        }
+        if (GameManager.Instance.GetItemValue("PartTwo") == 1)
+        {
+            secondPart = true;
+        }
+        else
+        {
+            secondPart = false;
+        }
+
         if (secondPart)
         {
             baloon3.SetActive(true);
