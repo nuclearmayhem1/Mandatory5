@@ -189,9 +189,13 @@ namespace StarterAssets
                 _animator.SetBool(_animIDGrounded, Grounded);
             }
         }
-
+        public bool freezePlayerCamera = false;
         private void CameraRotation()
         {
+            if (freezePlayerCamera)
+            {
+                return;
+            }
             // if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
