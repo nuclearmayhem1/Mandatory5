@@ -2206,13 +2206,14 @@ MonoBehaviour:
   reachedTheShore: 0
   midBoat: {fileID: 1577993358}
   animalPlacements:
-  - {fileID: 247556376}
-  - {fileID: 316868616}
-  - {fileID: 1191203941}
-  - {fileID: 913050491}
-  - {fileID: 257934948}
-  - {fileID: 1739017082}
-  availableSpot: {x: 0, y: 0, z: 0}
+  - {fileID: 247556373}
+  - {fileID: 316868613}
+  - {fileID: 1191203938}
+  - {fileID: 913050488}
+  - {fileID: 257934945}
+  - {fileID: 1739017079}
+  animalsInBoat: []
+  i: 0
 --- !u!1001 &1350208317
 PrefabInstance:
   m_ObjectHideFlags: 0

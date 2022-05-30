@@ -47,6 +47,7 @@ public class Mid_SetBoatOff : MonoBehaviour
     public void StopButton()
     {
         buttonAnim.SetBool("buttonPress", false);
+        midBoat.boatAnimator.SetBool("Go over", false);
     }
 }
 
