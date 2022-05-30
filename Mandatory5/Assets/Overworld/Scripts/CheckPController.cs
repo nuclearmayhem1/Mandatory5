@@ -18,11 +18,12 @@ public class CheckPController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        string checkopintCheck = gameObject.name;
-        if (other.CompareTag("Player"))
+        string compare = PlayerPrefs.GetString("CheckPoint", null);
+        string checkpointCheck = gameObject.name;
+        if (other.CompareTag("Player") && checkpointCheck != compare)
         {
             //playerStartPoint = gameObject.transform.position;
-            PlayerPrefs.SetString("CheckPoint", checkopintCheck);
+            PlayerPrefs.SetString("CheckPoint", checkpointCheck);
         }
     }
 }
