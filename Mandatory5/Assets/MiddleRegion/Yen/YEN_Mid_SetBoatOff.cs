@@ -2,38 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mid_SetBoatOff : MonoBehaviour
+public class YEN_Mid_SetBoatOff : MonoBehaviour
 {
 
     public bool canPressE;
     public Mid_Boat midBoat;
-    public Animator boatAnim, buttonAnim;
+    public Animator boatAnim;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        buttonAnim = gameObject.GetComponent<Animator>();
+
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            canPressE = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            canPressE = false;
-        }
-    }
     // Update is called once per frame
     void Update()
     {
-        if (canPressE)
+        if (canPressE && canPressE == true)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -43,8 +29,19 @@ public class Mid_SetBoatOff : MonoBehaviour
 
         if (midBoat.seatOneFilled == true && midBoat.playerTouchedBoat)
         {
-
+            boatAnim.SetBool("Two animals", true);
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                boatAnim.SetBool("Two animals", true);
+            }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                boatAnim.SetBool("Two animals", false);
+            }
         }
+        
     }
-}
+    
+
+    }
 

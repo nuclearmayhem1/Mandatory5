@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mid_Boat : MonoBehaviour
+public class YEN_Mid_Boat : MonoBehaviour
 {
     private Animator boatAnimator;
     public GameObject animal1, animal2;
@@ -37,9 +37,11 @@ public class Mid_Boat : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("The player touched the boat");
             if (Input.GetKeyUp(KeyCode.E) && boatIsFull)
             {
                 boatAnimator.SetBool("Two animals", true);
+                Debug.Log("The boat is going again");
             }
         }
     }
@@ -54,9 +56,9 @@ public class Mid_Boat : MonoBehaviour
     private void OnTriggerEnter(Collider other) //The issue is that all the if statements are true at the same time.
     {
         if (other.gameObject.CompareTag("Player"))
-        {
+            {
             playerTouchedBoat = true;
-        }
+            }
 
 
         if (other.gameObject.CompareTag("Fox") || other.gameObject.CompareTag("Chicken"))
@@ -73,8 +75,46 @@ public class Mid_Boat : MonoBehaviour
                 other.gameObject.transform.SetParent(gameObject.transform);
                 animal1 = other.gameObject;
                 Invoke("CanFill", 3f);
-            }           
+            }
+
+
+
+
+            /*if (seatCanBeFilled)
+            {
+                //if (animal2 == null)
+                if (animal1 == null)
+                {
+                    boatIsFull = false;
+                    other.gameObject.transform.SetParent(gameObject.transform);
+                    animal1 = other.gameObject;
+                    Invoke("CanFill", 3f);
+
+                    
+                    //seatOneFilled = true; 
+                }
+                //if (animal1 != null && animal2 == null)
+                if (seatOneFilled)
+                {
+                    boatIsFull = false;
+                    other.gameObject.transform.SetParent(gameObject.transform);
+                    animal2 = other.gameObject;
+
+                }
+            }*/
+            
+            
+            /*if (animal1 != null && animal2 != null)
+            {
+                boatIsFull = true;
+                animal1.transform.parent = null;
+                animal1 = other.gameObject;
+                
+            }*/
+                  
+                        
         }
+
 
     }
 
@@ -89,6 +129,7 @@ public class Mid_Boat : MonoBehaviour
         if (seatOneFilled)
         {
             objectToMove.transform.position = endPosition2;
+
         }
     }
 

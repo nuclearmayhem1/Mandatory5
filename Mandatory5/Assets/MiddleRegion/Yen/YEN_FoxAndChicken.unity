@@ -524,8 +524,8 @@ GameObject:
   - component: {fileID: 331823708}
   - component: {fileID: 331823707}
   - component: {fileID: 331823711}
-  - component: {fileID: 331823713}
   - component: {fileID: 331823712}
+  - component: {fileID: 331823713}
   m_Layer: 0
   m_Name: chicken3
   m_TagString: Chicken
@@ -631,14 +631,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 331823706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &331823713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ Animator:
   m_GameObject: {fileID: 402979911}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 927f308145b7eab448ac82d8d1b21708, type: 2}
+  m_Controller: {fileID: 9100000, guid: 48bda7148a06f9148b37b091777c16e4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -722,8 +722,8 @@ GameObject:
   - component: {fileID: 433912255}
   - component: {fileID: 433912254}
   - component: {fileID: 433912258}
-  - component: {fileID: 433912260}
   - component: {fileID: 433912259}
+  - component: {fileID: 433912260}
   m_Layer: 0
   m_Name: fox3
   m_TagString: Fox
@@ -829,14 +829,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 433912253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &433912260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1066,8 +1066,8 @@ GameObject:
   - component: {fileID: 607230876}
   - component: {fileID: 607230875}
   - component: {fileID: 607230879}
-  - component: {fileID: 607230881}
   - component: {fileID: 607230880}
+  - component: {fileID: 607230881}
   m_Layer: 0
   m_Name: chicken1
   m_TagString: Chicken
@@ -1173,14 +1173,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 607230874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &607230881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1207,8 +1207,8 @@ GameObject:
   - component: {fileID: 628849229}
   - component: {fileID: 628849228}
   - component: {fileID: 628849227}
-  - component: {fileID: 628849233}
   - component: {fileID: 628849232}
+  - component: {fileID: 628849233}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1237,12 +1237,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628849226}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.0263605
-  m_Height: 3.0507135
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.5000001
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: -0.01868248, y: -0.051396847, z: -0.03899932}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &628849229
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1315,13 +1315,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 628849226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3ef52dbc47fc044ba7eaf4efae8383, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a738c3413a4d644cba411b6f2226a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canPressE: 0
-  midBoat: {fileID: 1577993358}
-  boatAnim: {fileID: 0}
-  buttonAnim: {fileID: 0}
+  midBoat: {fileID: 1577993364}
+  boatAnim: {fileID: 402979912}
 --- !u!95 &628849233
 Animator:
   serializedVersion: 3
@@ -1751,8 +1750,8 @@ GameObject:
   - component: {fileID: 1287998611}
   - component: {fileID: 1287998610}
   - component: {fileID: 1287998614}
-  - component: {fileID: 1287998616}
   - component: {fileID: 1287998615}
+  - component: {fileID: 1287998616}
   m_Layer: 0
   m_Name: fox2
   m_TagString: Fox
@@ -1858,14 +1857,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287998609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &1287998616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1984,7 +1983,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348146790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30bd2425072c48f4d816667fbb3c0af2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f6f97b7889f2fa4c975584412b88fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reachedTheShore: 0
@@ -2002,8 +2001,8 @@ GameObject:
   - component: {fileID: 1521897707}
   - component: {fileID: 1521897706}
   - component: {fileID: 1521897710}
-  - component: {fileID: 1521897712}
   - component: {fileID: 1521897711}
+  - component: {fileID: 1521897712}
   m_Layer: 0
   m_Name: chicken2
   m_TagString: Chicken
@@ -2109,14 +2108,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1521897705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &1521897712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2135,29 +2134,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 104856, guid: 19379b4b0dd7bc741ac83c5040f31d79, type: 3}
   m_PrefabInstance: {fileID: 665904502}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1577993358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577993357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad9992cd0d1e4a44a1bb26093690d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animal1: {fileID: 0}
-  animal2: {fileID: 0}
-  startPosition: {x: 0, y: 0, z: 0}
-  endPosition1: {x: 0, y: 0, z: 0}
-  endPosition2: {x: 0, y: 0, z: 0}
-  ghostAnimal1: {fileID: 892972051}
-  ghostAnimal2: {fileID: 1262799888}
-  objectToMove: {fileID: 0}
-  boatIsFull: 0
-  seatOneFilled: 0
-  playerTouchedBoat: 0
 --- !u!4 &1577993361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 404782, guid: 19379b4b0dd7bc741ac83c5040f31d79, type: 3}
@@ -2192,6 +2168,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1564584, y: 1.6074529, z: 5.7599616}
   m_Center: {x: 0.00000024431637, y: 0.72319025, z: -0.18382706}
+--- !u!114 &1577993364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577993357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6cd38f27093ec41a78a9701589054c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animal1: {fileID: 0}
+  animal2: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition1: {x: 0, y: 0, z: 0}
+  endPosition2: {x: 0, y: 0, z: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
+  objectToMove: {fileID: 0}
+  boatIsFull: 0
+  seatOneFilled: 0
+  playerTouchedBoat: 0
+--- !u!111 &1577993365
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577993357}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0217047cdbd31d7438cd13c5cdab0dc2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0217047cdbd31d7438cd13c5cdab0dc2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1577993366
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577993357}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48bda7148a06f9148b37b091777c16e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1739017079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,8 +2320,8 @@ GameObject:
   - component: {fileID: 1837338380}
   - component: {fileID: 1837338379}
   - component: {fileID: 1837338383}
-  - component: {fileID: 1837338385}
   - component: {fileID: 1837338384}
+  - component: {fileID: 1837338385}
   m_Layer: 0
   m_Name: fox1
   m_TagString: Fox
@@ -2393,14 +2427,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837338378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52b1d4c008392e479ea32a611ba0829, type: 3}
+  m_Script: {fileID: 11500000, guid: 68da601c23e06de4c8ec446dc455003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostAnimal1: {fileID: 0}
-  ghostAnimal2: {fileID: 0}
+  ghostAnimal1: {fileID: 892972051}
+  ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
-  boat: {fileID: 0}
+  boat: {fileID: 1577993364}
 --- !u!65 &1837338385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2511,19 +2545,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 991939654607519805, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9793714
+      value: 0.9793726
       objectReference: {fileID: 0}
     - target: {fileID: 991939654607519805, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20069423
+      value: 0.2006883
       objectReference: {fileID: 0}
     - target: {fileID: 991939654607519805, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018735908
+      value: -0.018735785
       objectReference: {fileID: 0}
     - target: {fileID: 991939654607519805, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.01423148
+      value: -0.014230798
       objectReference: {fileID: 0}
     - target: {fileID: 1236873923027160003, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2579,19 +2613,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1675368891511779359, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9957822
+      value: 0.99578226
       objectReference: {fileID: 0}
     - target: {fileID: 1675368891511779359, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.01720548
+      value: -0.017202584
       objectReference: {fileID: 0}
     - target: {fileID: 1675368891511779359, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0678004
+      value: 0.06780052
       objectReference: {fileID: 0}
     - target: {fileID: 1675368891511779359, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05937133
+      value: 0.059370447
       objectReference: {fileID: 0}
     - target: {fileID: 1676761424303147363, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2807,15 +2841,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2879532956231370241, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0022748262
+      value: -0.0022715328
       objectReference: {fileID: 0}
     - target: {fileID: 2879532956231370241, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08656858
+      value: 0.08656854
       objectReference: {fileID: 0}
     - target: {fileID: 2879532956231370241, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.038079947
+      value: -0.03808048
       objectReference: {fileID: 0}
     - target: {fileID: 2977872626392359443, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3051,19 +3085,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922554047838204984, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9824927
+      value: 0.98249406
       objectReference: {fileID: 0}
     - target: {fileID: 3922554047838204984, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18474491
+      value: 0.18473792
       objectReference: {fileID: 0}
     - target: {fileID: 3922554047838204984, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018416408
+      value: -0.018416496
       objectReference: {fileID: 0}
     - target: {fileID: 3922554047838204984, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0154384505
+      value: -0.015437862
       objectReference: {fileID: 0}
     - target: {fileID: 3951714656017622092, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3187,19 +3221,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4165348944853289248, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98034626
+      value: 0.9803468
       objectReference: {fileID: 0}
     - target: {fileID: 4165348944853289248, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18525375
+      value: -0.18525074
       objectReference: {fileID: 0}
     - target: {fileID: 4165348944853289248, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.05321255
+      value: 0.05321271
       objectReference: {fileID: 0}
     - target: {fileID: 4165348944853289248, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04208005
+      value: -0.042079903
       objectReference: {fileID: 0}
     - target: {fileID: 4358941669452354675, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3651,7 +3685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7486448367487868610, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9677845
+      value: 0.9677856
       objectReference: {fileID: 0}
     - target: {fileID: 7486448367487868610, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3743,19 +3777,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678730649166280400, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.17272767
+      value: 0.17272386
       objectReference: {fileID: 0}
     - target: {fileID: 7678730649166280400, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.97900635
+      value: 0.97900695
       objectReference: {fileID: 0}
     - target: {fileID: 7678730649166280400, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.05116035
+      value: -0.05116024
       objectReference: {fileID: 0}
     - target: {fileID: 7678730649166280400, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.09536481
+      value: 0.09536511
       objectReference: {fileID: 0}
     - target: {fileID: 8077580697401442125, guid: 1f7abbcdbb876044d867580833cf78ef, type: 3}
       propertyPath: m_LocalPosition.x
