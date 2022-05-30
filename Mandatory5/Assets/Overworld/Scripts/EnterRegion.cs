@@ -15,14 +15,15 @@ public class EnterRegion : MonoBehaviour
 
     public regionName connectedRegion = regionName.Lower_Region;
         
-    private Transform airship;
+    public Transform airship;
+    public float interactRange = 30f;
     public GameObject landingText;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Airship"))
-        {airship = GameObject.FindGameObjectWithTag("Airship").transform;}
+        //if (GameObject.FindGameObjectWithTag("Airship"))
+        //{airship = GameObject.FindGameObjectWithTag("Airship").transform;}
         //Debug.Log(connectedRegion.ToString());
         landingText.transform.GetChild(0).GetComponent<Text>().text = "Press F to enter " + connectedRegion.ToString();
     }
@@ -30,7 +31,7 @@ public class EnterRegion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (airship && Vector3.Distance(airship.position, transform.position) < 20f)
+        if (airship && Vector3.Distance(airship.position, transform.position) < interactRange)
         {
             landingText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
