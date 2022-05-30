@@ -7,6 +7,8 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
     //private GameObject puzzleSpawnLocation;
     public GameObject firstPuzzleArea, secondPuzzleArea, thirdPuzzleArea, puzzleAreaDoor, closeTheDoorTrigger;
 
+    private Animator doorAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +16,10 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
         firstPuzzleArea.SetActive(false);
         secondPuzzleArea.SetActive(false);
         thirdPuzzleArea.SetActive(false);
-        puzzleAreaDoor.SetActive(true);
-        closeTheDoorTrigger.SetActive(false); 
+        //puzzleAreaDoor.SetActive(true);
+        closeTheDoorTrigger.SetActive(false);
+        doorAnimator = GameObject.Find("PuzzleDoor").GetComponent<Animator>();
+
 
     }
 
@@ -72,7 +76,9 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
 
     public void OpenPuzzleDoor()
     {
-        puzzleAreaDoor.SetActive(false);
+        //puzzleAreaDoor.SetActive(false); // Open THe Door
+        doorAnimator.SetBool("Open", true);
+
     }
 
     public void ActivateDoorTrigger()
