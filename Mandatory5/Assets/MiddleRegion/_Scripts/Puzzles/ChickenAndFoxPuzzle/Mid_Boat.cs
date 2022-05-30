@@ -12,9 +12,7 @@ public class Mid_Boat : MonoBehaviour
     public bool seatOneFilled;
     public bool playerTouchedBoat;
     
-    
-
-
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +27,13 @@ public class Mid_Boat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (animal1 != null && animal2 != null)
+        {
+            boatIsFull = true;
+        } else
+        {
+            boatIsFull = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other) //The issue is that all the if statements are true at the same time.
@@ -40,35 +44,45 @@ public class Mid_Boat : MonoBehaviour
         }
 
 
-        if (other.gameObject.CompareTag("Fox") || other.gameObject.CompareTag("Chicken"))
+        /*if (other.gameObject.CompareTag("Fox") || other.gameObject.CompareTag("Chicken"))
         {
             if (seatOneFilled)
             {
-                boatIsFull = true;
-                other.gameObject.transform.SetParent(gameObject.transform);
+                //other.gameObject.transform.SetParent(gameObject.transform);
+      
                 animal2 = other.gameObject;
+                
             }
             if (!seatOneFilled)
             {
-                boatIsFull = false;
-                other.gameObject.transform.SetParent(gameObject.transform);
+                //other.gameObject.transform.SetParent(gameObject.transform);
                 animal1 = other.gameObject;
                 Invoke("CanFill", 0.5f);
+                
             }           
-        }
+        }*/
 
     }
 
     public void MoveAnimalToBoat()
     {
+        
         if (!seatOneFilled)
         {
             objectToMove.transform.position = endPosition1;
+            objectToMove.transform.SetParent(gameObject.transform);
+
+            animal1 = objectToMove.gameObject;
+            Invoke("CanFill", 0.5f);
         }
            
         if (seatOneFilled)
         {
             objectToMove.transform.position = endPosition2;
+            objectToMove.transform.SetParent(gameObject.transform);
+
+            animal2 = objectToMove.gameObject;
+
         }
     }
 

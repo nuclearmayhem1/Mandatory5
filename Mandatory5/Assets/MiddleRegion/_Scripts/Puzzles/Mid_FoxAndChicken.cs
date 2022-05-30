@@ -21,6 +21,7 @@ public class Mid_FoxAndChicken : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 boat.MoveAnimalToBoat();
+                Debug.Log("Animal was moved");
             }
         }
         
