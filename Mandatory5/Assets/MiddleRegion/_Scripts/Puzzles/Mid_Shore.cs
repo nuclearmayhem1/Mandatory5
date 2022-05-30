@@ -6,8 +6,9 @@ public class Mid_Shore : MonoBehaviour
 {
     public bool reachedTheShore;
     public Mid_Boat midBoat;
-    public List<Transform> animalPlacements;
-    public Vector3 availableSpot;
+    public List<Vector3> animalPlacements;
+    public List<GameObject> animalsInBoat;
+    public int i;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -16,21 +17,24 @@ public class Mid_Shore : MonoBehaviour
             FindNextAvailableSpot();
             midBoat = other.GetComponent<Mid_Boat>();
             midBoat.animal1.transform.parent = gameObject.transform;
-            midBoat.animal1.transform.position = availableSpot;
+            animalsInBoat.Add(midBoat.animal1);
             //Invoke("FindNextAvailableSpot", 3f);
             //Debug.Log("Next available spot was executed with delay");
             midBoat.animal2.transform.parent = gameObject.transform;
-            midBoat.animal2.transform.position = availableSpot;
+            animalsInBoat.Add(midBoat.animal2);
         }
     }
 
     public void FindNextAvailableSpot()
     {
         Debug.Log("Next available spot was executed");
-        for (int i = 0; i < animalPlacements.Count; i++)
+        foreach (GameObject animal in animalsInBoat)
         {
-            Debug.Log("Ran once");
-            return;
+            animal.transform.position = animalPlacements[i++];
+        }
+        for (i = 0; i < animalPlacements.Count; i++)
+        {
+
         }
     }
 }
