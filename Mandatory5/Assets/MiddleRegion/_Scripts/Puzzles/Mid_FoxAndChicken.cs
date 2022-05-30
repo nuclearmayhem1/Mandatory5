@@ -4,26 +4,63 @@ using UnityEngine;
 
 public class Mid_FoxAndChicken : MonoBehaviour
 {
-    public Vector3 startPosition, endPosition1, endPosition2;
+    //public Vector3 startPosition, endPosition1, endPosition2;
     public GameObject ghostAnimal1, ghostAnimal2;
+    public bool firstSeat, canPressE;
+    public Mid_Boat boat;
 
     public void Start()
     {
-        startPosition = transform.position;
+        /*startPosition = transform.position;
         endPosition1 = ghostAnimal1.transform.position;
         endPosition2 = ghostAnimal2.transform.position;
+        firstSeat = false; */
 
 
     }
-    
-    private void OnTriggerStay(Collider other)
+
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (canPressE && boat.boatIsFull == false) 
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                transform.position = endPosition1;
+                boat.MoveAnimalToBoat();
+
+
+
             }
         }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canPressE = true; 
+            boat.objectToMove = this.gameObject;
+            /*if (Input.GetKeyUp(KeyCode.E))
+            {
+                boat.MoveAnimalToBoat();
+
+
+               /*if (!firstSeat)
+                {
+                    transform.position = endPosition1;
+                    firstSeat = true;
+                }
+               if (firstSeat)
+                {
+                    transform.position = endPosition2;
+
+                }
+            }*/
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        canPressE = false;
+
     }
 }

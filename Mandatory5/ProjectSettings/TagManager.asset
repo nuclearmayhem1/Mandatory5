@@ -4,13 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CinemachineTarget
-  - DispenserColor
-  - DeathCollider
-  - SporeZone
-  - DeathPlane
-  - Fox
+  - Mirror
+  - Brazier
+  - Bean
   - Chicken
+<<<<<<< HEAD
+=======
+  - Fox
+  - DeathCollider
+  - CinemachineTarget
+  - Boat
+>>>>>>> main-mid
   layers:
   - Default
   - TransparentFX
