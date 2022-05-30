@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+//Made by: Aeden
+/// <summary>
+/// Used as refrence to make the actual Checkpoint and respawn controllers.
+/// </summary>
 
 public class CheckpointController : MonoBehaviour
 {
@@ -12,13 +15,13 @@ public class CheckpointController : MonoBehaviour
         startPosition = transform.position;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if(transform.position.y < -15)
+        /*if(transform.position.y < -35)
         {
             transform.position = startPosition;
-        }
+        }*/
     }
 
     void OnTriggerEnter(Collider other)
