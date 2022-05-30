@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mid_Boat : MonoBehaviour
 {
-    private Animator boatAnimator;
+    public Animator boatAnimator;
     public GameObject animal1, animal2;
     public Vector3 startPosition, endPosition1, endPosition2;
     public GameObject ghostAnimal1, ghostAnimal2, objectToMove;
@@ -32,25 +32,6 @@ public class Mid_Boat : MonoBehaviour
         
     }
 
-    
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            if (Input.GetKeyUp(KeyCode.E) && boatIsFull)
-            {
-                boatAnimator.SetBool("Two animals", true);
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            boatAnimator.SetBool("Two animals", false);
-            playerTouchedBoat = false;
-        }
-    }
     private void OnTriggerEnter(Collider other) //The issue is that all the if statements are true at the same time.
     {
         if (other.gameObject.CompareTag("Player"))
@@ -72,7 +53,7 @@ public class Mid_Boat : MonoBehaviour
                 boatIsFull = false;
                 other.gameObject.transform.SetParent(gameObject.transform);
                 animal1 = other.gameObject;
-                Invoke("CanFill", 3f);
+                Invoke("CanFill", 0.5f);
             }           
         }
 
@@ -83,7 +64,6 @@ public class Mid_Boat : MonoBehaviour
         if (!seatOneFilled)
         {
             objectToMove.transform.position = endPosition1;
-            //seatOneFilled = true;
         }
            
         if (seatOneFilled)

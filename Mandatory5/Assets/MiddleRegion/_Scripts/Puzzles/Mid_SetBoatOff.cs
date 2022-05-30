@@ -33,18 +33,20 @@ public class Mid_SetBoatOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPressE)
+        if (midBoat.boatIsFull)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (canPressE && Input.GetKeyUp(KeyCode.E))
             {
-                midBoat.MoveAnimalToBoat();
+                buttonAnim.SetBool("buttonPress", true);
+                midBoat.boatAnimator.SetBool("Go over", true);
+                Invoke("StopButton", 0.5f);
             }
         }
+    }
 
-        if (midBoat.seatOneFilled == true && midBoat.playerTouchedBoat)
-        {
-
-        }
+    public void StopButton()
+    {
+        buttonAnim.SetBool("buttonPress", false);
     }
 }
 
