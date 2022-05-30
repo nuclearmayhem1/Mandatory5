@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 5345206999581444977}
   - component: {fileID: 5345206999581444976}
   - component: {fileID: 5345206999581444979}
+  - component: {fileID: 3791722901834549657}
   m_Layer: 0
   m_Name: Airship
   m_TagString: Airship
@@ -3032,7 +3033,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &5345206999581444976
 MonoBehaviour:
@@ -3047,7 +3048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0.1
-  throtthleForce: 100
+  throtthleForce: 500
   throtthleChangeSpeed: 1
   maxReverseThrotthle: -0.25
   throtthleBar: {fileID: 5345206999697117222}
@@ -3068,6 +3069,20 @@ MonoBehaviour:
   baloon1: {fileID: 5345206999069604211}
   baloon2: {fileID: 5345207000681412585}
   baloon3: {fileID: 5345207000472945908}
+--- !u!136 &3791722901834549657
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345206999581444975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5
+  m_Height: 15
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5345206999697117220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,7 +4482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7728027418985822226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.92, y: -8.73, z: 8.42}
+  m_LocalPosition: {x: -26.92, y: -8.64, z: 8.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2722827072884244814}
