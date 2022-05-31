@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Mirror
-  - Brazier
-  - Bean
-  - Chicken
-<<<<<<< HEAD
-=======
-  - Fox
-  - DeathCollider
-  - CinemachineTarget
-  - Boat
->>>>>>> main-mid
+  tags: []
   layers:
   - Default
   - TransparentFX

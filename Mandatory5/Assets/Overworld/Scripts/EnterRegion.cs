@@ -37,6 +37,8 @@ public class EnterRegion : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 PlayerPrefs.SetInt("plLoc", (int)connectedRegion);
+                PlayerPrefs.SetInt("lastActiveRegion", (int)connectedRegion);
+                //Debug.Log(PlayerPrefs.GetInt("plLoc", 1));
                 SceneManager.LoadScene(((int)connectedRegion), LoadSceneMode.Single);
             }
         }
