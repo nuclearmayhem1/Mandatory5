@@ -16,6 +16,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
     private GameObject backWall;
     private GameObject textPressE;
     private Mid_3_Splash doorSplash;
+    private Mid_PaintDispenser paintDispenser;
 
 
     [SerializeField]
@@ -42,10 +43,12 @@ public class Mid_Puz_Door3 : MonoBehaviour
     {
         doorMat = gameObject.GetComponent<Renderer>();
         gameObject.GetComponent<Renderer>().material = doorTrans;
-        //backWall = GameObject.Find("Walls/BackWall");
+        backWall = GameObject.Find("Walls/BackWall");
         textPressE = GameObject.Find("TextPressE");
         textPressE.SetActive(false);
         doorSplash = GameObject.Find("DoorSplash").GetComponent<Mid_3_Splash>();
+
+        paintDispenser = GameObject.Find("PaintDispenser").GetComponent<Mid_PaintDispenser>();
 
 
     }
@@ -62,6 +65,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 doorSplash.scaleDownB = true;
                 InvokeSplash();
                 textPressE.SetActive(false);
+                paintDispenser.buttonsUnlocked = true; 
+
 
 
                 gameObject.GetComponent<Renderer>().material = doorOne;
@@ -75,6 +80,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 doorSplash.scaleDownB = true;
                 InvokeSplash();
                 textPressE.SetActive(false);
+                paintDispenser.buttonsUnlocked = true;
+
 
 
                 gameObject.GetComponent<Renderer>().material = doorTwo;
@@ -88,6 +95,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 doorSplash.ResetScale();
                 doorSplash.scaleDownB = true;
                 InvokeSplash();
+
+
 
                 gameObject.GetComponent<Renderer>().material = doorThree;
 
@@ -107,7 +116,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
     void ChangeDoorMat()
     {
         gameObject.GetComponent<Renderer>().material = doorFour;
-        //backWall.SetActive(false);
+        backWall.SetActive(false);
         gameObject.GetComponent<BoxCollider>().enabled = false; 
 
     }
