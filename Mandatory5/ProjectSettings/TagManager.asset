@@ -11,6 +11,9 @@ TagManager:
   - DeathPlane
   - Fox
   - Chicken
+  - Manipulatable
+  - Airship
+  - PushShroom
   layers:
   - Default
   - TransparentFX

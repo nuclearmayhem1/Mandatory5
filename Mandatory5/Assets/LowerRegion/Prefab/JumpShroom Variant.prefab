@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 185836, guid: 555628e97d23ecc419d3c0fa06b08777, type: 3}
       propertyPath: m_Name
-      value: JumpShroom
+      value: JumpShroom Variant
       objectReference: {fileID: 0}
     - target: {fileID: 462266, guid: 555628e97d23ecc419d3c0fa06b08777, type: 3}
       propertyPath: m_LocalScale.x
@@ -115,19 +115,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 199150, guid: 555628e97d23ecc419d3c0fa06b08777, type: 3}
   m_PrefabInstance: {fileID: 8602385557716579899}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1014729601
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8602385557716689879}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 22.4, y: 3.703587, z: 19.15}
-  m_Center: {x: 0, y: 1.3517954, z: 0}
 --- !u!54 &1931932314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +157,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceHeight: 30
+--- !u!65 &1014729601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602385557716689879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.4, y: 3.703587, z: 19.15}
+  m_Center: {x: 0, y: 1.3517954, z: 0}
