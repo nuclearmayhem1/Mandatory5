@@ -9,6 +9,7 @@ public class MazeZone : MonoBehaviour
     private bool standardScaleSet = false;
     private bool newScaleSet = false;
     private float elapsedTime = 0;
+    public GameObject mazeCam;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +32,7 @@ public class MazeZone : MonoBehaviour
                         other.transform.localScale.z * 0.1f);
 
                     newScaleSet = true;
+                    mazeCam.SetActive(true);
                 }
             }
         }
@@ -48,6 +50,7 @@ public class MazeZone : MonoBehaviour
                 newScaleSet = false;
                 elapsedTime = 0f;
             }
+            mazeCam.SetActive(false);
         }
     }
 }
