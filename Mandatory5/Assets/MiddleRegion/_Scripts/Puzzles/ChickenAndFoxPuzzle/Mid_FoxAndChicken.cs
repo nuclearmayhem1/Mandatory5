@@ -21,10 +21,9 @@ public class Mid_FoxAndChicken : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 boat.MoveAnimalToBoat();
-                Debug.Log("Animal was moved");
+                gameObject.GetComponent<Collider>().enabled = false;
             }
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,5 +37,6 @@ public class Mid_FoxAndChicken : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canPressE = false;
+        boat.objectToMove = null;
     }
 }
