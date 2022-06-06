@@ -20,28 +20,42 @@ public class PlatformTest : MonoBehaviour
         targetPoint = targetPosition.position;
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         /*if (other.CompareTag("SporeZone"))
         {
             Debug.Log("SPORE TRIGGER ENTER");
             targetPoint = targetPosition.position;
-        }*/
-    }
+        }#1#
+    }*/
 
 
-    void OnTriggerStay(Collider Other)
+    void OnTriggerEnter(Collider Other)
     {   
-        if(Other.CompareTag("Player"))
+        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom"))
         {
+            if (Other.GetComponent<Rigidbody>())
+            {
+                Other.GetComponent<Rigidbody>().useGravity = false;
+                Other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
+
             Other.transform.SetParent(transform);
+            
+            /*Other.transform.localScale = new Vector3(Other.transform.lossyScale.x / transform.localScale.x,
+                Other.transform.lossyScale.y / transform.localScale.y,
+                Other.transform.lossyScale.z / transform.localScale.z);*/
+
         }
     }
 
     void OnTriggerExit(Collider Other)
     {
-        if(Other.CompareTag("Player"))
+        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom"))
         {
+            if (Other.GetComponent<Rigidbody>())
+                Other.GetComponent<Rigidbody>().useGravity = true;
+
             Other.transform.SetParent(null);
         }
     }
