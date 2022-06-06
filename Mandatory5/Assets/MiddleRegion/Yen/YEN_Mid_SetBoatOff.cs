@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mid_SetBoatOff : MonoBehaviour
+public class YEN_Mid_SetBoatOff : MonoBehaviour
 {
 
     public bool canPressE;
@@ -13,7 +13,7 @@ public class Mid_SetBoatOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,10 +39,6 @@ public class Mid_SetBoatOff : MonoBehaviour
                 boatAnim.SetBool("Two animals", false);
             }
         }
-
-
-    
-        
         
     }
     

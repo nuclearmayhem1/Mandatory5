@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mid_Boat : MonoBehaviour
+public class YEN_Mid_Boat : MonoBehaviour
 {
     private Animator boatAnimator;
     public GameObject animal1, animal2;
