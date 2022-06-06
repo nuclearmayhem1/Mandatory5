@@ -99,16 +99,15 @@ public class PlayerMarra : MonoBehaviour
     public void Jump()
     {
         EggChild.GetComponent<Animator>().SetTrigger("JumpTrigger");
-    
+
+        Debug.Log("Hello!");
 
 
 
-
-
-    //   if (isGrounded)
-    //   {
-    //       rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
-    //   }
+        //   if (isGrounded)
+        //   {
+        //       rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
+        //   }
     }
     // private void OnTriggerEnter (Collider other)
     // {
