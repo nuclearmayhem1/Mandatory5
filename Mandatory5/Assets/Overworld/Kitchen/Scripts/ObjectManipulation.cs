@@ -13,6 +13,7 @@ public class ObjectManipulation : MonoBehaviour
     [SerializeField] private ThirdPersonController playerController;
     [SerializeField] private float rotateXMultiplier = 1, rotateYMultiplier = 1, rotateZMultiplier = 5;
     [SerializeField] Transform carriedSlot;
+    [SerializeField] private float ToolDistance = 1f;
 
     private void OnValidate()
     {
@@ -37,6 +38,7 @@ public class ObjectManipulation : MonoBehaviour
     private bool rightClick = false;
     private bool holding = false;
     private GameObject carried = null;
+    private bool isTool = false;
     private void Update()
     {
         if (!holding && Input.GetMouseButtonDown(0))
@@ -48,42 +50,92 @@ public class ObjectManipulation : MonoBehaviour
             holding = DropObject();
         }
 
-        if (!rightClick)
+        if (held != null && held.tag == "Tool")
         {
-            grabPointDistance += Input.GetAxis("Mouse ScrollWheel");
-            grabPointDistance = Mathf.Clamp(grabPointDistance, grabPointMin, grabPointMax);
-            grabPoint.transform.localPosition = new Vector3(0, 0, grabPointDistance);
+            isTool = true;
+        }
+        else
+        {
+            isTool = false;
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (!isTool)
         {
-            playerController.freezePlayerCamera = true;
-            rightClick = true;
+            if (!rightClick)
+            {
+                grabPointDistance += Input.GetAxis("Mouse ScrollWheel");
+                grabPointDistance = Mathf.Clamp(grabPointDistance, grabPointMin, grabPointMax);
+                grabPoint.transform.localPosition = new Vector3(0, 0, grabPointDistance);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                playerController.freezePlayerCamera = true;
+                rightClick = true;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                playerController.freezePlayerCamera = false;
+                rightClick = false;
+            }
+            //Manipulate a held item
+            if (holding)
+            {
+                Rigidbody heldRb = held.GetComponent<Rigidbody>();
+                heldRb.velocity = (grabPoint.transform.position - held.transform.position) * grabStrenght;
+                heldRb.freezeRotation = true;
+
+                if (rightClick)
+                {
+                    float mouseX = Input.GetAxis("Mouse X") * rotateXMultiplier;
+                    float mouseY = Input.GetAxis("Mouse Y") * rotateYMultiplier;
+                    float scrollZ = Input.GetAxis("Mouse ScrollWheel") * rotateZMultiplier;
+                    Vector3 newRot = new Vector3(mouseY, mouseX, scrollZ);
+                    held.transform.Rotate(newRot);
+                }
+                if (Input.GetMouseButtonDown(2))
+                {
+                    held.transform.rotation = playerController.CinemachineCameraTarget.transform.rotation;
+                }
+            }
         }
-        if (Input.GetMouseButtonUp(1))
-        {
-            playerController.freezePlayerCamera = false;
-            rightClick = false;
-        }
-        //Manipulate a held item
-        if (holding)
+        //Tool logic
+        else if (isTool)
         {
             Rigidbody heldRb = held.GetComponent<Rigidbody>();
-            heldRb.velocity =  (grabPoint.transform.position - held.transform.position) * grabStrenght;
+            heldRb.velocity = (grabPoint.transform.position - held.transform.position) * grabStrenght;
             heldRb.freezeRotation = true;
+            grabPointDistance = ToolDistance;
+            grabPoint.transform.localPosition = new Vector3(0, 0, grabPointDistance);
+            held.transform.rotation = playerController.CinemachineCameraTarget.transform.rotation;
 
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                held.GetComponent<ManipulatableTool>().UseTool();
+                playerController.freezePlayerCamera = true;
+                rightClick = true;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                playerController.freezePlayerCamera = false;
+                rightClick = false;
+            }
+            //Send rotation info to tool
             if (rightClick)
             {
                 float mouseX = Input.GetAxis("Mouse X") * rotateXMultiplier;
                 float mouseY = Input.GetAxis("Mouse Y") * rotateYMultiplier;
                 float scrollZ = Input.GetAxis("Mouse ScrollWheel") * rotateZMultiplier;
                 Vector3 newRot = new Vector3(mouseY, mouseX, scrollZ);
-                held.transform.Rotate(newRot);
+                held.GetComponent<ManipulatableTool>().UseToolRotation(newRot);
             }
             if (Input.GetMouseButtonDown(2))
             {
-                held.transform.rotation = playerController.CinemachineCameraTarget.transform.rotation;
+                held.GetComponent<ManipulatableTool>().UseToolSecondary();
             }
+
+
         }
         //Carry item on back
         if (Input.GetKeyDown(KeyCode.R))
@@ -92,7 +144,17 @@ public class ObjectManipulation : MonoBehaviour
             {
                 if (held != null)
                 {
+                    if (isTool)
+                    {
+                        held.GetComponent<ManipulatableTool>().held = false;
+                        held.GetComponent<ManipulatableTool>().carried = true;
+                    }
                     GameObject temp = held;
+                    if (carried.TryGetComponent<ManipulatableTool>(out ManipulatableTool tool))
+                    {
+                        tool.carried = false;
+                        tool.held = true;
+                    }
                     held = carried;
                     held.transform.position = grabPoint.transform.position;
                     held.GetComponent<Rigidbody>().freezeRotation = true;
@@ -106,6 +168,11 @@ public class ObjectManipulation : MonoBehaviour
                 }
                 else
                 {
+                    if (carried.TryGetComponent<ManipulatableTool>(out ManipulatableTool tool))
+                    {
+                        tool.carried = false;
+                        tool.held = true;
+                    }
                     held = carried;
                     held.transform.parent = null;
                     held.transform.position = grabPoint.transform.position;
@@ -118,6 +185,11 @@ public class ObjectManipulation : MonoBehaviour
             {
                 if (held != null)
                 {
+                    if (isTool)
+                    {
+                        held.GetComponent<ManipulatableTool>().held = false;
+                        held.GetComponent<ManipulatableTool>().carried = true;
+                    }
                     carried = held;
                     carried.transform.parent = carriedSlot;
                     carried.transform.localPosition = Vector3.zero;
@@ -155,6 +227,13 @@ public class ObjectManipulation : MonoBehaviour
                 held.transform.position = grabPoint.transform.position;
                 return true;
             }
+            else if (hit.collider.transform.root.gameObject.tag == "Tool")
+            {
+                held = hit.collider.transform.root.gameObject;
+                held.transform.position = grabPoint.transform.position;
+                held.GetComponent<ManipulatableTool>().held = true;
+                return true;
+            }
             else
             {
                 return false;
@@ -169,6 +248,10 @@ public class ObjectManipulation : MonoBehaviour
     private bool DropObject()
     {
         held.GetComponent<Rigidbody>().freezeRotation = false;
+        if (held.TryGetComponent<ManipulatableTool>(out ManipulatableTool tool))
+        {
+            tool.held = false;
+        }
         held = null;
         return false;
     }
