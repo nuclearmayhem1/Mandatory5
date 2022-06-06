@@ -249,13 +249,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/MidSwitchScene.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../2021/Exams/Rarity-Project (1)/Assets/_Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Riddle1Object.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/ChickenDialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MidSwitchScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Riddle1Object.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="280zKUu2Wfcyj8P3y8judpI2Upi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -268,7 +270,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -320,6 +323,8 @@
       <workItem from="1652078520455" duration="1119000" />
       <workItem from="1652356743877" duration="1234000" />
       <workItem from="1652684651780" duration="1912000" />
+      <workItem from="1654445352678" duration="606000" />
+      <workItem from="1654471384753" duration="9684000" />
     </task>
     <servers />
   </component>
