@@ -3,17 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - DispenserColor
-  - DeathCollider
-  - SporeZone
-  - DeathPlane
-  - Fox
-  - Chicken
-  - Manipulatable
-  - Airship
-  - PushShroom
   layers:
   - Default
   - TransparentFX
