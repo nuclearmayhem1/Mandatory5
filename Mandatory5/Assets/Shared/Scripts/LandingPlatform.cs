@@ -10,7 +10,7 @@ public class LandingPlatform : MonoBehaviour
     [SerializeField] private Animator shipAnimator;
     private AnimatorClipInfo[] clipInfos;
     private float landingTime, takeOffTime;
-    public GameObject nestedParentArmature, playerModel;
+    public GameObject playerModel;
     public GameObject plPrefab;
     public GameObject exitText;
 
@@ -73,7 +73,7 @@ public class LandingPlatform : MonoBehaviour
         
         plActive = true;
         landingCamera.gameObject.SetActive(false);
-        nestedParentArmature.SetActive(true);
+        playerModel.transform.parent.gameObject.SetActive(true);
         //exitText.transform.parent.GetComponent<Canvas>().worldCamera = pl.transform.Find("MainCamera").GetComponent<Camera>();
     }
 
@@ -82,7 +82,7 @@ public class LandingPlatform : MonoBehaviour
         /*mainCamera.parent = transform;
         mainCamera.localPosition = new Vector3(0f, 3f, 10f);
         mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);*/
-        nestedParentArmature.SetActive(false);
+        playerModel.transform.parent.gameObject.SetActive(false);
         landingCamera.gameObject.SetActive(true);
         
         //Destroy(pl);
