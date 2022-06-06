@@ -3428,6 +3428,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.32275257
       objectReference: {fileID: 0}
+    - target: {fileID: 4729703879164481046, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729703879164481046, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4896715190266076885, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_IsActive
       value: 0
