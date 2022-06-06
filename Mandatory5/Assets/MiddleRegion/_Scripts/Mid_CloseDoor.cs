@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mid_CloseDoor : MonoBehaviour
-{
+{ //Script is applied to a trigger that is positioned so that when the player goes back to the main area, the door will close.
     public GameObject puzzleAreaDoor;
     private Animator doorAnimator;
 
@@ -13,7 +13,7 @@ public class Mid_CloseDoor : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)                         //This will close the door.
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -22,7 +22,7 @@ public class Mid_CloseDoor : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)                             //This is disable the trigger this script is attached to.
     {
         if (other.gameObject.CompareTag("Player"))
         {

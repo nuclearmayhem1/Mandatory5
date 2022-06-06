@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
+<<<<<<< Updated upstream
       flags: 0
     RecentlyUsedScenePath-3:
       value: 22424703114646770219093022265819191957192f2d28353e662d21edf43b2cfbf733faa80a2a26230eea6f4a2b0f36e613
@@ -15,6 +16,36 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-5:
       value: 22424703114646770219093022265819191957192f2d28353e662d21edf43b2cfbf733faa8173e263c33fa39172a4f2afc031d12
+=======
+      value: 22424703114646741b0b1e351f31531459241b2f222d357f0c200f20eae9240ce7f422a7f234362820
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 22424703114646741b0b1e351f31531459241b2f222d357f0028143da2cd3136f7a923e7ee2e26
+      flags: 0
+    RecentlyUsedScenePath-2:
+      value: 22424703114646741b0b1e351f31531459241b2f222d357f0028143dacf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 2242470311464679020f18315f075a1d19583c2f212735332827187df7ee3d2cfb
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 22424703114646770219093022265819191957192f2d28353e663032ebee7a2decee22f0
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 2242470311464676040a082e15115a171f181665131b2535232c0e7cd2f23b2cedf32ff9e22970183817e834103b130fe7101307f3451f05181ae4
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 2242470311464676040a082e15115a171f181665131b2535232c0e7cc4ef2c19ece315e1ee3934393742be721130082beb
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 2242470311464676040a082e15115a171f181665131b2535232c0e7cc4ef2c19ece315e1ee393439374cfa320d2a18
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 2242470311464676040a082e15115a171f181665131b2535232c0e7cd2f23b2cedf32ff9e229700c380be1282037122ff7041a0ee4451f05181ae4
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 2242470311464676040a082e15115a171f181665131b2535232c0e7ccfe13d36acf238e0f323
+>>>>>>> Stashed changes
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
