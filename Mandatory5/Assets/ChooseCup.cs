@@ -46,13 +46,11 @@ public class ChooseCup : MonoBehaviour
 
         if (gameObject.transform.parent.transform.parent.GetComponent<MidJeff>().bedge)
         {
-
             readyToChoose = true;
         }
 
-            if (Input.GetKey(KeyCode.E) && withinRange && readyToChoose)
+        if (Input.GetKey(KeyCode.E) && withinRange && readyToChoose)
         {
-
             
             gameObject.transform.parent.transform.parent.GetComponent<Animator>().SetBool("Reveal", true);
 
@@ -76,7 +74,7 @@ public class ChooseCup : MonoBehaviour
 
             transform.parent.transform.parent.GetComponent<MidJeff>().correct = true;
 
-            Debug.Log(" YOU WIND ");
+            Debug.Log(" YOU WINNED ");
 
 
         }
