@@ -25,7 +25,7 @@ public class Brazier : MonoBehaviour
     {
         if (!brazierHit)
         {
-            brazierAudioSource.PlayDelayed(1.5f);
+            brazierAudioSource.PlayDelayed(2.5f);
             manager.PuzzleDone(true);
             heatEffect.Play();
             brazierCam.m_Priority = 12;

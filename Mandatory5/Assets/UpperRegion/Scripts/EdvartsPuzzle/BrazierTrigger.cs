@@ -5,6 +5,8 @@ public class BrazierTrigger : MonoBehaviour
     [Header("References")]
     public Canvas pressE;
     public ParticleSystem explotion;
+    public AudioSource panSource;
+    public AudioClip flame;
 
     private bool canCook;
     private bool haveCooked;
@@ -34,6 +36,9 @@ public class BrazierTrigger : MonoBehaviour
         {
             if (!haveCooked)
             {
+                panSource.clip = flame;
+                panSource.loop = false;
+                panSource.Play();
                 explotion.Play();
                 manager.RespawnDone(true);
                 manager.Message("Breakfast is cooked");

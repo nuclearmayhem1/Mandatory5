@@ -6509,14 +6509,14 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ce627530f83789640b627724346e99f7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
-  m_Pitch: 0.8
+  m_Pitch: 0.7
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 4
+  MinDistance: 2
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
