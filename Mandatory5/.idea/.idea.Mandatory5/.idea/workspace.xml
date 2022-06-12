@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="" />
+    <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LowerRegion/Prefab/PushShroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LowerRegion/Prefab/PushShroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LowerRegion/Scenes/Prototypes/Puzzle3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LowerRegion/Scenes/Prototypes/Puzzle3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpperRegion/Scenes/Terrain/TormodPuzzleTerrain.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +29,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/LowerPuzzleThreeManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,6 +39,11 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -89,6 +102,7 @@
       <workItem from="1652078520455" duration="1119000" />
       <workItem from="1652356743877" duration="1234000" />
       <workItem from="1652684651780" duration="1912000" />
+      <workItem from="1655044261266" duration="1253000" />
     </task>
     <servers />
   </component>
