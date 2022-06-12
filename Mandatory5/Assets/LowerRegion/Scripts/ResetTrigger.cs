@@ -11,11 +11,12 @@ public class ResetTrigger : MonoBehaviour
     {
         if (other.gameObject.name == LowerPuzzleThreeManager.Instance.PushShroom.name)
         {
-            //Move PushShroom back to start position 
-            other.transform.position = LowerPuzzleThreeManager.Instance.PushShroomStart;
-            
-            //Reset its velocity to stop it's momentum
-            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            LowerPuzzleThreeManager.Instance.RespawnPushShroom();
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.position = other.GetComponent<LowerRegionCheckpoint>().currentCheckpoint;
         }
     }
 }
