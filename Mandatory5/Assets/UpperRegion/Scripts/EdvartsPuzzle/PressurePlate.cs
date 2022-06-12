@@ -9,23 +9,31 @@ public class PressurePlate :  MonoBehaviour
     public bool showTimer = false;
     public UnityEvent onPressurePlate;
     public UnityEvent offPressurePlate;
+    public AudioClip pressurePlateSoundUp;
+    public AudioClip pressurePlateSoundDown;
 
     
     private PuzzleManager manager;
     private Collider trigger;
+    private AudioSource pressurePlate;
+    private bool isActive;
 
     private void Start()
     {
         manager = FindObjectOfType<PuzzleManager>();
         trigger = GetComponent<Collider>();
+        pressurePlate = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player") 
+        if(other.gameObject.tag == "Player" && !isActive) 
         {
             plateAnim.SetBool("IsActive", true);
+            pressurePlate.clip = pressurePlateSoundDown;
+            pressurePlate.Play();
             onPressurePlate.Invoke();
+            isActive = true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -47,6 +55,9 @@ public class PressurePlate :  MonoBehaviour
     {
         trigger.enabled = true;
         plateAnim.SetBool("IsActive", false);
+        pressurePlate.clip = pressurePlateSoundUp;
+        pressurePlate.Play();
         offPressurePlate.Invoke();
+        isActive = false;
     }
 }

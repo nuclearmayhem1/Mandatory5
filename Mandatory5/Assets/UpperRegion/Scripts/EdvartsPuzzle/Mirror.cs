@@ -7,6 +7,7 @@ public class Mirror : MonoBehaviour
     public GameObject hitParticle;
     public Material glowMat, mirrorMat;
     public Renderer mirrorRenderer;
+    public AudioSource lightSound;
     [HideInInspector] public bool reflecting;
 
     private Mirror mirrorScript;
@@ -14,6 +15,7 @@ public class Mirror : MonoBehaviour
     private float hitAngle;
     private Vector3 mirrorHitLocation;
     private bool canReflect;
+    private bool audioPlayed;
 
 
     private void Start()
@@ -98,5 +100,19 @@ public class Mirror : MonoBehaviour
         reflecting = state;
         hitAngle = angle;
         mirrorHitLocation = point;
+        if (state)
+        {
+            if (!audioPlayed)
+            {
+                lightSound.Play();
+                audioPlayed = true;
+            }
+            
+        }
+        else
+        {
+            lightSound.Stop();
+            audioPlayed = false;
+        }
     }
 }
