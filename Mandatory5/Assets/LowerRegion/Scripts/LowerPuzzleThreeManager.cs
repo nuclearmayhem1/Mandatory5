@@ -10,6 +10,10 @@ public class LowerPuzzleThreeManager : MonoBehaviour
     
     public GameObject PushShroom;
     [HideInInspector] public Vector3 PushShroomStart;
+    
+    [TextArea]
+    [Tooltip("Doesn't do anything. Just comments shown in inspector")]
+    public string Notes = "This component shouldn't be removed, it does important stuff.";
 
     private void Awake()
     {
