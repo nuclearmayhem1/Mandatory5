@@ -7,6 +7,7 @@ public class Brazier : MonoBehaviour
     public GameObject energyBall;
     public CinemachineVirtualCamera brazierCam;
     public ParticleSystem heatEffect;
+    public AudioSource brazierAudioSource;
 
     private Renderer energyBallRenderer;
     private PuzzleManager manager;
@@ -24,6 +25,7 @@ public class Brazier : MonoBehaviour
     {
         if (!brazierHit)
         {
+            brazierAudioSource.PlayDelayed(1.5f);
             manager.PuzzleDone(true);
             heatEffect.Play();
             brazierCam.m_Priority = 12;
