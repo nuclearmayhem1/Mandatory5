@@ -1651,7 +1651,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8aa074f87b2e6947a04002756fc54f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1695,7 +1695,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16026,6 +16026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressE: {fileID: 6824119813665931609}
   explotion: {fileID: 6662467481574363950}
+  panSource: {fileID: 595240345}
+  flame: {fileID: 8300000, guid: 5ef5c33b3b80b2948a5cdd7efbb42138, type: 3}
 --- !u!1 &6824119813574516575
 GameObject:
   m_ObjectHideFlags: 0
@@ -112480,7 +112482,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6824119815283377421}
-  m_LocalRotation: {x: 0.06602224, y: -0.34276077, z: 0.024156824, w: 0.9367885}
+  m_LocalRotation: {x: 0.06602223, y: -0.34276086, z: 0.02415683, w: 0.93678844}
   m_LocalPosition: {x: 1.145998, y: 2.657792, z: -1.3613911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
