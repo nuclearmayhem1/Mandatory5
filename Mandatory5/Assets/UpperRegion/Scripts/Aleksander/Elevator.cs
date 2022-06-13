@@ -5,6 +5,8 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     public Animator ElevatorAnim;
+    public GameObject elevatorText;
+    public Animator elevatorTextAnim;
 
     private bool isActivated;
 
@@ -14,6 +16,7 @@ public class Elevator : MonoBehaviour
         if (isActivated)
         {
             ElevatorAnim.SetTrigger("Activate");
+
             
         }
     }
@@ -21,6 +24,11 @@ public class Elevator : MonoBehaviour
     public void ActivateElevator(bool state)
     {
         isActivated = state;
+        if (state)
+        {
+            elevatorText.SetActive(true);
+            elevatorTextAnim.SetTrigger("Start");
+        }
     }
 
     

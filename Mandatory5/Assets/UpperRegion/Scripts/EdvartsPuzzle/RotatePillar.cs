@@ -13,7 +13,7 @@ public class RotatePillar : MonoBehaviour
     public Canvas rotateCanvas;
 
     private bool isActive;
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
     private PillarTrigger trigger;
     private PuzzleManagerEdvart manager;
 
@@ -35,6 +35,7 @@ public class RotatePillar : MonoBehaviour
         }
         else if (isActive && !manager.puzzleDone)
         {
+            Debug.Log("yes");
             rotateCanvas.enabled = true;
             playerInput.enabled = false;
             pillarCam.m_Priority = 11;
