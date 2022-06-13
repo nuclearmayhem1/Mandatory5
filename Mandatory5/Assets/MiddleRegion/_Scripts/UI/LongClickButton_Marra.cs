@@ -6,7 +6,13 @@ using UnityEngine.UI;
 public class LongClickButton_Marra : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 	private bool pointerDown;
+	public bool IsC;
+
+	public Camera Cam1, Cam2;
 	private float pointerDownTimer;
+
+	[SerializeField]
+	private GameObject C;
 
 	[SerializeField]
 	private float requiredHoldTime;
@@ -29,13 +35,17 @@ public class LongClickButton_Marra : MonoBehaviour, IPointerDownHandler, IPointe
 		//GetComponent<Image>().color = new color (1,1,1,1,);
 		//GetComponent<Image>().color = new Color(1, 1, 1, 0);
 		//GetComponent<Button>().enabled = false;
-		transform.parent.GetComponent<CanvasGroup>().alpha = 0;
-		transform.parent.GetComponent<CanvasGroup>().interactable = false;
-		if (MovementControls)
+		if (!IsC)
         {
-			MovementControls.interactable = true;
-			MovementControls.alpha = 1;
+			transform.parent.GetComponent<CanvasGroup>().alpha = 0;
+			transform.parent.GetComponent<CanvasGroup>().interactable = false;
+			if (MovementControls)
+			{
+				MovementControls.interactable = true;
+				MovementControls.alpha = 1;
+			}
         }
+		
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
@@ -51,13 +61,20 @@ public class LongClickButton_Marra : MonoBehaviour, IPointerDownHandler, IPointe
 			pointerDownTimer += Time.deltaTime;
 			if (pointerDownTimer >= requiredHoldTime)
 			{
+				IsC = false;
+				Disappear();
 				if (onLongClick != null)
 					onLongClick.Invoke();
 
+				Cam1.gameObject.SetActive(false);
+				Cam2.gameObject.SetActive(true);
+
+				C.SetActive(true);
 				Reset();
 			}
-			if (fillImage)
+			if (fillImage) {
 				fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+				}
 		}
 	}
 
