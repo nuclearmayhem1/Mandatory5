@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 10b8cc2e868b66d48b107e832f701e53
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - door: {instanceID: 0}
+  - solvedMat: {fileID: 2100000, guid: 600cc5994056ecf4982d12301b1b3a12, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
