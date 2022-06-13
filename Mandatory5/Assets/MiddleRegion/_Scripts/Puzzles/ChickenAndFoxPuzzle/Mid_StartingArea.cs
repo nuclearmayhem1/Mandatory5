@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class Mid_StartingArea : MonoBehaviour
 {
-    public List<GameObject> animalsInStartingArea;
+    public List<GameObject> animalsInStartingArea, animalsToBeMoved;
+    public List<Vector3> startingPositions;
+    public List<GameObject> currentPositions;
+    public bool endGame;
 
-    private void OnTriggerExit(Collider other)
+    private void Start()
     {
-        Debug.Log(other.gameObject + " left the trigger");
-        if (other.CompareTag("Fox") || other.CompareTag("Chicken"))
+        foreach (GameObject animal in animalsInStartingArea)
         {
-            animalsInStartingArea.Remove(other.gameObject);
+            startingPositions.Add(animal.transform.position);
+            currentPositions.Add(animal);
+        }
+    }
+    private void Update()
+    {
+        for (int i = 0; i < animalsInStartingArea.Count; i++)
+        {
+            if (currentPositions[i].transform.position != startingPositions[i])
+            {
+                animalsInStartingArea[i].GetComponent<Mid_FoxAndChicken>().hasBeenMoved = true;
+            }
+        }
+
+        if (animalsToBeMoved.Count == 0)
+        {
+            Debug.Log("All animals are gone");
+            endGame = true;
         }
     }
 }

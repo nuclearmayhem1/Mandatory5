@@ -6,8 +6,9 @@ public class Mid_FoxAndChicken : MonoBehaviour
 {
     //public Vector3 startPosition, endPosition1, endPosition2;
     public GameObject ghostAnimal1, ghostAnimal2;
-    public bool firstSeat, canPressE;
+    public bool firstSeat, canPressE, hasBeenMoved;
     public Mid_Boat boat;
+    public Mid_StartingArea startingArea;
 
     public void Start()
     {
@@ -23,6 +24,10 @@ public class Mid_FoxAndChicken : MonoBehaviour
                 boat.MoveAnimalToBoat();
                 gameObject.GetComponent<Collider>().enabled = false;
             }
+        }
+        if (hasBeenMoved)
+        {
+            startingArea.animalsToBeMoved.Remove(this.gameObject);
         }
     }
 

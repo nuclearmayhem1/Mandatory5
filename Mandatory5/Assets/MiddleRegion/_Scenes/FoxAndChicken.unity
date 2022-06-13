@@ -802,6 +802,15 @@ MonoBehaviour:
   - {fileID: 607230874}
   - {fileID: 1521897705}
   - {fileID: 331823706}
+  animalsToBeMoved:
+  - {fileID: 1837338378}
+  - {fileID: 1287998609}
+  - {fileID: 433912253}
+  - {fileID: 607230874}
+  - {fileID: 1521897705}
+  - {fileID: 331823706}
+  startingPositions: []
+  currentPositions: []
 --- !u!65 &253655696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1143,7 +1152,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &331823713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1424,7 +1435,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &433912260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1944,7 +1957,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &607230881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3221,7 +3236,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &1287998616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3717,7 +3734,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &1521897712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4325,7 +4344,9 @@ MonoBehaviour:
   ghostAnimal2: {fileID: 1262799888}
   firstSeat: 0
   canPressE: 0
+  hasBeenMoved: 0
   boat: {fileID: 1577993358}
+  startingArea: {fileID: 253655695}
 --- !u!65 &1837338385
 BoxCollider:
   m_ObjectHideFlags: 0
