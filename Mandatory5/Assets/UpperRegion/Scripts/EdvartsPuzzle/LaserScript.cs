@@ -11,7 +11,7 @@ public class LaserScript : MonoBehaviour
     private LineRenderer laser;
     private Mirror mirrorScript;
     private Renderer energyBallRenderer;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
     private bool laserActive;
     private bool audioPlayed;
 
@@ -22,7 +22,7 @@ public class LaserScript : MonoBehaviour
         laserStart.SetActive(false);
         hitParticle.SetActive(false);
         energyBallRenderer = energyBall.GetComponent<Renderer>();
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
 
     private void Update()

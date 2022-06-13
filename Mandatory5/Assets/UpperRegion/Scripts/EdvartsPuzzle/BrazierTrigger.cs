@@ -10,11 +10,11 @@ public class BrazierTrigger : MonoBehaviour
 
     private bool canCook;
     private bool haveCooked;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
 
     private void Start()
     {
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
     private void OnTriggerEnter(Collider other)
     {

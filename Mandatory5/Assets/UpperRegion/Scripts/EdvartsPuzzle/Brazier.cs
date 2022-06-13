@@ -10,14 +10,14 @@ public class Brazier : MonoBehaviour
     public AudioSource brazierAudioSource;
 
     private Renderer energyBallRenderer;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
     private Animator brazierAnim;
     private bool brazierHit;
 
     void Start()
     {
         energyBallRenderer = energyBall.GetComponent<Renderer>();
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
         brazierAnim = GetComponent<Animator>();
     }
 
