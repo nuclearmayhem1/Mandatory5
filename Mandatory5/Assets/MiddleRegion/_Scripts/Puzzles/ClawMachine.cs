@@ -1,17 +1,16 @@
-
+using UnityEngine.UI;
 using UnityEngine;
+using StarterAssets;
 
 public class ClawMachine : MonoBehaviour
 {
-   
-    void Start()
+    public GameObject ClawArm;
+    public void MoveLeft()
     {
-        
+        ClawArm.transform.position = new Vector3(ClawArm.transform.position.x + 1, ClawArm.transform.position.y, ClawArm.transform.position.z);
     }
-
-   
-    void Update()
+    public void MoveRight()
     {
-        
+        ClawArm.transform.position = new Vector3(ClawArm.transform.position.x - 1, ClawArm.transform.position.y, ClawArm.transform.position.z);
     }
 }
