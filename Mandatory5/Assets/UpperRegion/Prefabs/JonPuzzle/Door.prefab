@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8487834437877527996}
   - component: {fileID: 8487834437877527997}
   - component: {fileID: 8487834437877527986}
+  - component: {fileID: -5115862463173918105}
   - component: {fileID: 8487834437877527987}
   - component: {fileID: 8487834437877527984}
   m_Layer: 0
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5115862463173918105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487834437877527985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6f5cac649c7d345924f907f778224a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfRequiredKeys: 2
+  anim: {fileID: 0}
 --- !u!65 &8487834437877527987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,7 +121,7 @@ Animator:
   m_GameObject: {fileID: 8487834437877527985}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8cba3a1e9e8bcd940883530956456eea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 97e0d7ac56a871541be9ed4296cb3748, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
