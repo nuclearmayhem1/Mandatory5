@@ -8,7 +8,7 @@ public class Mid_StartingArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Something left the trigger");
+        Debug.Log(other.gameObject + " left the trigger");
         if (other.CompareTag("Fox") || other.CompareTag("Chicken"))
         {
             animalsInStartingArea.Remove(other.gameObject);
