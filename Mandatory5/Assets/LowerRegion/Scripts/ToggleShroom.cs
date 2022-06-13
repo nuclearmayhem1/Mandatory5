@@ -15,6 +15,8 @@ public class ToggleShroom : MonoBehaviour
             {
                 PlayerDrugChecker.isHigh = false;
             }
+
+            GetComponent<ParticleSystem>().Play();
         }
     }
 
