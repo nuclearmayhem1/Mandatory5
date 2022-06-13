@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skyboxes:
   - {fileID: 2100000, guid: d1fdb8e44b28da34d9e922cca0bc740e, type: 2}
-  - {fileID: 2100000, guid: 9ca22510633fbfd4399f1704cd9d5c72, type: 2}
+  - {fileID: 2100000, guid: 0d5771081eb9abb43b1792b52260d914, type: 2}
 --- !u!65 &1525065284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -513,3 +513,94 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 21.504772, y: 7.75343, z: 11.420647}
   m_Center: {x: 0.011206627, y: 0.76271796, z: 0.001087904}
+--- !u!1001 &1913787935
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1187176765875418999, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4edfc301dfea92645b53125548bbd14b, type: 2}
+    - target: {fileID: 1187176765875418999, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 4edfc301dfea92645b53125548bbd14b, type: 2}
+    - target: {fileID: 1187176766137850310, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_Name
+      value: Quest GUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850311, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: questTemplates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850311, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: questTemplates.Array.data[0]
+      value: 
+      objectReference: {fileID: 255738341937712733, guid: 979e3b7d8a3b1fa48b4dbb01334defef, type: 3}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176766137850312, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176767651327126, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_text
+      value: 'Chick Republic Quests
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176767651327126, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_fontSize
+      value: 24.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187176767651327126, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4edfc301dfea92645b53125548bbd14b, type: 2}
+    - target: {fileID: 1187176767651327126, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 4edfc301dfea92645b53125548bbd14b, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}

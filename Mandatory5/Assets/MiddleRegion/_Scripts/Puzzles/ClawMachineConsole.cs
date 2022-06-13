@@ -10,6 +10,10 @@ public class ClawMachineConsole : MonoBehaviour
 
     public void Start()
     {
+        if (!player)
+        {
+            player = GameObject.FindWithTag("Player");
+        }
         ClawCanvas.GetComponent<CanvasGroup>().alpha = 0;
     }
 

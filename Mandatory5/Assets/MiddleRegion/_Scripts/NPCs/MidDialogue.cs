@@ -1,4 +1,5 @@
 using System.Collections;
+using Quests;
 using UnityEngine;
 using TMPro;
 
@@ -16,8 +17,6 @@ public class MidDialogue : MonoBehaviour
 
     private bool isRunning, resetting;
 
-    // Animator Anim;
-
     void Start()
     {
         dialogueNumber = 0;
@@ -28,34 +27,7 @@ public class MidDialogue : MonoBehaviour
         CurrentText = _dialogue[0];
         StartCoroutine(DisplayText());
 
-        // Anim = GetComponent<Animator>();
-        // if (Anim == null)
-        // {
-        //     Debug.LogError("No Animator Controller on DialogueWindow: " + gameObject.name);
-        // }
     }
-
-    // public void Show(string text)
-    // {
-    //     Anim?.SetBool("Open", true);
-    //     CurrentText = text;       
-    // }
-
-    // public void Close()
-    // {        
-    //     Anim?.SetBool("Open", false);
-    // }
-
-    // public void OnDialogueOpen()
-    // {
-    //     StartCoroutine(DisplayText());
-    // }
-
-    // public void OnDialogueClosed()
-    // {
-    //     StopAllCoroutines();
-    //     Text.text = "";
-    // }
 
     private IEnumerator DisplayText()
     {
@@ -111,23 +83,13 @@ public class MidDialogue : MonoBehaviour
 
             if (dialogueNumber == _dialogue.Length - 1)
             {
-                RiddleManager.Instance.StartNextRiddle(_dialogue[dialogueNumber], RiddleManager.Instance.currentRiddle);
+                RiddleManager.Instance.StartNextRiddle(RiddleManager.Instance.currentRiddle);
             }
             if (dialogueNumber == _dialogue.Length)
             {
                 skipAllDialogue();
             }
-
-            //if (RiddleManager.Instance.currentRiddle == 0)
-            //{
-            //    if (dialogueNumber == 3)
-            //    {
-            //        RiddleManager.Instance.StartNextRiddle(_dialogue[dialogueNumber], 0);
-            //    }
-            //}
         }
-
-
     }
 
 
@@ -137,15 +99,10 @@ public class MidDialogue : MonoBehaviour
         {
             resetting = true;
             StopAllCoroutines();
-
             dialogueNumber = 0;
 
             gameObject.transform.parent.parent.gameObject.GetComponent<ChickenCanvasController>().resetSpeech();
-
             transform.parent.GetComponent<Animator>().SetBool("StartAnim", false);
-
         }
-
-
     }
 }

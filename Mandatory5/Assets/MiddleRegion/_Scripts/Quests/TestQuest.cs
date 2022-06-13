@@ -5,7 +5,7 @@ using Quests;
 
 public class TestQuest : MonoBehaviour
 {
-    private uint quest;
+    private uint quest = 0; //The quest IDs are just numbers based on which were added first, 0 being the first.
 
     void Start()
     {
