@@ -23,6 +23,7 @@ public class RiddleManager : MonoBehaviour
    {
       QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic;
       currentRiddle = 0;
+      currentRiddlemaster = 0;
    }
 
    // Every riddle should be its own void in the manager
