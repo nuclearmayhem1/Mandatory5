@@ -5,13 +5,13 @@ public class Respawn : MonoBehaviour
     [Header("References")]
     public Transform respawnPoint;
 
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
     private bool respawnDone;
     private bool respawn;
 
     private void Start()
     {
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
 
     private void OnTriggerEnter(Collider other)

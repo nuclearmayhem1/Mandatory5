@@ -7,11 +7,11 @@ public class PillarTrigger : MonoBehaviour
     public Canvas pressE;
 
     private bool canRotate;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
 
     private void Start()
     {
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
     private void OnTriggerEnter(Collider other)
     {
