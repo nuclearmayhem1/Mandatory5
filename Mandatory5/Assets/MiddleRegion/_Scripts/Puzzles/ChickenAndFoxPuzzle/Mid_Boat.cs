@@ -16,17 +16,18 @@ public class Mid_Boat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boatAnimator = gameObject.GetComponentInParent<Animator>();
+        boatAnimator = gameObject.GetComponent<Animator>();
         seatOneFilled = false;
 
         startPosition = transform.position;
-        endPosition1 = ghostAnimal1.transform.position;
-        endPosition2 = ghostAnimal2.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        endPosition1 = ghostAnimal1.transform.position;
+        endPosition2 = ghostAnimal2.transform.position;
+
         if (animal1 != null && animal2 != null)
         {
             boatIsFull = true;
@@ -34,39 +35,19 @@ public class Mid_Boat : MonoBehaviour
         {
             boatIsFull = false;
         }
-    }
 
-    private void OnTriggerEnter(Collider other) //The issue is that all the if statements are true at the same time.
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (animal1 != null)
         {
-            playerTouchedBoat = true;
+            animal1.transform.position = endPosition1;
         }
-
-
-        /*if (other.gameObject.CompareTag("Fox") || other.gameObject.CompareTag("Chicken"))
+        if (animal2 != null)
         {
-            if (seatOneFilled)
-            {
-                //other.gameObject.transform.SetParent(gameObject.transform);
-      
-                animal2 = other.gameObject;
-                
-            }
-            if (!seatOneFilled)
-            {
-                //other.gameObject.transform.SetParent(gameObject.transform);
-                animal1 = other.gameObject;
-                Invoke("CanFill", 0.5f);
-                
-            }           
-        }*/
-
+            animal2.transform.position = endPosition2;
+        }
     }
 
     public void MoveAnimalToBoat()
     {
-        
         if (!seatOneFilled)
         {
             objectToMove.transform.position = endPosition1;
@@ -82,7 +63,6 @@ public class Mid_Boat : MonoBehaviour
             objectToMove.transform.SetParent(gameObject.transform);
 
             animal2 = objectToMove.gameObject;
-
         }
     }
 
@@ -91,5 +71,8 @@ public class Mid_Boat : MonoBehaviour
         seatOneFilled = true; 
     }
 
-    
+    public void ClearAnimalsInBoat()
+    {
+        GameObject.Find("Shore").GetComponent<Mid_Shore>().animalsInBoat.Clear();
+    }
 }

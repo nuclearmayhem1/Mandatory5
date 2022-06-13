@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Mid_SetBoatOff : MonoBehaviour
 {
-
     public bool canPressE;
     public Mid_Boat midBoat;
     public Animator boatAnim, buttonAnim;
+    public Mid_StartingArea startingArea;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        startingArea = GameObject.Find("StartingArea").GetComponent<Mid_StartingArea>();
         buttonAnim = gameObject.GetComponent<Animator>();
     }
 
@@ -33,7 +34,7 @@ public class Mid_SetBoatOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (midBoat.boatIsFull)
+        if (midBoat.boatIsFull || startingArea.endGame == true)
         {
             if (canPressE && Input.GetKeyUp(KeyCode.E))
             {
