@@ -4,14 +4,48 @@ using UnityEngine;
 
 public class Mid_StartingArea : MonoBehaviour
 {
-    public List<GameObject> animalsInStartingArea;
+    public List<GameObject> animalsInStartingArea, animalsToBeMoved, chickensInArea, foxesInArea;
+    public List<Vector3> startingPositions;
+    public List<GameObject> currentPositions;
+    public Mid_Shore shoreScript;
+    public bool endGame;
 
-    private void OnTriggerExit(Collider other)
+    public Mid_RestartFoxAndChicken restartScript;
+
+    private void Start()
     {
-        Debug.Log(other.gameObject + " left the trigger");
-        if (other.CompareTag("Fox") || other.CompareTag("Chicken"))
+        AddAnimals();
+        restartScript = GameObject.Find("FoxAndChickenRestartCanvas").GetComponent<Mid_RestartFoxAndChicken>();
+    }
+    private void Update()
+    {
+        for (int i = 0; i < animalsInStartingArea.Count; i++)
         {
-            animalsInStartingArea.Remove(other.gameObject);
+            if (currentPositions[i].transform.position != startingPositions[i])
+            {
+                animalsInStartingArea[i].GetComponent<Mid_FoxAndChicken>().hasBeenMoved = true;
+            }
+        }
+
+        if (animalsToBeMoved.Count == 0)
+        {
+            endGame = true;
+        }
+        if (animalsToBeMoved.Count <= 5)
+        {
+            if (foxesInArea.Count > chickensInArea.Count)
+            {
+                restartScript.Lose();
+            }
+        }
+    }
+
+    public void AddAnimals()
+    {
+        foreach (GameObject animal in animalsInStartingArea)
+        {
+            startingPositions.Add(animal.transform.position);
+            currentPositions.Add(animal);
         }
     }
 }

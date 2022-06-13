@@ -6,12 +6,15 @@ public class Mid_FoxAndChicken : MonoBehaviour
 {
     //public Vector3 startPosition, endPosition1, endPosition2;
     public GameObject ghostAnimal1, ghostAnimal2;
-    public bool firstSeat, canPressE;
+    public bool firstSeat, canPressE, hasBeenMoved;
     public Mid_Boat boat;
+    public Mid_StartingArea startingArea;
+
+    public Vector3 startingPosition;
 
     public void Start()
     {
-
+        startingPosition = gameObject.transform.position;
     }
 
     private void Update()
@@ -22,6 +25,18 @@ public class Mid_FoxAndChicken : MonoBehaviour
             {
                 boat.MoveAnimalToBoat();
                 gameObject.GetComponent<Collider>().enabled = false;
+            }
+        }
+        if (hasBeenMoved)
+        {
+            startingArea.animalsToBeMoved.Remove(this.gameObject);
+            if (gameObject.tag == "Fox")
+            {
+                startingArea.foxesInArea.Remove(this.gameObject);
+            }
+            if (gameObject.tag == "Chicken")
+            {
+                startingArea.chickensInArea.Remove(this.gameObject);
             }
         }
     }
@@ -38,5 +53,10 @@ public class Mid_FoxAndChicken : MonoBehaviour
     {
         canPressE = false;
         boat.objectToMove = null;
+    }
+
+    public void MoveAnimalsBack()
+    {
+        gameObject.transform.position = startingPosition;
     }
 }

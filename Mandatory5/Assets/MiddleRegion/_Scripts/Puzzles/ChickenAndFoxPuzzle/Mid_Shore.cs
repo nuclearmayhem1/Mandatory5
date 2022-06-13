@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mid_Shore : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class Mid_Shore : MonoBehaviour
     public int chosenAnimal = 0;
     public Mid_ChooseAnimalToSendOver chooseAnimal;
 
+    public Mid_RestartFoxAndChicken restartScript;
+
     private void Start()
     {
+        restartScript = GameObject.Find("FoxAndChickenRestartCanvas").GetComponent<Mid_RestartFoxAndChicken>();
         midBoat = GameObject.Find("Boat_Mobile").GetComponent<Mid_Boat>();
         chooseAnimal = GameObject.Find("FoxAndChickenCanvas").GetComponent<Mid_ChooseAnimalToSendOver>();
     }
@@ -51,18 +55,14 @@ public class Mid_Shore : MonoBehaviour
             midBoat.animal2 = null;
         }
 
-        Debug.Log(animalsInBoat[chosenAnimal]);
-
         if (animalsInBoat[chosenAnimal].gameObject.CompareTag("Fox"))
         {
-            Debug.Log("Chosen animal was a fox");
             //animalsInBoat[chosenAnimal].transform.position = foxPlacements[f].transform.position;
             foxPlacements[f++].transform.GetChild(0).gameObject.SetActive(true);
             foxesOnShore += 1;
         }
         else if (animalsInBoat[chosenAnimal].gameObject.CompareTag("Chicken"))
         {
-            Debug.Log("Chosen animal was a Chicken");
             //animalsInBoat[chosenAnimal].transform.position = chickenPlacements[c].transform.position;
             chickenPlacements[c++].transform.GetChild(0).gameObject.SetActive(true);
             chickensOnShore += 1;
@@ -70,9 +70,17 @@ public class Mid_Shore : MonoBehaviour
 
         animalsInBoat.RemoveAt(chosenAnimal);
 
-        if (foxesOnShore > chickensOnShore)
+        if (foxesOnShore + chickensOnShore >= 2 && foxesOnShore + chickensOnShore != 6 && chickensOnShore >= 1)
         {
-            Debug.Log("Player lost, reset puzzle");
+            if (foxesOnShore > chickensOnShore)
+            {
+                restartScript.Lose();
+            }
+        }
+
+        if (foxesOnShore + chickensOnShore == 6)
+        {
+            restartScript.Win();
         }
     }
 }
