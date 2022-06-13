@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Mid_StartingArea : MonoBehaviour
 {
-    public List<GameObject> animalsInStartingArea, animalsToBeMoved;
+    public List<GameObject> animalsInStartingArea, animalsToBeMoved, chickensInArea, foxesInArea;
     public List<Vector3> startingPositions;
     public List<GameObject> currentPositions;
+    public Mid_Shore shoreScript;
     public bool endGame;
+
+    public Mid_RestartFoxAndChicken restartScript;
 
     private void Start()
     {
-        foreach (GameObject animal in animalsInStartingArea)
-        {
-            startingPositions.Add(animal.transform.position);
-            currentPositions.Add(animal);
-        }
+        AddAnimals();
+        restartScript = GameObject.Find("FoxAndChickenRestartCanvas").GetComponent<Mid_RestartFoxAndChicken>();
     }
     private void Update()
     {
@@ -29,8 +29,23 @@ public class Mid_StartingArea : MonoBehaviour
 
         if (animalsToBeMoved.Count == 0)
         {
-            Debug.Log("All animals are gone");
             endGame = true;
+        }
+        if (animalsToBeMoved.Count <= 5)
+        {
+            if (foxesInArea.Count > chickensInArea.Count)
+            {
+                restartScript.Lose();
+            }
+        }
+    }
+
+    public void AddAnimals()
+    {
+        foreach (GameObject animal in animalsInStartingArea)
+        {
+            startingPositions.Add(animal.transform.position);
+            currentPositions.Add(animal);
         }
     }
 }
