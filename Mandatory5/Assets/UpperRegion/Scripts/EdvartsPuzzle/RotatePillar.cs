@@ -22,6 +22,7 @@ public class RotatePillar : MonoBehaviour
     private void Awake()
     {
         playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
 
     private void Start()
@@ -29,7 +30,7 @@ public class RotatePillar : MonoBehaviour
         rotateCanvas.enabled = false;
         
         trigger = GetComponentInChildren<PillarTrigger>();
-        manager = FindObjectOfType<PuzzleManagerEdvart>();
+        
     }
 
     void Update()
