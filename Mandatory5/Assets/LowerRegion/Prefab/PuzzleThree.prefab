@@ -1671,7 +1671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4117937352421590328
 Transform:
   m_ObjectHideFlags: 0
@@ -2826,6 +2826,198 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.668224, y: 0.2713864, z: 5.6682243}
   m_Center: {x: 1.3886305, y: 0.13569316, z: 0.7117526}
+--- !u!1001 &173486049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2385842971639117109}
+    m_Modifications:
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 561014715947906234, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094855930794334685, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094855930794334685, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094855930794334685, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 76.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094855930794334685, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107018254551776535, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_text
+      value: Yo dude, can you get my good funkin' shrooms inside this tiny maze?
+        Thaaaaanks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107018254551776535, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d0307f147c518474aa9f7964f86e28c1, type: 2}
+    - target: {fileID: 1107018254551776535, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316720541218884571, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Name
+      value: PushShroomDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549270062274723088, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3322914
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549270062274723088, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5867488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549270062274723088, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Center.x
+      value: -0.5780244
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549270062274723088, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.29337472
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989390667889387500, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989390667889387500, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989390667889387500, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281130994698099180, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115390136336484103, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_Name
+      value: ChickenCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115390136336484103, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133846688478872880, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.data[0]
+      value: Hey dude, can you help me out abit? I'm trying to get to the other side
+        of this mountain...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.data[1]
+      value: Those platforms will surely come in handy!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.data[2]
+      value: Also if I'm going a lil too fast, you can tell me to stop! (Press E)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.data[3]
+      value: As long as I can hear you of course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114971441790183706, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+      propertyPath: _dialogue.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+--- !u!1 &4316720541381485626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4316720541218884571, guid: 450c10d0b34b9234e83c39716c7ae86b, type: 3}
+  m_PrefabInstance: {fileID: 173486049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4043351134761731145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2895,8 +3087,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801697022983287164, guid: 403c9d2229d552c4fb79642dd219d8f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.63
+      value: -14.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1801697022983287164, guid: 403c9d2229d552c4fb79642dd219d8f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 36.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817485723344478165, guid: 403c9d2229d552c4fb79642dd219d8f4, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4316720541381485626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403c9d2229d552c4fb79642dd219d8f4, type: 3}
 --- !u!4 &2385842971639117109 stripped

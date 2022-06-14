@@ -27,8 +27,8 @@ public class LowerPuzzleThreeManager : MonoBehaviour
             return;
         }
 
-        //Assign as the Spawn Position for Push Shroom
-        PushShroomStart = PushShroom.transform.position;
+        //Assign as the Spawn Position for Push Shroom with an offset on 1 unit on the y axis
+        PushShroomStart = PushShroom.transform.position + Vector3.up;
     }
 
     private void Update()
