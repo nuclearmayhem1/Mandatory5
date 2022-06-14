@@ -21,6 +21,17 @@ public class RiddleManager : MonoBehaviour
 
    private void Start()
    {
+      // foreach (GameObject i in spawnedObject)
+      // {
+      //    i.SetActive(false);
+      // }
+      foreach (GameObject i in characters)
+      {
+         i.SetActive(false);
+      }
+      
+      characters[0].SetActive(true);
+      
       QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic;
       currentRiddle = 0;
       currentRiddlemaster = 0;
@@ -36,13 +47,46 @@ public class RiddleManager : MonoBehaviour
 
    public void StartNextRiddle(/*string hint,*/ int spawnObject) //Starts the first riddle
    {
+      Debug.Log("Starting new riddle, current riddle" + currentRiddle);
+      Debug.Log("Starting new riddle,current master: " +currentRiddlemaster);
       /* riddleHintUI.GetComponent<TMP_Text>().text = "- " + hint;                //makes screen say the hint you wrote in the inspector
          riddleHintUI.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f); THIS CODE WAS REPLACED BY NEW QUEST SYSTEM */
       
-      if (QuestManager.GetQuests(Quest.World.ChickRepublic).Length < currentRiddle+1) // Checks if the quest is already added
+      if (QuestManager.GetQuests(Quest.World.ChickRepublic).Length < currentRiddle + 1) // Checks if the quest is already added
       {
          QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, quests[spawnObject])); //adds a new quest
-         spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
+
+         Instantiate(spawnedObject[spawnObject]);
+         //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
+      }
+
+
+      
+      // switch (spawnObject)
+      // {
+      //    case 3:
+      //       Mid_PuzzleMapSwitch.Instance.SpawnFirstPuzzleArea();
+      //       break;
+      //    case 4:
+      //       Mid_PuzzleMapSwitch.Instance.SpawnSecondPuzzleArea();
+      //       break;
+      //    case 5:
+      //       Mid_PuzzleMapSwitch.Instance.SpawnThirdPuzzleArea();
+      //       break;
+      //    case 6:
+      //       Mid_PuzzleMapSwitch.Instance.SpawnFourthPuzzleArea();
+      //       break;
+      //    case 7:
+      //       Mid_PuzzleMapSwitch.Instance.SpawnFifthPuzzleArea();
+      //       break;
+      //    default:
+      //       break;
+      // }
+
+      if (spawnObject > 2)
+      {
+         Mid_PuzzleMapSwitch.Instance.OpenPuzzleDoor();
+         Mid_PuzzleMapSwitch.Instance.ActivateDoorTrigger();
       }
       
    }
@@ -50,12 +94,27 @@ public class RiddleManager : MonoBehaviour
    {
       /*riddleHintUI.GetComponent<TMP_Text>().text = "Solved! Return to the riddlemaster.";
       riddleHintUI.GetComponent<TMP_Text>().color = Color.green; THIS CODE WAS REPLACED BY NEW QUEST SYSTEM*/
+
+      if (currentRiddle > 3)
+      {
+         Mid_PuzzleMapSwitch.Instance.OpenPuzzleDoor();
+      }
+      
       SpawnCharacter(currentRiddlemaster+1);
       currentRiddle = currentRiddle+1;
       currentRiddlemaster = currentRiddlemaster + 1;
       Debug.Log("current riddle" + currentRiddle);
       Debug.Log("current master: " +currentRiddlemaster);
       
-   }   
+   }
+
+
+   public void FailPuzzle()
+   {
+      // GameObject puzzlePrefab = new GameObject("Puzzle "+currentRiddle);
+      // Vector3 objectPOS = Vector3.zero;
+      //
+      // GameObject newGameObject = Instantiate(testPrefab, objectPOS, Quaternion.identity);
+   }
 
 }

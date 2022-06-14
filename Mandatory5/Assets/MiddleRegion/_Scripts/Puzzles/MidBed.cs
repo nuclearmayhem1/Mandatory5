@@ -50,6 +50,7 @@ public class MidBed : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && withinRange)
             {
+                activated = true;
                 StartCoroutine("Sleeb");
             } 
         }
@@ -87,7 +88,9 @@ public class MidBed : MonoBehaviour
                 yield return null;
             }
         }
-        activated = true;
+        //activated = true;
+        RiddleManager.Instance.RiddleSolved();
+        QuestManager.SetNormalQuestStatus(2,true);
         worldCanvasGroup.alpha = 0;
         yield break;
         
