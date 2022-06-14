@@ -1811,7 +1811,7 @@ Transform:
   m_LocalScale: {x: 1.3010525, y: 1.9, z: 1.3983}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &354941665
 PrefabInstance:
@@ -5544,7 +5544,7 @@ MonoBehaviour:
   thirdPuzzleArea: {fileID: 676173395}
   puzzleAreaDoor: {fileID: 707855694}
   closeTheDoorTrigger: {fileID: 796136304}
-  fourthPuzzleAre: {fileID: 1728602827}
+  fourthPuzzleAre: {fileID: 0}
   fifthPuzzleArea: {fileID: 0}
 --- !u!4 &1385348245
 Transform:
@@ -6759,11 +6759,6 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 4edfc301dfea92645b53125548bbd14b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d915bf387f6bc4bb44de194f3bffc9, type: 3}
---- !u!1 &1728602827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3268024941672597928, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-  m_PrefabInstance: {fileID: 3614441874342848422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734049168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044200984858198138, guid: fbdbb2d26d53aca42ab181a66d258da9, type: 3}
@@ -8275,67 +8270,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7920402281984726515, guid: c2547099572ebfc4798a584f01b15767, type: 3}
   m_PrefabInstance: {fileID: 105820708553033217}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3614441874342848422
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 443.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 198
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -29.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3306752640812150740, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3904538346430061215, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_Name
-      value: PuzzleAreaFour
-      objectReference: {fileID: 0}
-    - target: {fileID: 3904538346430061215, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 585413b9b7828a44b89fa09a00a03dae, type: 3}
 --- !u!1001 &4126169029931993224
 PrefabInstance:
   m_ObjectHideFlags: 0

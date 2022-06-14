@@ -103,6 +103,12 @@ public class RiddleManager : MonoBehaviour
       /*riddleHintUI.GetComponent<TMP_Text>().text = "Solved! Return to the riddlemaster.";
       riddleHintUI.GetComponent<TMP_Text>().color = Color.green; THIS CODE WAS REPLACED BY NEW QUEST SYSTEM*/
 
+      if (currentRiddle == 1)
+      {
+         QuestManager.SetNormalQuestStatus(1,true);
+      }
+      
+      
       if (currentRiddle > 3)
       {
          Mid_PuzzleMapSwitch.Instance.OpenPuzzleDoor();
@@ -119,6 +125,15 @@ public class RiddleManager : MonoBehaviour
 
    public void FailPuzzle()
    {
+      
+      LateFail();
+      
+      
+   }
+
+   private void LateFail()
+   {
+      Time.timeScale = 1f;
       Destroy(spawnedPrefab);
       
       GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
@@ -128,11 +143,16 @@ public class RiddleManager : MonoBehaviour
       //Vector3 objectPOS = Vector3.zero;
       
       prefabToSpawn = spawnedObject[currentRiddle];
-      GameObject newGameObject = Instantiate(prefabToSpawn);
-      newGameObject.transform.parent = newGameObject.transform.parent;
-      spawnedPrefab = newGameObject;
       
+      Invoke("SuperLateSpawn",0.1f);
       
    }
 
+
+   private void SuperLateSpawn()
+   {
+      GameObject newGameObject = Instantiate(prefabToSpawn);
+      newGameObject.transform.parent = newGameObject.transform.parent;
+      spawnedPrefab = newGameObject;
+   }
 }

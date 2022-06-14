@@ -33,7 +33,7 @@ public class Mid_StartingArea : MonoBehaviour
         }
         if (animalsToBeMoved.Count <= 5)
         {
-            if (foxesInArea.Count > chickensInArea.Count)
+            if (foxesInArea.Count > chickensInArea.Count && chickensInArea.Count >= 1)
             {
                 restartScript.Lose();
             }

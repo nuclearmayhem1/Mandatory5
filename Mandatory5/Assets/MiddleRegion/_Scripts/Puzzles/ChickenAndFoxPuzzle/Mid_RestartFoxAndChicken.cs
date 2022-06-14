@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,13 +26,18 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
         gameObject.GetComponent<CanvasGroup>().alpha = 1;
         gameObject.GetComponent<CanvasGroup>().interactable = true;
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        Time.timeScale = 0f;
     }
 
     public void Restart()
     {
+        Time.timeScale = 1;
+        
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
         gameObject.GetComponent<CanvasGroup>().alpha = 0;
         gameObject.GetComponent<CanvasGroup>().interactable = false;
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        RiddleManager.Instance.FailPuzzle();
     }
 }
