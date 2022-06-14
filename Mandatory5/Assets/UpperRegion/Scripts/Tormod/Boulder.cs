@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Boulder : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Boulder : MonoBehaviour {
+    
+    private Rigidbody _rb;
+    
+    private void Awake() {
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void FixedUpdate() {
+        _rb.AddForce(Vector3.down * 100f, ForceMode.Force); //Extra gravity
+    }
+
+    //Destroy itself on impact with another boulder
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.collider.TryGetComponent<Boulder>(out var boulder)) {
+            Destroy(boulder.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

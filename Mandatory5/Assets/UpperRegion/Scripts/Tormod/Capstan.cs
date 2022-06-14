@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Capstan : MonoBehaviour {
-    //can add automatic fall recline option
+    //can add automatic fall recline option (would be nice on doors)
     [Header("Settings")]
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private float rotationSpeed = 50f;

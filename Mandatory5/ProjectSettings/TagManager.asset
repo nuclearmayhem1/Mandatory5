@@ -3,11 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+  tags:
+  - CinemachineTarget
+  - Manipulatable
+  - Mirror
+  - Brazier
+  - JumpTrigger
+  - Bean
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hidden On Camera
   - Water
   - UI
   - 
