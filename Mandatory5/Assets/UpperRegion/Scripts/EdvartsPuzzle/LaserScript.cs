@@ -6,12 +6,15 @@ public class LaserScript : MonoBehaviour
     public GameObject energyBall;
     public GameObject laserStart;
     public GameObject hitParticle;
+    public AudioSource lightSound;
 
     private LineRenderer laser;
     private Mirror mirrorScript;
     private Renderer energyBallRenderer;
+    private PuzzleManagerEdvart manager;
     private bool laserActive;
-    private PuzzleManager manager;
+    private bool audioPlayed;
+
 
     private void Start()
     {
@@ -19,7 +22,7 @@ public class LaserScript : MonoBehaviour
         laserStart.SetActive(false);
         hitParticle.SetActive(false);
         energyBallRenderer = energyBall.GetComponent<Renderer>();
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
 
     private void Update()
@@ -27,6 +30,12 @@ public class LaserScript : MonoBehaviour
         if (laserActive && !manager.puzzleDone)
         {
             laserStart.SetActive(true);
+            if (!audioPlayed)
+            {
+                lightSound.Play();
+                audioPlayed = true;
+            }
+
             energyBallRenderer.material.EnableKeyword("_EMISSION");
             laser.SetPosition(0, laserStart.transform.position);
             RaycastHit hit;

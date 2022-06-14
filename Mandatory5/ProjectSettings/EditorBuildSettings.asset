@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/LowerRegion/Scenes/Main.unity
     guid: 35b4ae9dfc650d44c881d9e2a6e22b5e
   - enabled: 1
-    path: Assets/MiddleRegion/_Scenes/Main.unity
+    path: Assets/MiddleRegion/_Scenes/MidMain.unity
     guid: 461c891b540770b408bed7cd966b779c
   - enabled: 1
     path: Assets/UpperRegion/Scenes/Main.unity

@@ -13,16 +13,16 @@ public class RotatePillar : MonoBehaviour
     public Canvas rotateCanvas;
 
     private bool isActive;
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
     private PillarTrigger trigger;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
 
     private void Start()
     {
         rotateCanvas.enabled = false;
         playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         trigger = GetComponentInChildren<PillarTrigger>();
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
 
     void Update()
@@ -35,6 +35,7 @@ public class RotatePillar : MonoBehaviour
         }
         else if (isActive && !manager.puzzleDone)
         {
+            Debug.Log("yes");
             rotateCanvas.enabled = true;
             playerInput.enabled = false;
             pillarCam.m_Priority = 11;

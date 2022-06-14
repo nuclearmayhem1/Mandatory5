@@ -6,13 +6,16 @@ using UnityEngine;
 public class ChickenDialogueTrigger : MonoBehaviour
 {
     public bool dialogueAlreadyStarted = false;
-    private GameObject chickenCanvas;
+    public GameObject chickenCanvas;
     private GameObject speechBubbleText;
     
     private void Start()
     {
-        chickenCanvas = gameObject.transform.parent.transform.Find("ChickenCanvas").gameObject;
-
+        if (!chickenCanvas)
+        {
+            chickenCanvas = gameObject.transform.parent.transform.Find("ChickenCanvas").gameObject;
+        }
+        
         speechBubbleText = chickenCanvas.GetComponent<ChickenCanvasController>().speechBubbleText;
         
         if (!chickenCanvas)

@@ -218,6 +218,11 @@ public class ObjectManipulation : MonoBehaviour
             onClick.Clicked();
             return false;
         }
+        else if (hit.collider.transform.TryGetComponent<InteractOnClick>(out InteractOnClick onClick2))
+        {
+            onClick2.Clicked();
+            return false;
+        }
 
         if (hit.collider.transform.root.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
         {

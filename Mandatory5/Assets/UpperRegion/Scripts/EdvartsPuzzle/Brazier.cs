@@ -7,16 +7,17 @@ public class Brazier : MonoBehaviour
     public GameObject energyBall;
     public CinemachineVirtualCamera brazierCam;
     public ParticleSystem heatEffect;
+    public AudioSource brazierAudioSource;
 
     private Renderer energyBallRenderer;
-    private PuzzleManager manager;
+    private PuzzleManagerEdvart manager;
     private Animator brazierAnim;
     private bool brazierHit;
 
     void Start()
     {
         energyBallRenderer = energyBall.GetComponent<Renderer>();
-        manager = FindObjectOfType<PuzzleManager>();
+        manager = FindObjectOfType<PuzzleManagerEdvart>();
         brazierAnim = GetComponent<Animator>();
     }
 
@@ -24,6 +25,7 @@ public class Brazier : MonoBehaviour
     {
         if (!brazierHit)
         {
+            brazierAudioSource.PlayDelayed(2.5f);
             manager.PuzzleDone(true);
             heatEffect.Play();
             brazierCam.m_Priority = 12;
