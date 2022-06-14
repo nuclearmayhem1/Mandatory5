@@ -1,13 +1,20 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Capstan : MonoBehaviour {
-    
+    //can add automatic fall recline option
+    [Header("Settings")]
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private float rotationSpeed = 50f;
-    [SerializeField] private float maxRotation;
-    [SerializeField] private Vector2 outputValueRange;
+    [Tooltip("The max angle of rotation")] [Range(0, 360)]
+    [SerializeField] private float maxRotation = 360f;
+    [Tooltip("Whether it can rotate infinitely and freely. Allows for rotation in both directions")]
+    [SerializeField] private bool unlockedRotation;
+    [SerializeField] private UnityEvent<float> onRotate;
+    
+    [Header("References")]
     [SerializeField] private CapstanHandle[] capstanHandles;
     [SerializeField] private Transform pivot;
     
@@ -15,10 +22,10 @@ public class Capstan : MonoBehaviour {
     public static event Action<Vector3> OnIndicatorPosition;
     public static event Action<bool> OnPushState; 
 
-    private static CapstanHandle _currentHandle;
+    private CapstanHandle _currentHandle;
     private PlayerInput _playerInput;
     private int _direction;
-    private float _yRotation; //Might have to locally track as unity rotation loops when going outside 0-360deg
+    private float _currentRotation; //Might have to locally track as unity rotation loops when going outside 0-360deg
 
     private void Awake() {
         _playerInput = FindObjectOfType<PlayerInput>();
@@ -26,7 +33,6 @@ public class Capstan : MonoBehaviour {
             Debug.LogWarning("No player input found!");
             Destroy(this); //Prevent future error
         }
-
         foreach (var handle in capstanHandles) {
             handle.SetCapstan(this);
         }
@@ -42,7 +48,7 @@ public class Capstan : MonoBehaviour {
         var keyPressed = Input.GetKeyDown(interactionKey);
         if (keyPressed) {
             foreach (var handle in capstanHandles) {
-                //Enter new push state if handle is not the current one, and player is in range of said handle
+                //Enter new push state if the handle is not the current one, and player is in range of said handle
                 if (_currentHandle != handle && handle.InRange) {
                     EnterPushState(handle);
                     return;
@@ -51,7 +57,11 @@ public class Capstan : MonoBehaviour {
             ExitPushState();
         }
     }
+    
+    public void InvokeOnIndicator(bool active) => OnIndicator?.Invoke(active, interactionKey);
+    public void InvokeOnIndicatorPosition(Vector3 position) => OnIndicatorPosition?.Invoke(position);
 
+    #region Push State
     private void EnterPushState(CapstanHandle handle) {
         _currentHandle = handle;
         OnIndicator?.Invoke(false, interactionKey);
@@ -65,22 +75,12 @@ public class Capstan : MonoBehaviour {
         var handlePosition = handleTransform.position;
         var playerPosition = playerTransform.position;
         var vectorToTarget = (handlePosition - playerPosition).normalized;
-        handlePosition.y = playerPosition.y;
-        playerTransform.position = handlePosition;
+        handlePosition.y = playerPosition.y; // Level out y position
 
-        if (Vector3.Dot(vectorToTarget, handleTransform.forward) > 0) { //Where is player related to the handle?
-            //Reverse direction
-            _direction = -1;
-            playerTransform.position -= handleTransform.forward * .2f;
-        } else {
-            //Normal direction
-            _direction = 1;
-            playerTransform.position += handleTransform.forward * .2f;
-        }
-
+        //Where is player related to the handle?
+        _direction = Vector3.Dot(vectorToTarget, handleTransform.forward) > 0 ? -1 : 1;
+        playerTransform.position = handlePosition + handleTransform.forward * .4f * _direction;
         playerTransform.LookAt(handlePosition);
-        
-        //Did last: made rotate correct way related to which side. New bug: interacting while walking along handle launches player far
     }
 
     private void ExitPushState() {
@@ -93,26 +93,24 @@ public class Capstan : MonoBehaviour {
     }
 
     private void HandlePushState() {
-        var rotationAmount = Time.deltaTime * rotationSpeed * _direction;
+        int pushDirection;
         if (Input.GetKey(KeyCode.W)) {
             //Push forward
-            pivot.Rotate(-Vector3.up * rotationAmount);
-            _yRotation -= rotationAmount;
+            pushDirection = -1;
         } else if (Input.GetKey(KeyCode.S)) {
             //Push backward
-            pivot.Rotate(Vector3.up * rotationAmount);
-            _yRotation += rotationAmount;
+            pushDirection = 1;
+        } else return; //Make sure to not proceed of no movement was made
+
+        var rotationAmount = Time.deltaTime * rotationSpeed * _direction * pushDirection;
+        _currentRotation += rotationAmount;
+        //Check if capstan can rotate further
+        if (!unlockedRotation) {
+            _currentRotation = Mathf.Clamp(_currentRotation, 0, maxRotation);
         }
-
-        Debug.Log(_yRotation);
+        
+        pivot.localRotation = Quaternion.Euler(Vector3.up * _currentRotation);
+        onRotate.Invoke(_currentRotation);
     }
-
-    public void InvokeOnIndicator(bool active) {
-        OnIndicator?.Invoke(active, interactionKey);
-    }
-
-    public void InvokeOnIndicatorPosition(Vector3 position) {
-        OnIndicatorPosition?.Invoke(position);
-    }
-    
+    #endregion
 }

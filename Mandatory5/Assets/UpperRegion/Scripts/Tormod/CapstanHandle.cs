@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CapstanHandle : MonoBehaviour {
     
@@ -25,6 +23,5 @@ public class CapstanHandle : MonoBehaviour {
     }
 
     public void SetCapstan(Capstan capstanToSet) => _capstan = capstanToSet;
-
 
 }

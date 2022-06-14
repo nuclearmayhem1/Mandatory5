@@ -22,6 +22,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/UpperRegion/Scripts/Tormod/RotationCopyCat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
@@ -103,6 +104,9 @@
       <workItem from="1652684651780" duration="1912000" />
       <workItem from="1654561667046" duration="4482000" />
       <workItem from="1655063288829" duration="5017000" />
+      <workItem from="1655129688457" duration="594000" />
+      <workItem from="1655131934723" duration="9284000" />
+      <workItem from="1655159392251" duration="10576000" />
     </task>
     <servers />
   </component>
