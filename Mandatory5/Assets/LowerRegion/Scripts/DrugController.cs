@@ -6,14 +6,16 @@ public class DrugController : MonoBehaviour
 {
     Vector3 startScale;
     Vector3 fullScale;
-    public float scale = 40;
+    public float scaleX = 40;
+    public float scaleY = 40;
+    public float scaleZ = 40;
     public float speed = 1;
     private bool isIn = false;
     
     void Start()
     {
         startScale = transform.localScale;
-        fullScale = new Vector3(scale, scale, scale);
+        fullScale = new Vector3(scaleX, scaleY, scaleZ);
         isIn = false;
     }
 

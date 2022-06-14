@@ -43,15 +43,15 @@ public class JumpPad : MonoBehaviour
 
         if(jumpCountdown == true)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().Move(Vector3.up * Time.deltaTime * bounceHeight);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().Move(Vector3.forward * Time.deltaTime * bounceHeight * 0.05f);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterController>().Move(Vector3.up * Time.deltaTime * bounceHeight);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterController>().Move(Vector3.forward * Time.deltaTime * bounceHeight * 0.05f);
             speed -= Time.deltaTime;
             if(speed <= 0)
             {
                 jumpCountdown = false;
                 speed = 2f;
             }
-            if(GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().isGrounded == true)
+            if(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterController>().isGrounded == true)
             {
                 jumpCountdown = false;
                 speed = 2f;

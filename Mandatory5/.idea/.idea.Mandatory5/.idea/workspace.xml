@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChooseCup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChooseCup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ClawMachineConsole.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ClawMachineConsole.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EeeeMid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EeeeMid.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidBed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidBed.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidJeff.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidJeff.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidResetEggy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidResetEggy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidSwitchScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidSwitchScene.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidTeethController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MidTeethController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/Puzzle claw.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/Puzzle claw.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/RiddleArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/RiddleArea.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/Main.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/Main.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/SleebingPuzzle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/SleebingPuzzle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/Waterfall.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/Waterfall.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/ChickenDialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/ChickenDialogueTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/ClawMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/ClawMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Quests/TestQuest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Quests/TestQuest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Riddle1Object.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Riddle1Object.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RiddleManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RiddleManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shared/Scripts/Quests/QuestManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shared/Scripts/Quests/QuestManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.progrids/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.progrids/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,12 +22,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../2021/Exams/Rarity-Project (1)/Assets/_Script/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/LowerPuzzleThreeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/LowerPuzzleThreeManagerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/LowerRegionCheckpoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/MazeQuest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowerRegion/Scripts/PushShroomStopper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/ChickenDialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidBed.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
