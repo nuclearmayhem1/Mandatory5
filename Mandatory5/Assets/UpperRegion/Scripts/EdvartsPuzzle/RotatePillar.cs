@@ -19,10 +19,15 @@ public class RotatePillar : MonoBehaviour
     private PillarTrigger trigger;
     private PuzzleManagerEdvart manager;
 
+    private void Awake()
+    {
+        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+    }
+
     private void Start()
     {
         rotateCanvas.enabled = false;
-        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        
         trigger = GetComponentInChildren<PillarTrigger>();
         manager = FindObjectOfType<PuzzleManagerEdvart>();
     }
