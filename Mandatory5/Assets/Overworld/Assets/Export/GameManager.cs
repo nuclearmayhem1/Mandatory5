@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
         }
 
 
-        /*for (int i = 0; i < ItemPgs.Length; i++)
+        for (int i = 0; i < ItemPgs.Length; i++)
         {
             ItemPgs[i].value = PlayerPrefs.GetInt(ItemPgs[i].key);
-        }*/
+        }
 
     }
 
