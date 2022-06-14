@@ -63,7 +63,7 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
     }
 
 
-    public void SpawnFirstPuzzle()                      //Call this method when getting the FIRST quest from the chicken. This will enable the puzzle area.
+    public void SpawnFirstPuzzleArea()                      //Call this method when getting the FIRST quest from the chicken. This will enable the puzzle area.
     {
         firstPuzzleArea.SetActive(true);
         secondPuzzleArea.SetActive(false);
@@ -72,7 +72,7 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
         fifthPuzzleArea.SetActive(false);
 
     }
-    public void SpawnSecondPuzzle()                     //Call this method when getting the SECOND quest from the chicken. This will enable the puzzle area.
+    public void SpawnSecondPuzzleArea()                     //Call this method when getting the SECOND quest from the chicken. This will enable the puzzle area.
     {
         firstPuzzleArea.SetActive(false);
         secondPuzzleArea.SetActive(true);
@@ -81,7 +81,7 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
         fifthPuzzleArea.SetActive(false);
 
     }
-    public void SpawnThirdPuzzle()                      //Call this method when getting the THIRD quest from the chicken. This will enable the puzzle area.
+    public void SpawnThirdPuzzleArea()                      //Call this method when getting the THIRD quest from the chicken. This will enable the puzzle area.
     {
         firstPuzzleArea.SetActive(false);
         secondPuzzleArea.SetActive(false);
@@ -91,7 +91,7 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
 
     }
 
-    public void SpawnFourthPuzzle()                      //Call this method when getting the FOURTH quest from the chicken. This will enable the puzzle area.
+    public void SpawnFourthPuzzleArea()                      //Call this method when getting the FOURTH quest from the chicken. This will enable the puzzle area.
                                                          //Comment out this section if there is no fourth and fifth puzzle area. 
     {
         firstPuzzleArea.SetActive(false);
@@ -101,7 +101,7 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
         fifthPuzzleArea.SetActive(false);
     }
 
-    public void SpawnFifthPuzzle()                      //Call this method when getting the FIFTH quest from the chicken. This will enable the puzzle area.
+    public void SpawnFifthPuzzleArea()                      //Call this method when getting the FIFTH quest from the chicken. This will enable the puzzle area.
                                                         //Comment out this section if there is no fifth puzzle area. 
     {
         firstPuzzleArea.SetActive(false);
