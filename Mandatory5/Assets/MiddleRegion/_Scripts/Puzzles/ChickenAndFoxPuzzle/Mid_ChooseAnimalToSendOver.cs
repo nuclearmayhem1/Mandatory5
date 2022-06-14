@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 
 public class Mid_ChooseAnimalToSendOver : MonoBehaviour
@@ -13,6 +14,9 @@ public class Mid_ChooseAnimalToSendOver : MonoBehaviour
     }
     public void OpenCanvas()
     {
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = false;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorInputForLook = false;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = false;
         gameObject.GetComponent<CanvasGroup>().alpha = 1;
         gameObject.GetComponent<CanvasGroup>().interactable = true;
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -27,6 +31,9 @@ public class Mid_ChooseAnimalToSendOver : MonoBehaviour
     }
     public void ChooseAnimal1()
     {
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
         midShoreScript.chosenAnimal = 0;
         midBoat.seatOneFilled = false;
         CloseCanvas();
