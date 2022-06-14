@@ -10,7 +10,7 @@ public class LandingPlatform : MonoBehaviour
     [SerializeField] private Animator shipAnimator;
     private AnimatorClipInfo[] clipInfos;
     private float landingTime, takeOffTime;
-    public GameObject playerModel;
+    public GameObject playerGeometry;
     public GameObject plPrefab;
     public GameObject exitText;
 
@@ -26,14 +26,16 @@ public class LandingPlatform : MonoBehaviour
         /*mainCamera.parent = transform;
         mainCamera.localPosition = new Vector3(0f, 3f, 10f);
         mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);*/
-        
+
+
+        playerGeometry.transform.parent.gameObject.SetActive(false);
         Invoke("PlayerSpawn", landingTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (plActive == true && playerModel != null && Vector3.Distance(transform.position, playerModel.transform.position) < 3f)
+        if (plActive == true && playerGeometry != null && Vector3.Distance(transform.position, playerGeometry.transform.position) < 3f)
         {
             exitText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
@@ -73,7 +75,7 @@ public class LandingPlatform : MonoBehaviour
         
         plActive = true;
         landingCamera.gameObject.SetActive(false);
-        playerModel.transform.parent.gameObject.SetActive(true);
+        playerGeometry.transform.parent.gameObject.SetActive(true);
         //exitText.transform.parent.GetComponent<Canvas>().worldCamera = pl.transform.Find("MainCamera").GetComponent<Camera>();
     }
 
@@ -82,7 +84,7 @@ public class LandingPlatform : MonoBehaviour
         /*mainCamera.parent = transform;
         mainCamera.localPosition = new Vector3(0f, 3f, 10f);
         mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);*/
-        playerModel.transform.parent.gameObject.SetActive(false);
+        playerGeometry.transform.parent.gameObject.SetActive(false);
         landingCamera.gameObject.SetActive(true);
         
         //Destroy(pl);
