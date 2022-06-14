@@ -9,7 +9,7 @@ public class MidBed : MonoBehaviour
 {
     private bool withinRange, activated;
     public Material[] skyboxes;
-    [SerializeField] private CanvasGroup fadeCanvasGroup;
+    [SerializeField] private CanvasGroup fadeCanvasGroup, worldCanvasGroup;
         
     private void Start()
     {
@@ -21,7 +21,12 @@ public class MidBed : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            withinRange = true;
+            if (!activated)
+            {
+                withinRange = true;
+                worldCanvasGroup.alpha = 1;  
+            }
+            
         }
     }
 
@@ -29,30 +34,64 @@ public class MidBed : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            withinRange = false;
+            if (!activated)
+            {
+                withinRange = false;
+                worldCanvasGroup.alpha = 0;
+            }
+            
         }
     }
 
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) && withinRange && !activated)
+        if (!activated)
         {
-            StartCoroutine("Sleeb");
+            if (Input.GetKey(KeyCode.E) && withinRange)
+            {
+                activated = true;
+                StartCoroutine("Sleeb");
+            } 
         }
+        
     }
 
     
 
     private IEnumerator Sleeb()
     {
-        //while ()
+        float elapsedTime = 0f;
+        bool fadeIn = true;
         
-        activated = true;
-        GameObject.Find("Directional Light").GetComponent<Light>().color = new Color32(49, 44, 30, 1);
+        while (fadeCanvasGroup.alpha < 0.99f)
+        {
+            //fadeCanvasGroup.alpha += 0.00001f * Time.unscaledDeltaTime;
+            
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / 2); 
+            yield return null;
+        }
+        fadeIn = false;
         
-        RenderSettings.skybox = skyboxes[0];
+        if (fadeIn == false)
+        {
+            GameObject.Find("Directional Light").GetComponent<Light>().color = new Color32(49, 44, 30, 1);
         
+            RenderSettings.skybox = skyboxes[0];
+            elapsedTime = 0f;
+            while (fadeCanvasGroup.alpha > 0.01f)
+            {
+                fadeIn = false;
+                elapsedTime += Time.deltaTime;
+                fadeCanvasGroup.alpha = Mathf.Lerp(1, 0, elapsedTime / 1);
+                yield return null;
+            }
+        }
+        //activated = true;
+        RiddleManager.Instance.RiddleSolved();
+        QuestManager.SetNormalQuestStatus(2,true);
+        worldCanvasGroup.alpha = 0;
         yield break;
         
     }

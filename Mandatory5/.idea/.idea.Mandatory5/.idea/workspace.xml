@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="" />
+=======
+    <list default="true" id="abce06de-0520-4a1b-8480-c8f0d650ff3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mandatory5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/RiddleArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/Prefabs/RiddleArea.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/MidMain.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/MidMain.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/SleebingPuzzle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scenes/SleebingPuzzle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidBed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidBed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpperRegion/Scripts/EdvartsPuzzle/PressurePlate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpperRegion/Scripts/EdvartsPuzzle/PuzzleManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+>>>>>>> main-mid
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +59,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -102,6 +120,7 @@
       <workItem from="1652078520455" duration="1119000" />
       <workItem from="1652356743877" duration="1234000" />
       <workItem from="1652684651780" duration="1912000" />
+      <workItem from="1655151977334" duration="1701000" />
     </task>
     <servers />
   </component>
