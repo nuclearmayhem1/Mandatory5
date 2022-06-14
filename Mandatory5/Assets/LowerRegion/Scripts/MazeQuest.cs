@@ -2,30 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Quests;
 
 public class MazeQuest : MonoBehaviour
 {
-    private bool hasBeenCollected = false;
-    public GameObject mazeExit;
-    
-    private void OnTriggerEnter(Collider other)
+    private bool acceptedQuest = false, completedQuest = false;
+    private uint mazeQuest = 1;
+
+    private void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            hasBeenCollected = true;
-            Destroy(mazeExit, 1f);
-            Destroy(gameObject,1f); 
-            Destroy(mazeExit.GetComponent<BoxCollider>());
-        }
+        QuestMenuRenderer.currentWorld = Quest.World.LowerWorld;
     }
 
     void Update()
     {
-        if (hasBeenCollected == true)
+        if (GetComponent<MidDialogue>().dialogueNumber == 2 && acceptedQuest == false)
         {
-            mazeExit.transform.position = new Vector3(mazeExit.transform.position.x, mazeExit.transform.position.y - 1 * Time.deltaTime,
-                mazeExit.transform.position.z);
+            mazeQuest = QuestManager.AddQuest(new Quest(Quest.World.LowerWorld, "Find the Shrooms in the small maze"));
+            acceptedQuest = true;
+        }
+
+        if (MazeQuestCompletion.hasBeenCollected == true && completedQuest == false)
+        {
+            Debug.Log("TEST");
+            QuestManager.SetNormalQuestStatus(1, true);
+            completedQuest = true;
         }
     }
 }

@@ -13,7 +13,7 @@ public class MidDialogue : MonoBehaviour
     private string CurrentText;
 
     public string[] _dialogue;
-    private int dialogueNumber = 0;
+    public int dialogueNumber = 0;
 
     private bool isRunning, resetting;
 
@@ -83,7 +83,10 @@ public class MidDialogue : MonoBehaviour
 
             if (dialogueNumber == _dialogue.Length - 1)
             {
-                RiddleManager.Instance.StartNextRiddle(RiddleManager.Instance.currentRiddle);
+                if (RiddleManager.Instance)
+                {
+                    RiddleManager.Instance.StartNextRiddle(RiddleManager.Instance.currentRiddle);
+                }
             }
             if (dialogueNumber == _dialogue.Length)
             {
