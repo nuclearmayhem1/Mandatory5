@@ -50,7 +50,7 @@ public class MidPlayerController : MonoBehaviour
     }
 
 
-    private void Respawn()
+    public void Respawn()
     {
         Time.timeScale = 0.99f;
         GetComponent<ThirdPersonController>().Respawn(respawnPosition);

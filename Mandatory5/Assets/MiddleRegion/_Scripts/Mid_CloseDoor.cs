@@ -6,10 +6,12 @@ public class Mid_CloseDoor : MonoBehaviour
 { //Script is applied to a trigger that is positioned so that when the player goes back to the main area, the door will close.
     public GameObject puzzleAreaDoor;
     private Animator doorAnimator;
+    private AudioSource audioSource;
 
     private void Start()
     {
         doorAnimator = GameObject.Find("PuzzleDoor").GetComponent<Animator>();
+        audioSource = GameObject.Find("PuzzleDoor").GetComponent<AudioSource>();
     }
 
 
@@ -19,6 +21,7 @@ public class Mid_CloseDoor : MonoBehaviour
         {
             //puzzleAreaDoor.SetActive(true); // Close the Door
             doorAnimator.SetBool("Open", false);
+            audioSource.Play();
         }
     }
 
