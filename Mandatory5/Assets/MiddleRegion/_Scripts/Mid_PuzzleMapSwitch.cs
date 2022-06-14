@@ -115,8 +115,8 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
                                                                     //This will open the puzzle area door.
     {
         //puzzleAreaDoor.SetActive(false); // Open THe Door
-        doorAnimator.SetBool("Open", true);
-        audioSource.Play();
+        doorAnimator.SetBool("Open", true);                         //Plays the open door animation.
+        audioSource.Play();                                         //Plays the door audio.
 
     }
 

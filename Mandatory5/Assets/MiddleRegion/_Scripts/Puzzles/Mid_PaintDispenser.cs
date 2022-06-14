@@ -42,11 +42,11 @@ public class Mid_PaintDispenser : MonoBehaviour
         goalColor.GetComponent<Renderer>().material.color = Color.green;
 
         buttonsUnlocked = false;
-        colorOne = true;
+        colorOne = true;                //Color one + two + three are the goal colors.
         colorTwo = false; 
         colorThree = false;
 
-        purple = new Color32(143, 0, 254, 1);
+        purple = new Color32(143, 0, 254, 1);          //Purple and orange colors don't have a preset in unity, and are therefore defined here.
         orange = new Color32(254, 161, 0, 1);
         
 
@@ -55,7 +55,7 @@ public class Mid_PaintDispenser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (buttonsUnlocked)
+        if (buttonsUnlocked)                            //In order to call this one script, than both of the buttons to make them interactable.
         {
             paintButtonOne.dispenserActive = true;
             paintButtonTwo.dispenserActive = true;
@@ -66,25 +66,28 @@ public class Mid_PaintDispenser : MonoBehaviour
             paintButtonTwo.dispenserActive = false;
         }
 
-        if (colorOne) //Yellow + Blue = Green
+        if (colorOne) //Yellow + Blue = Green               //colorOne(Two and Three) is two seperate the if statements
+                                                            // so that they can be independent of eachother.
         {
            
-            if (paintButtonOne.yellow & paintButtonTwo.blue || paintButtonOne.blue & paintButtonTwo.yellow)
+            if (paintButtonOne.yellow & paintButtonTwo.blue || paintButtonOne.blue & paintButtonTwo.yellow)     //If the colors are the right combination.
             {
-                dispenserAnim.SetBool("DispenseBrush", true);
+                dispenserAnim.SetBool("DispenseBrush", true);               //Play the animation.
                 //audio_Clips.PlayAudioOne();
-                audioSource.Play();
+                audioSource.Play();                                         //Play the audio.
                 Invoke("SpawnBrushOne", 2);
                 //SpawnBrushOne();
-                buttonsUnlocked = false;
-                colorTwo = true;
+                buttonsUnlocked = false;                                    //Turns off the ability to press the buttons.
+                                                                            //(This is activated again when using the paintbrush on the door).
+                colorTwo = true;                                            //Sets the next color combination bool to be true,
+                                                                            //and disables this bool.
                 colorOne = false;
             }
             
         }
         if (colorTwo)//Blue + Red = Purple
         {
-            if (paintButtonOne.blue & paintButtonTwo.red || paintButtonOne.red & paintButtonTwo.blue)
+            if (paintButtonOne.blue & paintButtonTwo.red || paintButtonOne.red & paintButtonTwo.blue)           //Same as above.
             {
                 dispenserAnim.SetBool("DispenseBrush", true);
                 //audio_Clips.PlayAudioOne();
@@ -98,7 +101,7 @@ public class Mid_PaintDispenser : MonoBehaviour
         }
         if (colorThree)// Yellow + Red = Orange
         {
-            if (paintButtonOne.yellow & paintButtonTwo.red || paintButtonOne.red & paintButtonTwo.yellow)
+            if (paintButtonOne.yellow & paintButtonTwo.red || paintButtonOne.red & paintButtonTwo.yellow)               //Same as above.
             {
                 dispenserAnim.SetBool("DispenseBrush", true);
                 //audio_Clips.PlayAudioOne();
@@ -115,15 +118,15 @@ public class Mid_PaintDispenser : MonoBehaviour
 
     private void SpawnBrushOne()
     {
-        Instantiate(brushOnePrefab, brushSpawnLoc.position, brushSpawnLoc.rotation);
-        dispenserAnim.SetBool("DispenseBrush", false);
+        Instantiate(brushOnePrefab, brushSpawnLoc.position, brushSpawnLoc.rotation);            //Spawns the first brush prefab.
+        dispenserAnim.SetBool("DispenseBrush", false);                                          //Plays the second animation for the dispenser. Lifts the arm.
         //audio_Clips.PlayAudioOne();
-        audioSource.Play();
+        audioSource.Play();                                                                     //Play the audio.
 
-        goalColor.GetComponent<Renderer>().material.color = purple;
+        goalColor.GetComponent<Renderer>().material.color = purple;                             //Changes the color of the object that visualizes the goal color.
 
     }
-    private void SpawnBrushTwo()
+    private void SpawnBrushTwo()                                                                //Same as above.
     {
         Instantiate(brushTwoPrefab, brushSpawnLoc.position, brushSpawnLoc.rotation);
         dispenserAnim.SetBool("DispenseBrush", false);
@@ -135,7 +138,7 @@ public class Mid_PaintDispenser : MonoBehaviour
 
 
     }
-    private void SpawnBrushThree()
+    private void SpawnBrushThree()                                                              //Same as above.
     {
         Instantiate(brushThreePrefab, brushSpawnLoc.position, brushSpawnLoc.rotation);
         dispenserAnim.SetBool("DispenseBrush", false);

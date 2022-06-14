@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mid_Puz_3 : MonoBehaviour
 {
-    public string pickUpName;
+    public string pickUpName;                       //Script is attached to the brush prefab, with their individual string name.
 
     private Mid_Puz_Door3 door3; 
 
@@ -12,20 +12,16 @@ public class Mid_Puz_3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
         door3 = GameObject.Find("Door").GetComponent<Mid_Puz_Door3>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
+        {                                           //If the gameobject is in contact with the player, and has the matching string name
+                                                    //- Set the following bool, in the scipt attached to the door, to be true.
             
             if(pickUpName == ("Brush1"))
             {
@@ -45,7 +41,7 @@ public class Mid_Puz_3 : MonoBehaviour
 
 
             }
-            gameObject.SetActive(false); 
+            gameObject.SetActive(false);                //Deactivate itself.
         }
     }
 
