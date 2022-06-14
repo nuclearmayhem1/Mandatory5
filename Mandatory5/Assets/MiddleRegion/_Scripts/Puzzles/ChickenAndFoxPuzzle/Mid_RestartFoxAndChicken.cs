@@ -20,6 +20,10 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
         // gameObject.GetComponent<CanvasGroup>().interactable = true;
         // gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
         text.text = "You won!!! :D";
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
+        GameObject.FindWithTag("Player").GetComponent<StarterAssetsInputs>().cursorLocked = true;
+        
         
         QuestManager.SetNormalQuestStatus(3,true);
         RiddleManager.Instance.RiddleSolved();

@@ -8,11 +8,10 @@ public class ChooseCup : MonoBehaviour
     private bool withinRange;
     private bool readyToChoose;
     public int cupNumber;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-
         E.GetComponent<CanvasGroup>().alpha = 0;
     }
 
@@ -55,6 +54,7 @@ public class ChooseCup : MonoBehaviour
             gameObject.transform.parent.transform.parent.GetComponent<Animator>().SetBool("Reveal", true);
 
             eggCheck();
+            
 
         }
 
@@ -67,6 +67,9 @@ public class ChooseCup : MonoBehaviour
 
     private void eggCheck()
     {
+        egg.SetActive(true);
+        egg.GetComponent<Egg>().TeleportToCorrectCup();
+        
         Debug.Log("the cup number is " + cupNumber + ", and the correct answer is " + egg.GetComponent<Egg>().posNumber);
 
         if (egg.GetComponent<Egg>().posNumber == cupNumber)

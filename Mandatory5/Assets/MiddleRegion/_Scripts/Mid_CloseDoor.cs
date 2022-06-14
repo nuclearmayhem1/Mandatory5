@@ -20,8 +20,9 @@ public class Mid_CloseDoor : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //puzzleAreaDoor.SetActive(true); // Close the Door
-            doorAnimator.SetBool("Open", false);
-            audioSource.Play();
+            //doorAnimator.SetBool("Open", false);
+            //audioSource.Play();
+            
         }
     }
 
@@ -29,7 +30,7 @@ public class Mid_CloseDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
 
         }
 
