@@ -8,6 +8,9 @@ TagManager:
   - SporeZone
   - CinemachineTarget
   - PushShroom
+  - Mirror
+  - Brazier
+  - Manipulatable
   layers:
   - Default
   - TransparentFX
