@@ -11,6 +11,7 @@ public class RiddleManager : MonoBehaviour
 {
    public static RiddleManager Instance;
 
+   public GameObject prefabToSpawn, spawnedPrefab;
    
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
@@ -56,7 +57,14 @@ public class RiddleManager : MonoBehaviour
       {
          QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, quests[spawnObject])); //adds a new quest
 
-         Instantiate(spawnedObject[spawnObject]);
+         if (currentRiddle > 0)
+         {
+            Destroy(spawnedPrefab);
+         }
+         
+         prefabToSpawn = spawnedObject[currentRiddle];
+         GameObject newGameObject = Instantiate(prefabToSpawn);
+         spawnedPrefab = newGameObject;
          //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
       }
 
@@ -111,10 +119,20 @@ public class RiddleManager : MonoBehaviour
 
    public void FailPuzzle()
    {
-      // GameObject puzzlePrefab = new GameObject("Puzzle "+currentRiddle);
-      // Vector3 objectPOS = Vector3.zero;
-      //
-      // GameObject newGameObject = Instantiate(testPrefab, objectPOS, Quaternion.identity);
+      Destroy(spawnedPrefab);
+      
+      GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+      
+      
+      //GameObject puzzlePrefab = new GameObject("Puzzle " + currentRiddle);
+      //Vector3 objectPOS = Vector3.zero;
+      
+      prefabToSpawn = spawnedObject[currentRiddle];
+      GameObject newGameObject = Instantiate(prefabToSpawn);
+      newGameObject.transform.parent = newGameObject.transform.parent;
+      spawnedPrefab = newGameObject;
+      
+      
    }
 
 }
