@@ -6,10 +6,10 @@ public class CapstanGuideUI : MonoBehaviour {
     
     private void Awake() {
         _canvas = GetComponent<Canvas>();
-        CapstanHandle.OnPushState += OnPushState;
+        Capstan.OnPushState += OnPushState;
     }
 
-    private void OnDestroy() => CapstanHandle.OnPushState -= OnPushState;
+    private void OnDestroy() => Capstan.OnPushState -= OnPushState;
 
     private void OnPushState(bool state) {
         _canvas.enabled = state;

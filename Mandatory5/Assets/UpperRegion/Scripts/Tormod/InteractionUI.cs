@@ -15,13 +15,13 @@ public class InteractionUI : MonoBehaviour {
             Destroy(this); //Prevent future error
         }
         
-        CapstanHandle.OnIndicator += OnIndicator;
-        CapstanHandle.OnIndicatorPosition += OnIndicatorPosition;
+        Capstan.OnIndicator += OnIndicator;
+        Capstan.OnIndicatorPosition += OnIndicatorPosition;
     }
 
     private void OnDestroy() {
-        CapstanHandle.OnIndicator -= OnIndicator;
-        CapstanHandle.OnIndicatorPosition -= OnIndicatorPosition;
+        Capstan.OnIndicator -= OnIndicator;
+        Capstan.OnIndicatorPosition -= OnIndicatorPosition;
     }
 
     private void OnIndicator(bool state, KeyCode key) {

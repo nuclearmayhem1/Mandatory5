@@ -13,6 +13,8 @@ public class RotatePillar : MonoBehaviour
     public Canvas rotateCanvas;
 
     private bool isActive;
+    private bool camActive;
+    private bool camDone;
     public PlayerInput playerInput;
     private PillarTrigger trigger;
     private PuzzleManagerEdvart manager;
@@ -29,17 +31,19 @@ public class RotatePillar : MonoBehaviour
     {
         if (manager.puzzleDone)
         {
-            playerInput.enabled = true;
-            pillarCam.m_Priority = 9;
-            rotateCanvas.enabled = false;
+            Done();
         }
         else if (isActive && !manager.puzzleDone)
         {
-            Debug.Log("yes");
-            rotateCanvas.enabled = true;
-            playerInput.enabled = false;
-            pillarCam.m_Priority = 11;
-
+            if (!camActive)
+            {
+                rotateCanvas.enabled = true;
+                playerInput.enabled = false;
+                pillarCam.m_Priority = 11;
+                camDone = false;
+                camActive = true;
+            }
+            
             //Rotation
             if (Input.GetKey(KeyCode.A))
             {
@@ -58,12 +62,22 @@ public class RotatePillar : MonoBehaviour
         }
         else
         {
-            playerInput.enabled = true;
-            pillarCam.m_Priority = 9;
-            rotateCanvas.enabled = false;
+            Done();
         }
     }
 
     public void IsActive(bool state) { isActive = state; }
 
+    private void Done()
+    {
+        if (!camDone)
+        {
+            playerInput.enabled = true;
+            pillarCam.m_Priority = 9;
+            rotateCanvas.enabled = false;
+            camActive = false;
+            camDone = true; 
+        }
+
+    }
 }
