@@ -1,3 +1,4 @@
+using Quests;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +16,15 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
     }
     public void Win()
     {
-        gameObject.GetComponent<CanvasGroup>().alpha = 1;
-        gameObject.GetComponent<CanvasGroup>().interactable = true;
-        gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        // gameObject.GetComponent<CanvasGroup>().alpha = 1;
+        // gameObject.GetComponent<CanvasGroup>().interactable = true;
+        // gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
         text.text = "You won!!! :D";
+        
+        QuestManager.SetNormalQuestStatus(3,true);
+        RiddleManager.Instance.RiddleSolved();
+        QuestManager.SetNormalQuestStatus(3,true);
+        
     }
 
     public void Lose()
