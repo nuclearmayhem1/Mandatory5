@@ -13,7 +13,7 @@ public class RiddleManager : MonoBehaviour
 
    
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
-   public GameObject riddleHintUI; // On-screen instructions to the riddle
+   //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
    public String[] quests;
    public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on
    private void Awake() => Instance = this;
