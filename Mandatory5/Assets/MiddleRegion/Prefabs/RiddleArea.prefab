@@ -278,9 +278,11 @@ MonoBehaviour:
   - {fileID: 1969416543373478132}
   - {fileID: 5120358336281089544}
   - {fileID: 94757169202471680}
+  - {fileID: 94757169202471680}
   spawnedObject:
   - {fileID: 4896715190266076885}
   - {fileID: 464500703554849961}
+  - {fileID: 6291325855383669464}
   - {fileID: 6291325855383669464}
   riddleHintUI: {fileID: 8776346444110154986}
   quests:
@@ -288,6 +290,7 @@ MonoBehaviour:
   - Look for the thing that has legs but can't run, possess no heat but has steam,
     and shouts without a voice
   - How can a mother chick go 25 days without sleep?
+  - Get all chickens across safely.
   currentRiddle: 0
   currentRiddlemaster: 0
 --- !u!1 &1969416542217788132

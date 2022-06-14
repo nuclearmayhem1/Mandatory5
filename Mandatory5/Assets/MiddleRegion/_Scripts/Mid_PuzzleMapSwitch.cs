@@ -8,12 +8,17 @@ public class Mid_PuzzleMapSwitch : MonoBehaviour
     public GameObject firstPuzzleArea, secondPuzzleArea, thirdPuzzleArea, puzzleAreaDoor, closeTheDoorTrigger;
     public GameObject fourthPuzzleAre, fifthPuzzleArea;
 
+    public static Mid_PuzzleMapSwitch Instance;
+    
     private Animator doorAnimator;
     private AudioSource audioSource;
 
+    private void Awake() => Instance = this;
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         //puzzleSpawnLocation = GameObject.Find("PuzzleSpawnLocation");
         firstPuzzleArea.SetActive(false);
         secondPuzzleArea.SetActive(false);
