@@ -25,10 +25,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cull: 0
-    - _FresnelPower: 3
+    - _FresnelPower: 2.16
     m_Colors:
     - _BoxDims: {r: 5, g: 4, b: 5, a: 1}
-    - _Color: {r: 0.15979885, g: 0.17857611, b: 0.5377358, a: 1}
+    - _Color: {r: 0.15, g: 0.18, b: 0.7, a: 1}
     - _Emission1: {r: 2.56, g: 0, b: 0, a: 1}
     - _Emission2: {r: 0, g: 1.95, b: 2.52, a: 1}
     - _ScrollDirection: {r: 0, g: 0, b: 0, a: 0}
