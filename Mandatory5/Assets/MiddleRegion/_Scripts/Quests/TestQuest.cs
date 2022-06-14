@@ -5,13 +5,13 @@ using Quests;
 
 public class TestQuest : MonoBehaviour
 {
-    private uint quest;
+    private uint quest = 0; //The quest IDs are just numbers based on which were added first, 0 being the first.
 
     void Start()
     {
         QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic;
 
-        quest = QuestManager.AddQuest(new Quest(Quest.World.OverWorld, "Find a rock"));
+        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Find a rock", 3));
     }
 
     // Update is called once per frame

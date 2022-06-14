@@ -14,6 +14,11 @@ public class PlayerMarra : MonoBehaviour
     float verticalMove;
     public float speed = 300;
 
+    public GameObject EggChild;
+
+   // public float jumpSpeed = 5;
+    bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +96,28 @@ public class PlayerMarra : MonoBehaviour
 
     }
     
+    public void Jump()
+    {
+        EggChild.GetComponent<Animator>().SetTrigger("JumpTrigger");
+
+        Debug.Log("Hello!");
+
+
+
+        //   if (isGrounded)
+        //   {
+        //       rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
+        //   }
+    }
+    // private void OnTriggerEnter (Collider other)
+    // {
+    //     if (other.CompareTag("ground"))
+    //     {
+    //         isGrounded = false;
+    //     }
+    // }
+
+
     private void FixedUpdate()
     {
       rb.velocity = new Vector3(horizontalMove * Time.deltaTime, rb.velocity.y, verticalMove * Time.deltaTime);

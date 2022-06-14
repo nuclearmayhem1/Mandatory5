@@ -8,7 +8,8 @@ public class Mid_PaintButton : MonoBehaviour
     public int currentColor;
     private bool inContactWithPlayer;
     private Mid_PaintDispenser paintDispenser;
-    public bool yellow, blue, red; 
+    public bool yellow, blue, red;
+    public bool dispenserActive;
 
 
     // Start is called before the first frame update
@@ -18,20 +19,27 @@ public class Mid_PaintButton : MonoBehaviour
         this.GetComponent<Renderer>().material.color = colors[currentColor];
 
         paintDispenser = GameObject.Find("PaintDispenser").GetComponent<Mid_PaintDispenser>();
+        dispenserActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inContactWithPlayer & paintDispenser.buttonsUnlocked)
+        if (dispenserActive)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (inContactWithPlayer & paintDispenser.buttonsUnlocked)
             {
-                currentColor = (currentColor + 1) % colors.Length;
-                this.GetComponent<Renderer>().material.color = colors[currentColor];
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentColor = (currentColor + 1) % colors.Length;
+                    this.GetComponent<Renderer>().material.color = colors[currentColor];
 
+                }
             }
         }
+
+        
+        
 
         if (currentColor == 1) 
         {
