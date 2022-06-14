@@ -9,13 +9,13 @@ public class Cups : MonoBehaviour
 
     public void Start()
     {
-        cupsAnimator = cupsParentObject.GetComponent<Animator>();
+        cupsAnimator = cupsParentObject.GetComponent<Animator>(); //Gets the cup's animator
     }
 
     public void StartCupAnim()
     {
         
-       cupsAnimator.SetBool("Move", true);
+       cupsAnimator.SetBool("Move", true); //Makes the cup start moving
         
     }
 

@@ -5,17 +5,17 @@ using UnityEngine;
 public class EeeeMid : MonoBehaviour
 {
 
-    public GameObject E;
-    private bool withinRange;
-    private Vector3 ESavedPos;
+    public GameObject E; //A UI button
+    private bool withinRange; //Checks if player can press button
+    private Vector3 ESavedPos; //Where the button is
 
 
     // Start is called before the first frame update
     void Start()
     {
-        E.GetComponent<CanvasGroup>().alpha = 0;
+        E.GetComponent<CanvasGroup>().alpha = 0; //Make button transparent
 
-        ESavedPos = E.transform.parent.transform.position;
+        ESavedPos = E.transform.parent.transform.position; //Save where the button is
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +25,7 @@ public class EeeeMid : MonoBehaviour
             E.transform.parent.transform.position = ESavedPos;
             E.GetComponent<CanvasGroup>().alpha = 1;
             withinRange = true;
+            //If player is close to button, make it visible and pressable
 
         }
     }
@@ -34,6 +35,7 @@ public class EeeeMid : MonoBehaviour
         {
             E.GetComponent<CanvasGroup>().alpha = 0;
             withinRange = false;
+            //If player is not close to button, make it transparent again
 
         }
     }
