@@ -52,6 +52,10 @@ public class RiddleManager : MonoBehaviour
       riddleHintUI.GetComponent<TMP_Text>().color = Color.green; THIS CODE WAS REPLACED BY NEW QUEST SYSTEM*/
       SpawnCharacter(currentRiddlemaster+1);
       currentRiddle = currentRiddle+1;
+      currentRiddlemaster = currentRiddlemaster + 1;
+      Debug.Log("current riddle" + currentRiddle);
+      Debug.Log("current master: " +currentRiddlemaster);
+      
    }   
 
 }
