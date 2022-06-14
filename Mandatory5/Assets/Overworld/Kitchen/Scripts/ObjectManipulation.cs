@@ -59,6 +59,11 @@ public class ObjectManipulation : MonoBehaviour
             isTool = false;
         }
 
+        if (held == null)
+        {
+            holding = false;
+        }
+
         if (!isTool)
         {
             if (!rightClick)
