@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 1088866754}
   m_Layer: 0
   m_Name: Landing Platform Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -777,6 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipAnimator: {fileID: 2497534256981357404}
+  playerGeometry: {fileID: 0}
   plPrefab: {fileID: 8047161636021232021, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
   exitText: {fileID: 1903844870}
 --- !u!1001 &2497534257993581729
