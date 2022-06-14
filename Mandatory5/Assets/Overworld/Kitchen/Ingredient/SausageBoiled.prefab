@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6751472960286448088}
   - component: {fileID: 3034443626965998843}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8749047521806202109}
   - component: {fileID: 8877392214647276125}
   - component: {fileID: 7095763777759348193}
+  - component: {fileID: 8793543402422189662}
   m_Layer: 0
   m_Name: SausageBoiled
   m_TagString: Manipulatable
@@ -194,6 +195,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8793543402422189662
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330140154357181920}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &9089954243536603144
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +224,7 @@ GameObject:
   - component: {fileID: 4234512892757114334}
   - component: {fileID: 8928142505416378184}
   m_Layer: 0
-  m_Name: Sausage
+  m_Name: s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
