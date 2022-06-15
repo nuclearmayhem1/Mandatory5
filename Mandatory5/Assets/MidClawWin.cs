@@ -44,6 +44,7 @@ public class MidClawWin : MonoBehaviour
 
     private void ClawWin()
     {
+        clawMachineConsole.GetComponent<Collider>().enabled = false;
         QuestManager.SetNormalQuestStatus(5,true);
         RiddleManager.Instance.RiddleSolved();
         QuestManager.SetNormalQuestStatus(5,true);
