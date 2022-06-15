@@ -19,7 +19,7 @@ public class YEN_Mid_FoxAndChicken : MonoBehaviour
 
     }
 
-    private void Update()
+    private void Update() //Move the selected animal to the boat
     {
         if (canPressE && boat.boatIsFull == false) 
         {
@@ -34,7 +34,7 @@ public class YEN_Mid_FoxAndChicken : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //Move the animal to the assigned 2 seats
     {
         if (other.gameObject.CompareTag("Player"))
         {

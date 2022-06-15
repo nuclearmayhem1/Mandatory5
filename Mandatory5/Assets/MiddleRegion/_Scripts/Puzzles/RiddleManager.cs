@@ -10,9 +10,9 @@ using UnityEngine.UIElements;
 public class RiddleManager : MonoBehaviour
 {
    public static RiddleManager Instance;
-   private bool finiiished;
+   private bool finiiished; //For activating the final puzzle
 
-   public GameObject prefabToSpawn, spawnedPrefab, PaintDispenser;
+   public GameObject prefabToSpawn, spawnedPrefab, PaintDispenser; //Related to the final puzzle of this region
    
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
@@ -23,7 +23,7 @@ public class RiddleManager : MonoBehaviour
 
    private void Start()
    {
-      // foreach (GameObject i in spawnedObject)
+      // foreach (GameObject i in spawnedObject)     //Obsolete code that was used to set every puzzle to inactive on Start
       // {
       //    i.SetActive(false);
       // }
@@ -34,13 +34,13 @@ public class RiddleManager : MonoBehaviour
       
       characters[0].SetActive(true);
       
-      QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic;
+      QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic; //Sets the world, so the correct quests show up
       currentRiddle = 0;
       currentRiddlemaster = 0;
    }
 
    // Every riddle should be its own void in the manager
-   public void SpawnCharacter(int chararcterNumber) //Changes out the bird. Each bird has their own riddle.
+   public void SpawnCharacter(int chararcterNumber) //Changes out the dialogue bird. Each bird has their own riddle.
    {
       characters[chararcterNumber].SetActive(true);
       characters[chararcterNumber-1].SetActive(false);
@@ -144,7 +144,8 @@ public class RiddleManager : MonoBehaviour
 
    public void FailPuzzle()
    {
-      LateFail();
+      LateFail(); //Respanws the player AND the puzzle itself, resseting it.
+                  //A delay was added as reinstantiating on the same frame had some funky bugs (like Start() not running in the instantiated prefab on the second spawn)
    }
 
    private void LateFail()
@@ -171,7 +172,7 @@ public class RiddleManager : MonoBehaviour
          {
             finiiished = true;
             GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
-            LastPuzzle();
+            LastPuzzle(); // Activates the final puzzle
          }
       }
       

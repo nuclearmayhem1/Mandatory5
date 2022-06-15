@@ -7,9 +7,9 @@ using Quests;
 
 public class MidBed : MonoBehaviour
 {
-    private bool withinRange, activated;
-    public Material[] skyboxes;
-    [SerializeField] private CanvasGroup fadeCanvasGroup, worldCanvasGroup;
+    private bool withinRange, activated; //used for detecting player presence and input
+    public Material[] skyboxes; //array of skyboxes
+    [SerializeField] private CanvasGroup fadeCanvasGroup, worldCanvasGroup; //contains the values for alpha, which this script uses to fade in and out; see Sleeb() below.
         
     private void Start()
     {
@@ -51,7 +51,7 @@ public class MidBed : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && withinRange)
             {
                 activated = true;
-                StartCoroutine("Sleeb");
+                StartCoroutine("Sleeb"); 
             } 
         }
         
@@ -59,7 +59,7 @@ public class MidBed : MonoBehaviour
 
     
 
-    private IEnumerator Sleeb()
+    private IEnumerator Sleeb() //Performs a lerped (smooth) fade in and out to simulate sleeping until night
     {
         float elapsedTime = 0f;
         bool fadeIn = true;
