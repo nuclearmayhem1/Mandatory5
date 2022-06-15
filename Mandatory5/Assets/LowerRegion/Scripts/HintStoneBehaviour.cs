@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -24,31 +25,15 @@ public class HintStoneBehaviour : MonoBehaviour
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, hintRadius);
 
-            //Looping through each collider within a radius to find the player
-            foreach (Collider c in colliders)
+            if (colliders.ToList().Any(x => x.CompareTag("Player")))
             {
-                //If player is within the radius
-                if (c.CompareTag("Player"))
-                {
-                    //Give hint
-                    if (!startFade)
-                    {
-                        startFade = true;
-                        hintText.color = Color.clear;
-                    }
-                        
-                }
+                //If player is in radius change text color to yellow
+                hintText.color = Color.yellow;
             }
-        }
-
-        if (startFade)
-        {
-            hintText.color = Color.Lerp(hintText.color, Color.yellow, Time.deltaTime * textFadeSpeed);
-
-            if (hintText.color == Color.yellow)
+            else
             {
+                //Make text transparent when player is not within range
                 hintText.color = Color.clear;
-                startFade = false;
             }
         }
     }
