@@ -49,6 +49,7 @@ public class PushShroomStopper : MonoBehaviour
                 if (dialogue.GetComponentInChildren<ChickenCanvasController>().speechBubbleText.GetComponent<MidDialogue>().dialogueNumber ==
                     4)
                 {
+                    //Remove Physics constraints so the shroom can be pushed around
                     _rb.constraints = RigidbodyConstraints.None;
                     dialogue.SetActive(false);
                     hasSpoken = true;

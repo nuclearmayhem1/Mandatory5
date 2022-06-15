@@ -15,10 +15,12 @@ public class PuzzleThreeGateOpener : MonoBehaviour
         
         if (shroomPresent)
         {
+            //Set gate speed to 1 to play the animation
             gateAnim.SetFloat("GateOpenSpeed", 1);
         }
         else
         {
+            //Makes sure speed is on 0 so animation doesn't play
             gateAnim.SetFloat("GateOpenSpeed", 0);
         }
     }
