@@ -17,7 +17,7 @@ public class CanBePickedUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && playerRightHand.childCount == 5)
         {
             if (!pickedUp)
             {

@@ -23,4 +23,9 @@ public class TriggerJump : MonoBehaviour
             move = true;
         }
     }
+
+    public void BeanSunk()
+    {
+        Destroy(gameObject);
+    }
 }
