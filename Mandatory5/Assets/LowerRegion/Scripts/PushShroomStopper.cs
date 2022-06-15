@@ -47,7 +47,7 @@ public class PushShroomStopper : MonoBehaviour
             if (dialogue.GetComponentInChildren<ChickenCanvasController>().speechBubbleText != null)
             {
                 if (dialogue.GetComponentInChildren<ChickenCanvasController>().speechBubbleText.GetComponent<TMP_Text>().text ==
-                    "THANKS!")
+                    "THANKS!<color=#00000000>")
                 {
                     _rb.constraints = RigidbodyConstraints.None;
                     dialogue.SetActive(false);
