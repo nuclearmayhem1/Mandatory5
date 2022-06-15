@@ -280,6 +280,7 @@ MonoBehaviour:
   - You can just push me around, it's no problem at all
   - Also if you want me to stop rolling just tell me to do so (Press E)
   - THANKS!
+  - ...
   dialogueNumber: 0
 --- !u!1 &1411635313
 GameObject:
