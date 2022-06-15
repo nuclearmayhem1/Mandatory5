@@ -1,15 +1,17 @@
 using System;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 public class Capstan : MonoBehaviour {
-    //can add automatic fall recline option
+
     [Header("Settings")]
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private float rotationSpeed = 50f;
+    
     [Tooltip("The max angle of rotation")] [Range(0, 360)]
     [SerializeField] private float maxRotation = 360f;
+    
     [Tooltip("Whether it can rotate infinitely and freely. Allows for rotation in both directions")]
     [SerializeField] private bool unlockedRotation;
     [SerializeField] private UnityEvent<float> onRotate;
@@ -23,13 +25,13 @@ public class Capstan : MonoBehaviour {
     public static event Action<bool> OnPushState; 
 
     private CapstanHandle _currentHandle;
-    private PlayerInput _playerInput;
+    private ThirdPersonController _playerController;
     private int _direction;
     private float _currentRotation; //Might have to locally track as unity rotation loops when going outside 0-360deg
 
     private void Awake() {
-        _playerInput = FindObjectOfType<PlayerInput>();
-        if (_playerInput == null) {
+        _playerController = FindObjectOfType<ThirdPersonController>();
+        if (_playerController == null) {
             Debug.LogWarning("No player input found!");
             Destroy(this); //Prevent future error
         }
@@ -66,29 +68,30 @@ public class Capstan : MonoBehaviour {
         _currentHandle = handle;
         OnIndicator?.Invoke(false, interactionKey);
         OnPushState?.Invoke(true);
-        _playerInput.enabled = false;
-        var playerTransform = _playerInput.transform;
-        playerTransform.SetParent(pivot); //transform.parent is pivot
+        _playerController.canMove = false;
+        var playerTransform = _playerController.transform;
+        playerTransform.SetParent(pivot);
         
-        //Find which side of the handle + position the player
+        //Find which side of the handle to know which direction to move
         var handleTransform = handle.transform;
         var handlePosition = handleTransform.position;
         var playerPosition = playerTransform.position;
         var vectorToTarget = (handlePosition - playerPosition).normalized;
         handlePosition.y = playerPosition.y; // Level out y position
-
-        //Where is player related to the handle?
         _direction = Vector3.Dot(vectorToTarget, handleTransform.forward) > 0 ? -1 : 1;
+        
+        //Position the player
         playerTransform.position = handlePosition + handleTransform.forward * .4f * _direction;
         playerTransform.LookAt(handlePosition);
     }
 
     private void ExitPushState() {
         if (_currentHandle == null) return;
+        
         OnIndicator?.Invoke(_currentHandle.InRange, interactionKey); //Pass _inRange in case outside range
         OnPushState?.Invoke(false);
-        _playerInput.transform.SetParent(null);
-        _playerInput.enabled = true;
+        _playerController.transform.SetParent(null);
+        _playerController.canMove = true;
         _currentHandle = null;
     }
 
