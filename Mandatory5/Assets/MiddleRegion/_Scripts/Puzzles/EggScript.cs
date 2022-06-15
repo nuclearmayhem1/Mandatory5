@@ -9,7 +9,7 @@ public class EggScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("Egg", 1);
+            GameManager.Instance.SetItem("Egg");
             Debug.Log("CONGRATULEGGTIONS");
             Destroy(this.gameObject);
         }
@@ -20,7 +20,7 @@ public class EggScript : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("Egg", 1);
+            GameManager.Instance.SetItem("Egg");
             Debug.Log("CONGRATULEGGTIONS");
             Destroy(this.gameObject);
         }

@@ -36,7 +36,7 @@ public class BrazierTrigger : MonoBehaviour
         {
             if (!haveCooked)
             {
-                PlayerPrefs.SetInt("Spice", 1);
+                GameManager.Instance.SetItem("Beans");
                 panSource.clip = flame;
                 panSource.loop = false;
                 panSource.Play();
