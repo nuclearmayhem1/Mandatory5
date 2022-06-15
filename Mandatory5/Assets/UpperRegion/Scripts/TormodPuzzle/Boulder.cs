@@ -32,7 +32,7 @@ public class Boulder : MonoBehaviour {
             boulder.DestroySelf();
             DestroySelf();
         } else if (collision.collider.CompareTag("Player") && _rb != null) { //Check rb to make sure it is live
-            //respawn that mofo
+            Abyss.Instance?.RespawnPlayer();
         }
     }
 
