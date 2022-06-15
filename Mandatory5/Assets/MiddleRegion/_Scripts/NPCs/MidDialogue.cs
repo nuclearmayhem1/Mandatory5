@@ -7,13 +7,13 @@ public class MidDialogue : MonoBehaviour
 {
     const string kAlphaCode = "<color=#00000000>";
     const float kMaxTextTime = 0.1f;
-    public static int TextSpeed = 2;
+    public static int TextSpeed = 2; //the speed at which the text pops in
 
     private TMP_Text Text;
     private string CurrentText;
 
-    public string[] _dialogue;
-    public int dialogueNumber = 0;
+    public string[] _dialogue; //array of dialogue texts to be spoken in order
+    public int dialogueNumber = 0; //the currently active dialogue
 
     private bool isRunning, resetting;
 
@@ -44,7 +44,7 @@ public class MidDialogue : MonoBehaviour
         string displayedText = "";
         int alphaIndex = 0;
 
-        foreach (char c in CurrentText.ToCharArray())
+        foreach (char c in CurrentText.ToCharArray()) //reveals each letter consecutively
         {
             alphaIndex++;
             Text.text = originalText;
@@ -59,7 +59,7 @@ public class MidDialogue : MonoBehaviour
         isRunning = false;
     }
 
-    public void NextDialogue()
+    public void NextDialogue() //skips to the end of the current dialogue, and if there already, advances to the next one
     {
         if (isRunning)
         {
@@ -90,7 +90,7 @@ public class MidDialogue : MonoBehaviour
             }
             if (dialogueNumber == _dialogue.Length)
             {
-                skipAllDialogue();
+                skipAllDialogue(); //advances to the next dialogue in the array
             }
         }
     }

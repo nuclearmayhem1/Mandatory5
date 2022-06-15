@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.5477118, g: 0.8547271, b: 0.92230666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &14337786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1944,7 +1945,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.14611793}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
-  - {fileID: 11737435}
   - {fileID: 1182960424}
   m_Father: {fileID: 1547641024}
   m_RootOrder: 2
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b5b0447f2987a4497e994174d9b942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initiateIcon: {fileID: 11737434}
+  initiateIcon: {fileID: 0}
   speechBubble: {fileID: 1182960423}
   speechBubbleText: {fileID: 1949320242}
   dialogueTrigger: {fileID: 411613076}
@@ -2402,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &427342419
 Transform:
   m_ObjectHideFlags: 0
@@ -3289,7 +3289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1559008636432091754, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: _dialogue.Array.data[7]
-      value: Find the area to my right. Good luck!
+      value: Find the area to the right. Good luck!
       objectReference: {fileID: 0}
     - target: {fileID: 1964727755001138145, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3675,6 +3675,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1969416543301853907, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.data[4]
+      value: Go find it, and come talk to me when you're done.
+      objectReference: {fileID: 0}
     - target: {fileID: 1970952040947605167, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999941
@@ -3857,7 +3861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5086936982583083333, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: _dialogue.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5086936982583083333, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: _dialogue.Array.data[1]
@@ -3884,6 +3888,10 @@ PrefabInstance:
       propertyPath: _dialogue.Array.data[6]
       value: There you will find the next egg.
       objectReference: {fileID: 0}
+    - target: {fileID: 5086936982583083333, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.data[7]
+      value: Come talk to me when you've found it.
+      objectReference: {fileID: 0}
     - target: {fileID: 5144604991203544451, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3891,6 +3899,10 @@ PrefabInstance:
     - target: {fileID: 5144604991203544451, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850063765323317939, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.data[3]
+      value: Once more, find the task to the right.
       objectReference: {fileID: 0}
     - target: {fileID: 6230243593868783023, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_RootOrder
@@ -4311,6 +4323,18 @@ PrefabInstance:
     - target: {fileID: 8319713200060331943, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.56657207
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684918121821316566, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684918121821316566, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.data[4]
+      value: Once more, the task is to the right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684918121821316566, guid: d6a239656992524408017de73eeabcd8, type: 3}
+      propertyPath: _dialogue.Array.data[5]
+      value: Come speak to me once you solve it.
       objectReference: {fileID: 0}
     - target: {fileID: 8996337898425971164, guid: d6a239656992524408017de73eeabcd8, type: 3}
       propertyPath: m_RootOrder
@@ -7058,7 +7082,7 @@ RectTransform:
   m_Children:
   - {fileID: 1949320243}
   m_Father: {fileID: 340340667}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.00009, y: 0.0047}
   m_AnchorMax: {x: 1, y: 1}
@@ -13881,7 +13905,7 @@ PrefabInstance:
     - target: {fileID: 3383265172460035617, guid: 28f12fb5a317f894d81f1334c16f91c3, type: 3}
       propertyPath: GoPaintDoor
       value: 
-      objectReference: {fileID: 759404940}
+      objectReference: {fileID: 651952881}
     - target: {fileID: 3383265172460035617, guid: 28f12fb5a317f894d81f1334c16f91c3, type: 3}
       propertyPath: buttonsUnlocked
       value: 0
