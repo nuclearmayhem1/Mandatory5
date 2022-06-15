@@ -9,6 +9,7 @@ public class PuzzleThreeGateOpener : MonoBehaviour
 
     [SerializeField] private bool shroomPresent;
 
+    public static bool pushShroomQuestCompletion = false;
     private void Update()
     {
         Animator gateAnim = gate.GetComponent<Animator>();
@@ -17,6 +18,7 @@ public class PuzzleThreeGateOpener : MonoBehaviour
         {
             //Set gate speed to 1 to play the animation
             gateAnim.SetFloat("GateOpenSpeed", 1);
+            pushShroomQuestCompletion = true;
         }
         else
         {

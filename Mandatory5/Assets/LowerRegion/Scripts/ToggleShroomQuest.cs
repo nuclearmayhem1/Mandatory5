@@ -24,5 +24,10 @@ public class ToggleShroomQuest : MonoBehaviour
             toggleShroomQuest = QuestManager.AddQuest(new Quest(Quest.World.LowerWorld, "Find a way to cross the bog"));
             acceptedQuest = true;
         }
+
+        if (acceptedQuest && ToggleShroomQuestCompletion.bogCrossed)
+        {
+            QuestManager.SetNormalQuestStatus(toggleShroomQuest, true);
+        }
     }
 }
