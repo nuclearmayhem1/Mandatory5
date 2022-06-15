@@ -44,6 +44,7 @@ public class LongClickButton_Marra : MonoBehaviour, IPointerDownHandler, IPointe
 			{
 				MovementControls.interactable = true;
 				MovementControls.alpha = 1;
+				Debug.Log("Movement controls should spawn");
 			}
         }
 		
