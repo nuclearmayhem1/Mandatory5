@@ -10,7 +10,7 @@ public class PlayerDrugChecker : MonoBehaviour
 
     void Update()
     {
-        if(isHigh == true)
+        if(isHigh == true)  //Very simple and accessible bool for other scripts to check and use to manipulate environments.
         {
             Debug.Log("Currently tripping.");
         }
