@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 7531861465857617158}
+  winCondition: {fileID: 3116816048528456036}
 --- !u!1 &186129911
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 0}
+  winCondition: {fileID: 3116816048528456036}
 --- !u!1 &641478185
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 0}
+  winCondition: {fileID: 3116816048528456036}
 --- !u!1 &1330533060
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 0}
+  winCondition: {fileID: 3116816048528456036}
 --- !u!1 &1676497894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 0}
+  winCondition: {fileID: 3116816048528456036}
 --- !u!1 &1997004117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clawMachineConsole: {fileID: 7531861467514961532}
+  cannister: {fileID: 8555394460455605938}
 --- !u!1 &4601189949564910402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7955511338399248449}
   animator: {fileID: 7531861465857617158}
+  winCondition: {fileID: 0}
 --- !u!1 &6979051644041758646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7531861465857617176}
   animator: {fileID: 7531861465857617158}
+  winCondition: {fileID: 0}
 --- !u!1 &7531861466139093480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClawArm: {fileID: 7531861465857617176}
   animator: {fileID: 7531861465857617158}
+  winCondition: {fileID: 0}
 --- !u!1001 &8848077223483863136
 PrefabInstance:
   m_ObjectHideFlags: 0

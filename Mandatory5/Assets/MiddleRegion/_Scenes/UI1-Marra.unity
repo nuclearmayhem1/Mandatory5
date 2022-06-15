@@ -206,11 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &107275311 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6991792357336213654, guid: ceb81fd8043306c47aed3609092efdbd, type: 3}
-  m_PrefabInstance: {fileID: 413077916}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &413077916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,10 +229,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1593739710}
-    - target: {fileID: 1279558685, guid: ceb81fd8043306c47aed3609092efdbd, type: 3}
-      propertyPath: Cam1
-      value: 
-      objectReference: {fileID: 107275311}
     - target: {fileID: 1393172668, guid: ceb81fd8043306c47aed3609092efdbd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -520,20 +511,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1821852680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1821852680, guid: ceb81fd8043306c47aed3609092efdbd, type: 3}
-  m_PrefabInstance: {fileID: 413077916}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1821852685
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821852680}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0

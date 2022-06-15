@@ -61,15 +61,16 @@ public class RiddleManager : MonoBehaviour
             Destroy(spawnedPrefab);
          }
          
-         if (currentRiddle != 8)
+         if (currentRiddle != 7)
          {
             prefabToSpawn = spawnedObject[currentRiddle];
             GameObject newGameObject = Instantiate(prefabToSpawn);
             spawnedPrefab = newGameObject;
             //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
          } 
-        else if (currentRiddle == 8)
+        else if (currentRiddle == 7)
         {
+           GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
             LastPuzzle();
         }
       }

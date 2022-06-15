@@ -7,7 +7,8 @@ using UnityEngine;
 public class MidClawWin : MonoBehaviour
 {
     private GameObject player;
-    public GameObject clawMachineConsole;
+    public GameObject clawMachineConsole, cannister;
+    
 
     private void Start()
     {
@@ -42,9 +43,10 @@ public class MidClawWin : MonoBehaviour
         }
     }
 
-    private void ClawWin()
+    public void ClawWin()
     {
-        clawMachineConsole.GetComponent<Collider>().enabled = false;
+        
+        clawMachineConsole.gameObject.SetActive(false);
         QuestManager.SetNormalQuestStatus(5,true);
         RiddleManager.Instance.RiddleSolved();
         QuestManager.SetNormalQuestStatus(5,true);

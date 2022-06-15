@@ -9,8 +9,8 @@ public class ClawMachine : MonoBehaviour
     public Animator animator;
     private Vector3 startingPos;
     private float elapsedTime;
-    
-
+    private int timesGrabbed;
+    public GameObject winCondition;
     float lerpDuration = 1; 
     float startValue = 0;
 
@@ -59,6 +59,7 @@ public class ClawMachine : MonoBehaviour
     {
         if (!ClawArm.GetComponent<MidGrabbing>().grabbing)
         {
+            timesGrabbed++;
             ClawArm.GetComponent<MidGrabbing>().grabbing = true;
             animator.SetBool("Grab", true);
             //Debug.Log("The animator 'grab' bool is set to"+ animator.GetBool("Grab"));
@@ -68,6 +69,12 @@ public class ClawMachine : MonoBehaviour
     }
     public void Release()
     {
+        if (timesGrabbed == 5)
+        {
+            winCondition.GetComponent<MidClawWin>().cannister.transform.localPosition = new Vector3(
+                winCondition.transform.position.y + 2, winCondition.transform.position.x,
+                winCondition.transform.position.z);
+        }
         StartCoroutine("ResetPos");
         animator.SetBool("Grab", false);
     }
@@ -77,7 +84,7 @@ public class ClawMachine : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         //lerpDuration = 3;
-        startingPos = new Vector3(0, 2, 0);
+        startingPos = new Vector3(0, 1.5f, 0);
         //Debug.Log(startingPos);
         //float timeElapsed = 0;
         while (ClawArm.transform.localPosition != startingPos)

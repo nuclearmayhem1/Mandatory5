@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Quests;
+using StarterAssets;
 using UnityEngine;
 
 public class ChooseCup : MonoBehaviour
@@ -9,11 +10,14 @@ public class ChooseCup : MonoBehaviour
     private bool withinRange;
     private bool readyToChoose;
     public int cupNumber;
+    private GameObject player;
+    private bool won = false;
     
     // Start is called before the first frame update
     void Start()
     {
         E.GetComponent<CanvasGroup>().alpha = 0;
+        player = GameObject.FindWithTag("Player");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,21 +79,40 @@ public class ChooseCup : MonoBehaviour
 
         if (egg.GetComponent<Egg>().posNumber == cupNumber)
         {
-
-            transform.parent.transform.parent.GetComponent<MidJeff>().correct = true;
+            if (!won)
+            {
+                won = true;
+                transform.parent.transform.parent.GetComponent<MidJeff>().correct = true;
             
-            Debug.Log("YOU WINNED ");
-
-            QuestManager.SetNormalQuestStatus(4,true);
-            QuestManager.RemoveQuest(0);
-            RiddleManager.Instance.RiddleSolved();
-            QuestManager.SetNormalQuestStatus(4,true);
+                Debug.Log("YOU WINNED ");
+                RiddleManager.Instance.RiddleSolved();
+                Debug.Log("Solved Marte's cup puzzle");
+                
+                QuestManager.SetNormalQuestStatus(4,true);
+                QuestManager.RemoveQuest(0);
+                QuestManager.SetNormalQuestStatus(4,true);
+            }
+            
 
         }
         else
         {
 
             transform.parent.transform.parent.GetComponent<MidJeff>().correct = false;
+            
+            Time.timeScale = 1;
+            
+            // Cursor.visible = false;
+            // Cursor.lockState = CursorLockMode.Locked;
+            // player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
+            // player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
+            // player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
+            // player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
+            // gameObject.GetComponent<CanvasGroup>().alpha = 0;
+            // gameObject.GetComponent<CanvasGroup>().interactable = false;
+            // gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        
+            RiddleManager.Instance.FailPuzzle();
         }
         
 

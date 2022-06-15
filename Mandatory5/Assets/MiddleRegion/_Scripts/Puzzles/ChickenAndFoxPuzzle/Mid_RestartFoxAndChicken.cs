@@ -9,6 +9,7 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
     public Text text;
     private bool alreadyStarted = false;
     private GameObject player;
+    private bool won = false;
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -19,22 +20,27 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
     }
     public void Win()
     {
+        if (!won)
+        {
+           
+            // gameObject.GetComponent<CanvasGroup>().alpha = 1;
+            // gameObject.GetComponent<CanvasGroup>().interactable = true;
+            // gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            text.text = "You won!!! :D";
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
+            player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
+            player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
+            player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
         
-        // gameObject.GetComponent<CanvasGroup>().alpha = 1;
-        // gameObject.GetComponent<CanvasGroup>().interactable = true;
-        // gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        text.text = "You won!!! :D";
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
-        player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
-        player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
-        player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
         
+            QuestManager.SetNormalQuestStatus(3,true);
+            RiddleManager.Instance.RiddleSolved();
+            QuestManager.SetNormalQuestStatus(3,true);
+            won = true;
+        }
         
-        QuestManager.SetNormalQuestStatus(3,true);
-        RiddleManager.Instance.RiddleSolved();
-        QuestManager.SetNormalQuestStatus(3,true);
         
     }
 
