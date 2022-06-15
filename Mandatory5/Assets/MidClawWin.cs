@@ -7,7 +7,7 @@ using UnityEngine;
 public class MidClawWin : MonoBehaviour
 {
     private GameObject player;
-    public GameObject clawMachineConsole, cannister;
+    public GameObject clawMachineConsole, cannister, turnFOn;
     
 
     private void Start()
@@ -45,7 +45,7 @@ public class MidClawWin : MonoBehaviour
 
     public void ClawWin()
     {
-        
+        turnFOn.SetActive(true);
         clawMachineConsole.gameObject.SetActive(false);
         QuestManager.SetNormalQuestStatus(5,true);
         RiddleManager.Instance.RiddleSolved();

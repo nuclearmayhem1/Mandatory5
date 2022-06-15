@@ -35,8 +35,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
     [SerializeField]
     private Material doorTrans;
 
-    
 
+    public GameObject GoGetPaint;
 
 
 
@@ -71,8 +71,9 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 doorSplash.scaleDownB = true;       //Bool is set to true. This causes the gameobject to scale down in size.
                 InvokeSplash();                     //An invoke method - Sets the scaleDown to be false after x seconds.
                 textPressE.SetActive(false);            //Deactivates text gameobject.
-                paintDispenser.buttonsUnlocked = true;          //Unlocks the Buttons on the paint dispenser system.
-
+                paintDispenser.buttonsUnlocked = true;
+                    //Unlocks the Buttons on the paint dispenser system.
+                GoGetPaint.SetActive(false);
 
 
                 gameObject.GetComponent<Renderer>().material = doorOne;             //Changes the doors material to be = doorOne. 
@@ -88,7 +89,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 InvokeSplash();
                 textPressE.SetActive(false);
                 paintDispenser.buttonsUnlocked = true;
-
+                GoGetPaint.SetActive(false);
 
 
                 gameObject.GetComponent<Renderer>().material = doorTwo;

@@ -21,6 +21,7 @@ public class Mid_PaintDispenser : MonoBehaviour
     private Color orange;
 
     private Animator dispenserAnim;
+    public GameObject GoPaintDoor;
 
     
 
@@ -47,7 +48,7 @@ public class Mid_PaintDispenser : MonoBehaviour
         colorThree = false;
 
         purple = new Color32(143, 0, 254, 1);          //Purple and orange colors don't have a preset in unity, and are therefore defined here.
-        orange = new Color32(254, 161, 0, 1);
+        orange = new Color32(255, 100, 0, 1);
         
 
     }
@@ -79,6 +80,8 @@ public class Mid_PaintDispenser : MonoBehaviour
                 //SpawnBrushOne();
                 buttonsUnlocked = false;                                    //Turns off the ability to press the buttons.
                                                                             //(This is activated again when using the paintbrush on the door).
+
+                GoPaintDoor.SetActive(true);
                 colorTwo = true;                                            //Sets the next color combination bool to be true,
                                                                             //and disables this bool.
                 colorOne = false;
@@ -95,6 +98,7 @@ public class Mid_PaintDispenser : MonoBehaviour
                 Invoke("SpawnBrushTwo", 2);
                 //SpawnBrushTwo();
                 buttonsUnlocked = false;
+                GoPaintDoor.SetActive(true);
                 colorThree = true;
                 colorTwo = false;
             }
@@ -109,6 +113,7 @@ public class Mid_PaintDispenser : MonoBehaviour
                 Invoke("SpawnBrushThree", 2);
                 //SpawnBrushThree();
                 buttonsUnlocked = false;
+                GoPaintDoor.SetActive(true);
                 
                 colorThree = false;
             }

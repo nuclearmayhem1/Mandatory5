@@ -10,8 +10,9 @@ using UnityEngine.UIElements;
 public class RiddleManager : MonoBehaviour
 {
    public static RiddleManager Instance;
+   private bool finiiished;
 
-   public GameObject prefabToSpawn, spawnedPrefab;
+   public GameObject prefabToSpawn, spawnedPrefab, PaintDispenser;
    
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
@@ -67,12 +68,13 @@ public class RiddleManager : MonoBehaviour
             GameObject newGameObject = Instantiate(prefabToSpawn);
             spawnedPrefab = newGameObject;
             //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
-         } 
-        else if (currentRiddle == 7)
-        {
-           GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+         }
+         
+         if (currentRiddle == 7)
+         {
+            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
             LastPuzzle();
-        }
+         }
       }
 
 
@@ -131,7 +133,13 @@ public class RiddleManager : MonoBehaviour
 
     public void LastPuzzle()
     {
-        GameObject.Find("Mid_PaintDispenser").GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
+        PaintDispenser.GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
+        
+        Debug.Log("LAST PUZZLE");
+
+        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Combine colors to paint the door to the volcano."));
+        
+
     }
 
    public void FailPuzzle()
@@ -154,6 +162,20 @@ public class RiddleManager : MonoBehaviour
       Invoke("SuperLateSpawn",0.1f); 
    }
 
+
+   private void Update()
+   {
+      if (!finiiished)
+      {
+         if (currentRiddle == 7)
+         {
+            finiiished = true;
+            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+            LastPuzzle();
+         }
+      }
+      
+   }
 
    private void SuperLateSpawn()
    {

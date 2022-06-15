@@ -10,6 +10,7 @@ public class Mid_PaintButton : MonoBehaviour
     private Mid_PaintDispenser paintDispenser;
     public bool yellow, blue, red;
     public bool dispenserActive;
+    public GameObject touchPaint;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,9 @@ public class Mid_PaintButton : MonoBehaviour
     {
         if (dispenserActive)
         {
+
+            touchPaint.SetActive(false);
+            
             if (inContactWithPlayer & paintDispenser.buttonsUnlocked)
             {
                 if (Input.GetKeyDown(KeyCode.E))
@@ -37,6 +41,10 @@ public class Mid_PaintButton : MonoBehaviour
 
                 }
             }
+        }
+        else
+        {
+            touchPaint.SetActive(true);
         }
 
         
