@@ -22,12 +22,14 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/UpperRegion/Scripts/TormodPuzzle/ObjectSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/MidDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/SharedDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/Puzzles/MidMovingWall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MiddleRegion/_Scripts/NPCs/ChickenDialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MidSwitchScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Riddle1Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,7 +109,7 @@
       <workItem from="1655129688457" duration="594000" />
       <workItem from="1655131934723" duration="9284000" />
       <workItem from="1655159392251" duration="17405000" />
-      <workItem from="1655215608938" duration="1056000" />
+      <workItem from="1655215608938" duration="13565000" />
     </task>
     <servers />
   </component>

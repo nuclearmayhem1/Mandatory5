@@ -10,6 +10,7 @@ TagManager:
   - Brazier
   - JumpTrigger
   - Bean
+  - DeathCollider
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - Hidden On Camera
   - Water
   - UI
+  - Player Impassable
   - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 

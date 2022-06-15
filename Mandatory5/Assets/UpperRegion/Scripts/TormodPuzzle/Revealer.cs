@@ -18,8 +18,9 @@ public class Revealer : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.TryGetComponent<ArtifactObject>(out var artifactObject) && artifactObjects.Contains(artifactObject)) {
+        if (other.TryGetComponent<ArtifactObject>(out var artifactObject)) {
             var index = artifactObjects.IndexOf(artifactObject);
+            if (index == -1) return; //Is not in artifactObjects list
             var artifactIndicator = artifactIndicators[index];
 
             _artifactsSlotted++;
