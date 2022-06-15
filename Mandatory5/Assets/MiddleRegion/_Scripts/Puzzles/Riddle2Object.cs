@@ -11,6 +11,7 @@ public class Riddle2Object : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            QuestManager.SetNormalQuestStatus(1,true);
             RiddleManager.Instance.RiddleSolved();
             QuestManager.SetNormalQuestStatus(1,true);
             gameObject.SetActive(false);

@@ -26,8 +26,12 @@ public class AirshipController : MonoBehaviour
     private void Update()
     {
         Inputs();
-        Movement();
         UpdateUI();
+    }
+
+    private void FixedUpdate()
+    {
+        Movement();
     }
 
     private void Inputs()

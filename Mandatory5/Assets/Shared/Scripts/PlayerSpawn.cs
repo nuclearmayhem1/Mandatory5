@@ -2,7 +2,7 @@
 //using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEditor;
+using UnityEditor;
 
 public class PlayerSpawn : MonoBehaviour
 {
@@ -20,9 +20,17 @@ public class PlayerSpawn : MonoBehaviour
         SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
     }
 
+    public void ClearAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void ExitGame()
     {
-        Application.Quit();
-        //EditorApplication.ExitPlaymode();
+        #if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+        #else
+            Application.Quit();
+        #endif
     }
 }
