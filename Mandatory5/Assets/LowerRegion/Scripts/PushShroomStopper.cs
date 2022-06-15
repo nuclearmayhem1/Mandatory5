@@ -47,7 +47,7 @@ public class PushShroomStopper : MonoBehaviour
             if (dialogue.GetComponentInChildren<ChickenCanvasController>().speechBubbleText != null)
             {
                 if (dialogue.GetComponentInChildren<ChickenCanvasController>().speechBubbleText.GetComponent<TMP_Text>().text ==
-                    "As long as I can hear you of course!")
+                    "THANKS!")
                 {
                     _rb.constraints = RigidbodyConstraints.None;
                     dialogue.SetActive(false);
