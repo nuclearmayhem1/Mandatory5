@@ -6,6 +6,7 @@ public class Tiles : MonoBehaviour
 {
     public static Tiles tilesScript;
 
+    public WinMessage message;
 
     public Material Green, Yellow, Red, Black;
 
@@ -90,8 +91,8 @@ public class Tiles : MonoBehaviour
             isActive = false;
             color.material = Green;
             Rotating.rotation.rotationSpeed = 0f;
-            
-            
+
+            message.Message("You got a Sausage!");
         }
     }
 }
