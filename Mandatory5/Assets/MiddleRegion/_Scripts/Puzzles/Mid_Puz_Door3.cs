@@ -8,13 +8,15 @@ public class Mid_Puz_Door3 : MonoBehaviour
     public bool brushOne = false;
     public bool brushTwo = false;
     public bool brushThree = false;
-    
-    
-    
+
+
+
+    private Mid_Audio_Clips audio_Clips;
     private bool inContactWithPlayer;
     private Renderer doorMat;
     private GameObject backWall;
     private GameObject textPressE;
+    private MeshRenderer doorSplashMesh;
     private Mid_3_Splash doorSplash;
     private Mid_PaintDispenser paintDispenser;
 
@@ -47,8 +49,10 @@ public class Mid_Puz_Door3 : MonoBehaviour
         textPressE = GameObject.Find("TextPressE");
         textPressE.SetActive(false);
         doorSplash = GameObject.Find("DoorSplash").GetComponent<Mid_3_Splash>();
+        doorSplashMesh = GameObject.Find("DoorSplash").GetComponent<MeshRenderer>();
 
         paintDispenser = GameObject.Find("PaintDispenser").GetComponent<Mid_PaintDispenser>();
+        audio_Clips = GameObject.Find("PaintingMechPrefab/Door").GetComponent<Mid_Audio_Clips>();
 
 
     }
@@ -60,6 +64,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
         {
             if (brushOne)
             {
+                audio_Clips.PlayAudioOne();
                 doorSplash.MaterialOne();
                 doorSplash.ResetScale();
                 doorSplash.scaleDownB = true;
@@ -75,6 +80,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
 
             if (brushTwo)
             {
+                audio_Clips.PlayAudioOne();
                 doorSplash.MaterialTwo();
                 doorSplash.ResetScale();
                 doorSplash.scaleDownB = true;
@@ -91,6 +97,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
 
             if (brushThree)
             {
+                audio_Clips.PlayAudioOne();
                 doorSplash.MaterialThree();
                 doorSplash.ResetScale();
                 doorSplash.scaleDownB = true;
@@ -115,9 +122,11 @@ public class Mid_Puz_Door3 : MonoBehaviour
 
     void ChangeDoorMat()
     {
+        audio_Clips.PlayAudioTwo();
         gameObject.GetComponent<Renderer>().material = doorFour;
         backWall.SetActive(false);
-        gameObject.GetComponent<BoxCollider>().enabled = false; 
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        Invoke("RemoveDoorAndSplashMesh", 2f);
 
     }
 
@@ -130,6 +139,11 @@ public class Mid_Puz_Door3 : MonoBehaviour
     void TurnOffSplashScale()
     {
         doorSplash.scaleDownB = false;
+    }
+    void RemoveDoorAndSplashMesh()
+    {
+        doorMat.enabled = false;
+        doorSplashMesh.enabled = false;
     }
 
 

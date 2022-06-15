@@ -212,7 +212,7 @@ public class ObjectManipulation : MonoBehaviour
     private bool TryPickupObject()
     {
         Ray ray = new Ray(transform.position, cameraRoot.transform.forward);
-        Physics.Raycast(ray, out RaycastHit hit, rayCastRange);
+        Physics.Raycast(ray, out RaycastHit hit, rayCastRange, Physics.AllLayers, QueryTriggerInteraction.Ignore);
         if (hit.collider == null)
         {
             return false;

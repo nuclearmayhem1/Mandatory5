@@ -1,5 +1,10 @@
 fileFormatVersion: 2
-guid: 16703c83b20a28c408d467cf5b910164
+<<<<<<<< HEAD:Mandatory5/Assets/MiddleRegion/_Scenes/Waterfall.unity.meta
+guid: 93ca9bf19752a854aa8fa9a2474c711f
+========
+guid: b6b74fafedf3ce74cb3643c84b1a3cf6
+folderAsset: yes
+>>>>>>>> tormod:Mandatory5/Assets/UpperRegion/Animations/TormodPuzzle.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

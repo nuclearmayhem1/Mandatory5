@@ -19,7 +19,7 @@ public class Mid_PaintButton : MonoBehaviour
         this.GetComponent<Renderer>().material.color = colors[currentColor];
 
         paintDispenser = GameObject.Find("PaintDispenser").GetComponent<Mid_PaintDispenser>();
-        dispenserActive = false;
+        //dispenserActive = false;
     }
 
     // Update is called once per frame
