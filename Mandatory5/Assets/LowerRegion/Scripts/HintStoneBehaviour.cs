@@ -43,9 +43,9 @@ public class HintStoneBehaviour : MonoBehaviour
 
         if (startFade)
         {
-            hintText.color = Color.Lerp(Color.clear, Color.black, Time.deltaTime * textFadeSpeed);
+            hintText.color = Color.Lerp(hintText.color, Color.yellow, Time.deltaTime * textFadeSpeed);
 
-            if (hintText.color == Color.black)
+            if (hintText.color == Color.yellow)
             {
                 hintText.color = Color.clear;
                 startFade = false;
