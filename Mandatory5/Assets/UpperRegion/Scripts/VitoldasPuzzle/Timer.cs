@@ -36,19 +36,22 @@ public class Timer : MonoBehaviour
                 timerSeconds = 0;
                 timerRunning = false;
                 BeanRescueManager.Instance.reset = true;
-                BeanRescueManager.Instance.enabled = false;
                 BeanRescueManager.Instance.beansRescued = 0;
 
                 animator.SetTrigger("GameEnd");
+
+                BeanRescueManager.Instance.enabled = false;
             }
 
             if (BeanRescueManager.Instance.beansRescued == BeanRescueManager.Instance.beanCount)
             {
                 timerText.text = "You Win!";
-                timerRunning = false;
-                BeanRescueManager.Instance.enabled = false;
+                timerSeconds = 0;
+                timerRunning = false;;
 
                 animator.SetTrigger("GameEnd");
+
+                BeanRescueManager.Instance.enabled = false;
             }
         }
     }

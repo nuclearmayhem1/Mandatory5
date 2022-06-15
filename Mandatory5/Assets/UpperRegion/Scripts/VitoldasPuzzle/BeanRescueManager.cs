@@ -7,12 +7,12 @@ public class BeanRescueManager : MonoBehaviour
     public int beansRescued = 0;
     public int beanCount = 3;
     public bool reset = false;
+    public Timer timer;
 
     [SerializeField] private Transform spawner;
     [SerializeField] private GameObject bean;
     [SerializeField] private float spawnInterval;
     [SerializeField] private TMPro.TextMeshProUGUI beanCounterText;
-    [SerializeField] private Timer timer;
     [SerializeField] private Savepoint savepoint;
 
     private void Awake() => Instance = this;
@@ -23,25 +23,15 @@ public class BeanRescueManager : MonoBehaviour
         {
             beanCounterText.text = "Beans rescued: " + beansRescued + " / " + beanCount;
         }
-
-        if (beansRescued != beanCount)
+        else
         {
+            Transform bugFixHeldBean = GameObject.Find("Right_Hand").transform;
 
-        }
-
-        if (reset)
-        {
-            beanCounterText.text = "Beans rescued: " + 0 + " / " + beanCount;
-
-            GameObject[] allBeans = GameObject.FindGameObjectsWithTag("Bean");
-            for (int i = 0; i < allBeans.Length; i++)
+            if (bugFixHeldBean.childCount > 5)
             {
-                Destroy(allBeans[i]);
+                Destroy(bugFixHeldBean.GetChild(5).gameObject);
             }
-
-            reset = false;
         }
-        
     }
 
     private void SpawnBeans()
@@ -67,6 +57,12 @@ public class BeanRescueManager : MonoBehaviour
     private void OnEnable()
     {
         InvokeRepeating("SpawnBeans", 0f, spawnInterval);
+
+        if (beansRescued > 0)
+        {
+            savepoint.ClearBeans();
+            beansRescued = 0;
+        }
     }
 
 

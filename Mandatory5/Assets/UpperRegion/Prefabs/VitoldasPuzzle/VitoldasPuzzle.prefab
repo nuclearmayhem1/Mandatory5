@@ -191,11 +191,11 @@ MonoBehaviour:
   beansRescued: 0
   beanCount: 3
   reset: 0
+  timer: {fileID: 7541360008337419193}
   spawner: {fileID: 3440386610766083843}
   bean: {fileID: 5047328322320079302, guid: cbd77533b69f3274db54feaf20a33d93, type: 3}
   spawnInterval: 7.5
   beanCounterText: {fileID: 1158124642}
-  timer: {fileID: 7541360008337419193}
   savepoint: {fileID: 333547071}
 --- !u!65 &1836538974
 BoxCollider:

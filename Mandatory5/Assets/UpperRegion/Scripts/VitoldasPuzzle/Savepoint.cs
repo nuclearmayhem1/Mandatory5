@@ -13,13 +13,7 @@ public class Savepoint : MonoBehaviour
     {
         if (BeanRescueManager.Instance.reset)
         {
-            for (int i = 1; i < locations.Length; i++)
-            {
-                if (locations[i].childCount != 0)
-                {
-                    Destroy(locations[i].GetChild(0).gameObject);
-                }
-            }
+            ClearBeans();
 
             BeanRescueManager.Instance.reset = false;
         }
@@ -53,6 +47,17 @@ public class Savepoint : MonoBehaviour
                     itemHeld.pickedUp = false;
                     Destroy(itemHeld);
                 }
+            }
+        }
+    }
+
+    public void ClearBeans()
+    {
+        for (int i = 1; i < locations.Length; i++)
+        {
+            if (locations[i].childCount != 0)
+            {
+                Destroy(locations[i].GetChild(0).gameObject);
             }
         }
     }
