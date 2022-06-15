@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Quests;
 using UnityEngine;
 
 public class Mid_Puz_Door3 : MonoBehaviour
@@ -146,6 +147,11 @@ public class Mid_Puz_Door3 : MonoBehaviour
     {
         doorMat.enabled = false;
         doorSplashMesh.enabled = false;
+        
+        QuestManager.SetNormalQuestStatus(7,true);
+        
+        QuestManager.SetNormalQuestStatus(7,true);
+        
     }
 
 
