@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour
     public bool timerRunning = false;
 
     [SerializeField] private TMPro.TextMeshProUGUI timerText;
+    [SerializeField] private WinMessage message;
     
     private float resetSeconds;
     private Animator animator;
@@ -45,6 +46,7 @@ public class Timer : MonoBehaviour
 
             if (BeanRescueManager.Instance.beansRescued == BeanRescueManager.Instance.beanCount)
             {
+                message.Message("You got some baked beans!");
                 timerText.text = "You Win!";
                 timerSeconds = 0;
                 timerRunning = false;;

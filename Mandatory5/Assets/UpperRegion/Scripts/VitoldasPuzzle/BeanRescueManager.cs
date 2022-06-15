@@ -10,6 +10,7 @@ public class BeanRescueManager : MonoBehaviour
     public Timer timer;
 
     [SerializeField] private Transform spawner;
+    [SerializeField] private Transform puzzleRoot;
     [SerializeField] private GameObject bean;
     [SerializeField] private float spawnInterval;
     [SerializeField] private TMPro.TextMeshProUGUI beanCounterText;
@@ -36,7 +37,7 @@ public class BeanRescueManager : MonoBehaviour
 
     private void SpawnBeans()
     {
-        Instantiate(bean, spawner.localPosition, Quaternion.identity);
+        Instantiate(bean, spawner.localPosition, Quaternion.identity, puzzleRoot);
     }
 
     private void OnTriggerEnter(Collider other)
