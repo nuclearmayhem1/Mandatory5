@@ -50,20 +50,12 @@ public class PushShroomStopper : MonoBehaviour
                     "THANKS!<color=#00000000>")
                 {
                     _rb.constraints = RigidbodyConstraints.None;
+                    dialogue.SetActive(false);
                     hasSpoken = true;
-                    
-                    //Add a delay to disabling the dialogue
-                    Invoke("DisableDialogue", 1f);
-                    
                 }
             }
             
         }
-    }
-
-    private void DisableDialogue()
-    {
-        dialogue.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()
