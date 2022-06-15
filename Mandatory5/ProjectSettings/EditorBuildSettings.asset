@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UpperRegion/Scenes/Main.unity
     guid: 34ac946a59f33b8418a28545f6af0f62
-  - enabled: 1
+  - enabled: 0
     path: Assets/Overworld/Scenes/LandingPlatform Testing.unity
     guid: 49ccf2378b6c31745a09750165dba5ae
   m_configObjects:
