@@ -13,25 +13,26 @@ public class MazeQuest : MonoBehaviour
 
     private void Start()
     {
-        QuestMenuRenderer.currentWorld = Quest.World.LowerWorld;
+        QuestMenuRenderer.currentWorld = Quest.World.LowerWorld; //Sets the current region for the quest manager.
     }
 
     void Update()
     {
-        if (dialogue.GetComponent<MidDialogue>().dialogueNumber == 2 && acceptedQuest == false)
+        if (dialogue.GetComponent<MidDialogue>().dialogueNumber == 2 && acceptedQuest == false) //Checks what current line the dialogue is and
+                                                                                                //runs the code if it is the first time.
         {
             mazeQuest = QuestManager.AddQuest(new Quest(Quest.World.LowerWorld, "Find the Shrooms in the small maze"));
-            acceptedQuest = true;
+            acceptedQuest = true;   //Gives the quest, activates the maze the quest takes place in,
+                                    //and flips a bool so it doesn't ever run again.
             mazeZone.SetActive(true);
         }
 
-        if (MazeQuestCompletion.hasBeenCollected == true && completedQuest == false)
+        if (MazeQuestCompletion.hasBeenCollected == true && completedQuest == false)    //Runs if quest objective is complete.
         {
-            Debug.Log("TEST");
-            QuestManager.SetNormalQuestStatus(mazeQuest, true);
-            completedQuest = true;
-            Mushroom.GetComponent<Animation>().Play("Attack");
-            dialogue.GetComponent<MidDialogue>()._dialogue = completedDialogue;
+            QuestManager.SetNormalQuestStatus(mazeQuest, true);                     //Sets the quest as completed.
+            completedQuest = true;                                                      //Flips a bool to make it only run once.
+            Mushroom.GetComponent<Animation>().Play("Attack");                  //Changes the questgiver's animation to now be "dancing".
+            dialogue.GetComponent<MidDialogue>()._dialogue = completedDialogue;         //Updates the questgiver's dialogue.
         }
     }
 }
