@@ -16,7 +16,7 @@ public class ResetTrigger : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            other.transform.position = other.GetComponent<LowerRegionCheckpoint>().currentCheckpoint;
+            //other.transform.position = other.GetComponent<LowerRegionCheckpoint>().currentCheckpoint;
         }
     }
 }
