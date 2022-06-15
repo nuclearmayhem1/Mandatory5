@@ -152,10 +152,17 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
+        [HideInInspector] public bool canMove = true;
+        
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
 
+            if (!canMove) {
+                _animator.SetFloat(_animIDSpeed, 0);
+                _animator.SetFloat(_animIDMotionSpeed, 0);
+                return;
+            }
             JumpAndGravity();
             GroundedCheck();
             Move();
