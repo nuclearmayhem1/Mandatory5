@@ -4978,8 +4978,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8300209798101427622}
   - component: {fileID: 6033781721285852243}
+  - component: {fileID: 4460232640162467211}
   m_Layer: 0
-  m_Name: ZonePuzzle4
+  m_Name: ZonePuzzle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,6 +5013,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4460232640162467211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131443733185967193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add1a1940238c15449fa59581db7b6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padPuzzle: {fileID: 1131443733185967193}
+  ZonePuzzle: {fileID: 5897208306356956406}
+  ShroomEnding: {fileID: 6387734696157335867}
+  timer: 10
 --- !u!1 &2541720418050835407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,12 +5315,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6387734695032301405}
-  m_LocalRotation: {x: -0, y: -0.016518192, z: -0, w: 0.99986356}
-  m_LocalPosition: {x: 4.413267, y: 16.371675, z: 3.4499245}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.016518194, z: 0.0000000018626451, w: 0.9998636}
+  m_LocalPosition: {x: 12.356141, y: 70.35504, z: -9.030745}
+  m_LocalScale: {x: 3.2601957, y: 3.2601967, z: 3.2601964}
   m_Children: []
-  m_Father: {fileID: 6387734696743334202}
-  m_RootOrder: 0
+  m_Father: {fileID: 6387734695800336014}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -1.893, z: 0}
 --- !u!114 &6387734695032301380
 MonoBehaviour:
@@ -10590,7 +10607,7 @@ Transform:
   m_Children:
   - {fileID: 6387734697002686230}
   m_Father: {fileID: 6387734695800336014}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 1.893, z: 0}
 --- !u!1 &6387734695565628499
 GameObject:
@@ -10736,7 +10753,7 @@ Transform:
   - {fileID: 6387734695890571152}
   - {fileID: 6387734695426588304}
   m_Father: {fileID: 6387734696743334202}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6387734695729754353
 BoxCollider:
@@ -10781,9 +10798,10 @@ Transform:
   m_Children:
   - {fileID: 6387734696247897834}
   - {fileID: 6387734696832756044}
+  - {fileID: 6387734695032301378}
   - {fileID: 6387734695499154965}
   m_Father: {fileID: 6387734696743334202}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6387734695800336015
 BoxCollider:
@@ -10831,7 +10849,7 @@ Transform:
   - {fileID: 6387734696082143786}
   - {fileID: 6387734695565628502}
   m_Father: {fileID: 6387734696743334202}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6387734695890571155
 GameObject:
@@ -20951,6 +20969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6387734696664832407}
   - component: {fileID: 6387734696664832405}
+  - component: {fileID: 8619892254042572649}
   m_Layer: 0
   m_Name: ZonePuzzle4
   m_TagString: Untagged
@@ -20985,6 +21004,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8619892254042572649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387734696664832406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add1a1940238c15449fa59581db7b6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padPuzzle: {fileID: 6387734696664832406}
+  ZonePuzzle: {fileID: 6387734696082143781}
+  ShroomEnding: {fileID: 6387734696247897829}
+  timer: 10
 --- !u!1 &6387734696743334197
 GameObject:
   m_ObjectHideFlags: 0
@@ -21012,7 +21047,6 @@ Transform:
   m_LocalPosition: {x: -1.3332669, y: 28.628325, z: 33.080074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6387734695032301378}
   - {fileID: 6387734695800336014}
   - {fileID: 6387734695729754352}
   - {fileID: 6387734695818785523}
@@ -31066,5 +31100,5 @@ Transform:
   - {fileID: 3392667805305636765}
   - {fileID: 7414062144847511586}
   m_Father: {fileID: 6387734696743334202}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}

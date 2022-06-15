@@ -329,3 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d5c804030b10b4c89b24b10d0dc42d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintRadius: 5
+  hintText: {fileID: 727945404}
+  textFadeSpeed: 50

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallingShroomSwitch : MonoBehaviour
 {
+    //script that allows for one of the toggleshrooms to activate/deactivate the platforms for the falling shroom puzzle
     public GameObject[] leftPlatforms, rightPlatforms;
 
     private void OnTriggerEnter(Collider other)
