@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Quests;
 using UnityEngine;
 
 public class ChooseCup : MonoBehaviour
@@ -76,9 +77,13 @@ public class ChooseCup : MonoBehaviour
         {
 
             transform.parent.transform.parent.GetComponent<MidJeff>().correct = true;
+            
+            Debug.Log("YOU WINNED ");
 
-            Debug.Log(" YOU WINNED ");
-
+            QuestManager.SetNormalQuestStatus(4,true);
+            QuestManager.RemoveQuest(0);
+            RiddleManager.Instance.RiddleSolved();
+            QuestManager.SetNormalQuestStatus(4,true);
 
         }
         else
