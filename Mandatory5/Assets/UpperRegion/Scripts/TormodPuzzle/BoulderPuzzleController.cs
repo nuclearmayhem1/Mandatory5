@@ -35,21 +35,17 @@ public class BoulderPuzzleController : MonoBehaviour {
 
     private void CheckSolveCondition() {
         if (_completed) return;
-        Debug.Log("1");
         //Check if correct holes are not slotted
         foreach (var boulderHole in _correctBoulderHoles) {
             if (!boulderHole.IsBoulderSlotted)
                 return;
         }
-
-        Debug.Log("2");
         //Check if wrong holes are slotted 
         foreach (var boulderHole in possibleBoulderHoles) {
             if (boulderHole.IsBoulderSlotted)
                 return;
         }
 
-        Debug.Log("3");
         //If this point is reach, all and just the correct holes are slotted
         _completed = true;
         onCompletion.Invoke();

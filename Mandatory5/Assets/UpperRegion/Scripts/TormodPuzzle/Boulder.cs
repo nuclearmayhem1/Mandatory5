@@ -4,6 +4,7 @@ using UnityEngine;
 public class Boulder : MonoBehaviour {
     
     [SerializeField] private float maxLifetime = 15f;
+    [SerializeField] private GameObject destroyParticlesPrefab;
     
     public event Action OnDestroyed;
 
@@ -28,20 +29,21 @@ public class Boulder : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (_deactivated) return;
         if (collision.collider.TryGetComponent<Boulder>(out var boulder)) {
-            Destroy(boulder.gameObject);
+            boulder.DestroySelf();
             DestroySelf();
         } else if (collision.collider.CompareTag("Player") && _rb != null) { //Check rb to make sure it is live
             //respawn that mofo
         }
     }
 
-    private void DestroySelf() {
-        if (_deactivated) return; //Dont destroy if it is deactivated
+    public void DestroySelf() {
+        Instantiate(destroyParticlesPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     
     public void Deactivate() {
         _deactivated = true;
+        CancelInvoke(); //Cancel destroy invoke
         Destroy(_rb);
     }
 }

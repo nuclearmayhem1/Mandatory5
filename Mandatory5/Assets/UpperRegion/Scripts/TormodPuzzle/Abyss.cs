@@ -5,7 +5,7 @@ public class Abyss : MonoBehaviour {
         if (other.CompareTag("Player")) {
             //respawn that mofo
         } else if (other.TryGetComponent<Boulder>(out var boulder)) {
-            Destroy(boulder.gameObject);
+            boulder.DestroySelf();
         }
     }
 }

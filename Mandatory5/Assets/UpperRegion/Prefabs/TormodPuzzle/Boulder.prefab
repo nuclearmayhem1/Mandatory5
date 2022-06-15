@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 15
+  destroyParticlesPrefab: {fileID: 1025285306637258, guid: e2469f68f645ed24fa1105a31c5abe14, type: 3}
