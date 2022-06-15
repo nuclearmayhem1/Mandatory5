@@ -4,23 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DeathPlane
-  - SporeZone
   - CinemachineTarget
-  - PushShroom
+  - Manipulatable
   - Mirror
   - Brazier
-  - Manipulatable
+  - JumpTrigger
+  - Bean
+  - DeathCollider
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hidden On Camera
   - Water
   - UI
+  - Player Impassable
   - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
