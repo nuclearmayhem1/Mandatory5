@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Mandatory5/Assets/LowerRegion/Scenes/Prototypes/ShroomVillage/NavMesh.asset.meta
 guid: 3bf34550265e0e7448c9efa5b9be0c19
 NativeFormatImporter:
   externalObjects: {}
@@ -9,7 +8,6 @@ guid: 80d9ce9f7b468432da298c7f2f761611
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
->>>>>>>> main:Mandatory5/Assets/MiddleRegion/TeethFBX.controller.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
