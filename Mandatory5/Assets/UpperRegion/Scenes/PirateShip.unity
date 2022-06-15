@@ -1948,10 +1948,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VitoldasPuzzle
       objectReference: {fileID: 0}
-    - target: {fileID: 7541360008337419193, guid: 879886bab288f894cbf9c63c784ac01b, type: 3}
-      propertyPath: timerSeconds
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 9205280703344905704, guid: 879886bab288f894cbf9c63c784ac01b, type: 3}
       propertyPath: m_RootOrder
       value: 4
