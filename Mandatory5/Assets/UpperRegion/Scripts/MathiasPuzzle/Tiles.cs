@@ -14,6 +14,8 @@ public class Tiles : MonoBehaviour
 
     public bool isActive = false;
 
+    private bool puzzleCleared;
+
     private void Awake()
     {
         tilesScript = this;
@@ -84,15 +86,21 @@ public class Tiles : MonoBehaviour
     }
 
     public void Win()
-    {
-        if (CorrectTileGrid.instance.loadingBar == 12)
+    {  
+        if (CorrectTileGrid.instance.loadingBar == 12 && puzzleCleared == false)
         {
             CorrectTileGrid.instance.timerIsRunning = false;
             isActive = false;
             color.material = Green;
             Rotating.rotation.rotationSpeed = 0f;
-
+            puzzleCleared = true;
             message.Message("You got a Sausage!");
+
+
+
+
+
         }
     }
+    
 }
