@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Rotating : MonoBehaviour
 {
-    
+    public static Rotating rotation;
 
-    private float rotationSpeed = 45f; 
+    public float rotationSpeed;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        rotation = this;
+    }
     void Start()
     {
-        
+        SetRotationSpeed();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+    }
+
+    public void SetRotationSpeed()
+    {
+        rotationSpeed = 45f;
     }
 }
