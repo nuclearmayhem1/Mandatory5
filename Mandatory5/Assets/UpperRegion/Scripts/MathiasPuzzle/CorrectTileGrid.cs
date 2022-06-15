@@ -58,6 +58,7 @@ public class CorrectTileGrid : MonoBehaviour
 	public void PuzzleStart()
     {
 		timerIsRunning = true;
+		timeRemaining = 10f;
 
 		gameObject.GetComponent<Rotating>().enabled = true;
 		

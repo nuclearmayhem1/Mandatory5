@@ -43,7 +43,8 @@ public class Tiles : MonoBehaviour
             {
                 color.material = Black;
                 isActive = false;
-                print("u nob");
+                Rotating.rotation.rotationSpeed = 0f;
+                
             }
             else if (CorrectTileGrid.instance.timeRemaining < 3)
             {
@@ -90,7 +91,7 @@ public class Tiles : MonoBehaviour
             color.material = Green;
             Rotating.rotation.rotationSpeed = 0f;
             
-            print("YOuWooon");
+            
         }
     }
 }
