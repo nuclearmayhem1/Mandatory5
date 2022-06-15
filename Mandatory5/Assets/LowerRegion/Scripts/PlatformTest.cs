@@ -9,7 +9,8 @@ public class PlatformTest : MonoBehaviour
     public Transform targetPosition, targetPosition2;
     public Vector3 targetPoint;
     public float moveSpeed = 1, waitTime;
-    private float elapsedTime;
+    public float elapsedTime;
+    private bool hasWaited = true;
     
 
     public Vector3 currentTarget;
@@ -65,26 +66,33 @@ public class PlatformTest : MonoBehaviour
     {
         if(PlayerDrugChecker.isHigh == true)
         {
-            Vector3 direction = targetPoint - transform.position;
-            transform.Translate(direction.normalized * Time.deltaTime * moveSpeed);
-
-            if (Vector3.Distance(transform.position, targetPosition2.position) < 0.1f)
+            if (hasWaited == true)
             {
+                Vector3 direction = targetPoint - transform.position;
+                transform.Translate(direction.normalized * Time.deltaTime * moveSpeed);   
+            }
+
+            if (Vector3.Distance(transform.position, targetPosition2.position) < 0.001f)
+            {
+                hasWaited = false;
                 elapsedTime += Time.deltaTime;
                 if (elapsedTime > waitTime)
                 {
                     targetPoint = targetPosition.position;
                     elapsedTime = 0;
+                    hasWaited = true;
                 }
             }
 
-            if (Vector3.Distance(transform.position, targetPosition.position) < 0.1f)
+            if (Vector3.Distance(transform.position, targetPosition.position) < 0.001f)
             {
+                hasWaited = false;
                 elapsedTime += Time.deltaTime;
                 if (elapsedTime > waitTime)
                 {
                     targetPoint = targetPosition2.position;
                     elapsedTime = 0;
+                    hasWaited = true;
                 }
             }
         }
