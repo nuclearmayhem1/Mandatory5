@@ -17,7 +17,7 @@ public class CorrectTileGrid : MonoBehaviour
 	void Start()
     {
 		gameObject.GetComponent<Rotating>().enabled = false;
-		timerIsRunning = true;
+		
     }
     // Update is called once per frame
     void Update()
@@ -57,6 +57,8 @@ public class CorrectTileGrid : MonoBehaviour
     }
 	public void PuzzleStart()
     {
+		timerIsRunning = true;
+
 		gameObject.GetComponent<Rotating>().enabled = true;
 		
 		foreach (var tilesScripts in scripts)
