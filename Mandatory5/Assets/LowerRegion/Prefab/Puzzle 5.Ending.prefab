@@ -4978,8 +4978,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8300209798101427622}
   - component: {fileID: 6033781721285852243}
+  - component: {fileID: 4460232640162467211}
   m_Layer: 0
-  m_Name: ZonePuzzle4
+  m_Name: ZonePuzzle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,6 +5013,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4460232640162467211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131443733185967193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add1a1940238c15449fa59581db7b6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padPuzzle: {fileID: 1131443733185967193}
+  ZonePuzzle: {fileID: 5897208306356956406}
+  ShroomEnding: {fileID: 6387734696157335867}
+  timer: 10
 --- !u!1 &2541720418050835407
 GameObject:
   m_ObjectHideFlags: 0
@@ -20951,6 +20968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6387734696664832407}
   - component: {fileID: 6387734696664832405}
+  - component: {fileID: 8619892254042572649}
   m_Layer: 0
   m_Name: ZonePuzzle4
   m_TagString: Untagged
@@ -20985,6 +21003,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8619892254042572649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387734696664832406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add1a1940238c15449fa59581db7b6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  padPuzzle: {fileID: 6387734696664832406}
+  ZonePuzzle: {fileID: 6387734696082143781}
+  ShroomEnding: {fileID: 6387734696247897829}
+  timer: 10
 --- !u!1 &6387734696743334197
 GameObject:
   m_ObjectHideFlags: 0
