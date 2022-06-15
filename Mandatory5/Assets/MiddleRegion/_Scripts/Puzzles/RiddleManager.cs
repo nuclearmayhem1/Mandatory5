@@ -10,8 +10,9 @@ using UnityEngine.UIElements;
 public class RiddleManager : MonoBehaviour
 {
    public static RiddleManager Instance;
+   private bool finiiished;
 
-   public GameObject prefabToSpawn, spawnedPrefab;
+   public GameObject prefabToSpawn, spawnedPrefab, PaintDispenser;
    
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
@@ -41,7 +42,6 @@ public class RiddleManager : MonoBehaviour
    // Every riddle should be its own void in the manager
    public void SpawnCharacter(int chararcterNumber) //Changes out the bird. Each bird has their own riddle.
    {
-      
       characters[chararcterNumber].SetActive(true);
       characters[chararcterNumber-1].SetActive(false);
    }
@@ -62,10 +62,19 @@ public class RiddleManager : MonoBehaviour
             Destroy(spawnedPrefab);
          }
          
-         prefabToSpawn = spawnedObject[currentRiddle];
-         GameObject newGameObject = Instantiate(prefabToSpawn);
-         spawnedPrefab = newGameObject;
-         //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
+         if (currentRiddle != 7)
+         {
+            prefabToSpawn = spawnedObject[currentRiddle];
+            GameObject newGameObject = Instantiate(prefabToSpawn);
+            spawnedPrefab = newGameObject;
+            //spawnedObject[spawnObject].SetActive(true);  //Set the hint and the object you want spawned in the inspector
+         }
+         
+         if (currentRiddle == 7)
+         {
+            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+            LastPuzzle();
+         }
       }
 
 
@@ -122,13 +131,20 @@ public class RiddleManager : MonoBehaviour
       
    }
 
+    public void LastPuzzle()
+    {
+        PaintDispenser.GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
+        
+        Debug.Log("LAST PUZZLE");
+
+        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Combine colors to paint the door to the volcano."));
+        
+
+    }
 
    public void FailPuzzle()
    {
-      
       LateFail();
-      
-      
    }
 
    private void LateFail()
@@ -137,17 +153,29 @@ public class RiddleManager : MonoBehaviour
       Destroy(spawnedPrefab);
       
       GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
-      
-      
+
       //GameObject puzzlePrefab = new GameObject("Puzzle " + currentRiddle);
       //Vector3 objectPOS = Vector3.zero;
       
       prefabToSpawn = spawnedObject[currentRiddle];
       
-      Invoke("SuperLateSpawn",0.1f);
-      
+      Invoke("SuperLateSpawn",0.1f); 
    }
 
+
+   private void Update()
+   {
+      if (!finiiished)
+      {
+         if (currentRiddle == 7)
+         {
+            finiiished = true;
+            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+            LastPuzzle();
+         }
+      }
+      
+   }
 
    private void SuperLateSpawn()
    {

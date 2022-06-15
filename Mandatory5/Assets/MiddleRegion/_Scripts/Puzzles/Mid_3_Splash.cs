@@ -24,7 +24,7 @@ public class Mid_3_Splash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localScale = new Vector3(0.000001f, 0.000001f, 0.0000001f);
+        transform.localScale = new Vector3(0.000001f, 0.000001f, 0.0000001f);           //Sets the scale of the object to be so small that it cannot be seen.
 
     }
 
@@ -33,7 +33,7 @@ public class Mid_3_Splash : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        /*if (Input.GetKeyDown(KeyCode.O))
+        /*if (Input.GetKeyDown(KeyCode.O))                  //FOR TESTING!
         {
             ScaleDown();
         }*/
@@ -46,7 +46,7 @@ public class Mid_3_Splash : MonoBehaviour
 
         if (scaleDownB)
         {
-            transform.localScale -= new Vector3(0.2f, 1, 0.3f) * Time.deltaTime * growFactor;
+            transform.localScale -= new Vector3(0.2f, 1, 0.3f) * Time.deltaTime * growFactor;       // Changes the scale of the object. 
 
         }
 
@@ -60,7 +60,7 @@ public class Mid_3_Splash : MonoBehaviour
 
     public void ResetScale()
     {
-        transform.localScale = new Vector3(0.2f, 1, 0.3f);
+        transform.localScale = new Vector3(0.2f, 1, 0.3f);          //Resets the scale back to it's original size.
 
     }
 
@@ -70,7 +70,7 @@ public class Mid_3_Splash : MonoBehaviour
         scaleDownB = true;
     }*/
 
-    public void MaterialOne()
+    public void MaterialOne()                                                   //These set the material to the different variables. 
     {
         gameObject.GetComponent<Renderer>().material = splashOneMat;
     }
