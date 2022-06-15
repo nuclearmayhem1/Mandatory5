@@ -27,7 +27,7 @@ public class Capstan : MonoBehaviour {
     private CapstanHandle _currentHandle;
     private ThirdPersonController _playerController;
     private int _direction;
-    private float _currentRotation; //Might have to locally track as unity rotation loops when going outside 0-360deg
+    private float _currentRotation; //Have to locally track as actual unity rotation is different from what is displayed in the inspector
 
     private void Awake() {
         _playerController = FindObjectOfType<ThirdPersonController>();

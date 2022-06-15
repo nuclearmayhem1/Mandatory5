@@ -43,7 +43,7 @@ public class Boulder : MonoBehaviour {
     
     public void Deactivate() {
         _deactivated = true;
-        CancelInvoke(); //Cancel destroy invoke
+        CancelInvoke(); //Cancel destroy invoke from awake
         Destroy(_rb);
     }
 }
