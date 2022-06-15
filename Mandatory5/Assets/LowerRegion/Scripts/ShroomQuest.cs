@@ -24,12 +24,5 @@ public class ShroomQuest : MonoBehaviour
             Destroy(gate2);
             acceptedQuest = true;
         }
-
- /*       if (MazeQuestCompletion.hasBeenCollected == true && completedQuest == false)
-        {
-            Debug.Log("TEST");
-            QuestManager.SetNormalQuestStatus(shroomQuest, true);
-            completedQuest = true;
-        } */
     }
 }

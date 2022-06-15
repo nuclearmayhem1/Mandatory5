@@ -10,6 +10,7 @@ public class RunningShroom : MonoBehaviour
     public GameObject player;
     public float distanceToRun = 4f;
     private bool isDirSafe = false;
+    public static bool shroomGameQuestCompleted = false;
     private float vRotation = 0f;
     private static int mushroomsCollected;
 
@@ -97,6 +98,10 @@ public class RunningShroom : MonoBehaviour
                 //activate platforms
                 SecondMiniGameController.sMGC.rock.SetActive(false);
                 SecondMiniGameController.sMGC.lastPlatform.SetActive(true);
+                if (shroomGameQuestCompleted == false)
+                {
+                    shroomGameQuestCompleted = true;
+                }
 
                
             } else Debug.Log(mushroomsCollected);

@@ -8,7 +8,8 @@ public class MazeQuest : MonoBehaviour
 {
     private bool acceptedQuest = false, completedQuest = false;
     private uint mazeQuest = 1;
-    public GameObject dialogue;
+    public GameObject dialogue, mazeZone, Mushroom;
+    public string[] completedDialogue;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class MazeQuest : MonoBehaviour
         {
             mazeQuest = QuestManager.AddQuest(new Quest(Quest.World.LowerWorld, "Find the Shrooms in the small maze"));
             acceptedQuest = true;
+            mazeZone.SetActive(true);
         }
 
         if (MazeQuestCompletion.hasBeenCollected == true && completedQuest == false)
@@ -28,6 +30,8 @@ public class MazeQuest : MonoBehaviour
             Debug.Log("TEST");
             QuestManager.SetNormalQuestStatus(mazeQuest, true);
             completedQuest = true;
+            Mushroom.GetComponent<Animation>().Play("Attack");
+            dialogue.GetComponent<MidDialogue>()._dialogue = completedDialogue;
         }
     }
 }
