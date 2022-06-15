@@ -82,5 +82,10 @@ public class Mid_Shore : MonoBehaviour
         {
             restartScript.Win();
         }
+
+        if (chickensOnShore == 3)
+        {
+            restartScript.Win();
+        }
     }
 }

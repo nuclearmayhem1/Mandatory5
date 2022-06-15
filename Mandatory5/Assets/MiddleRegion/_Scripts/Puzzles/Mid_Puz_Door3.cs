@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Quests;
 using UnityEngine;
 
 public class Mid_Puz_Door3 : MonoBehaviour
@@ -35,8 +36,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
     [SerializeField]
     private Material doorTrans;
 
-    
 
+    public GameObject GoGetPaint;
 
 
 
@@ -62,23 +63,25 @@ public class Mid_Puz_Door3 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inContactWithPlayer)
         {
-            if (brushOne)
+            if (brushOne)                       //When player is close enough to the door and press "E" + the bool is true
+                                                //(Set true when collecting the brush)
             {
-                audio_Clips.PlayAudioOne();
-                doorSplash.MaterialOne();
-                doorSplash.ResetScale();
-                doorSplash.scaleDownB = true;
-                InvokeSplash();
-                textPressE.SetActive(false);
-                paintDispenser.buttonsUnlocked = true; 
+                audio_Clips.PlayAudioOne();         //Play audio.
+                doorSplash.MaterialOne();           //Calls method in doorSplash script to change the material.
+                doorSplash.ResetScale();            //Resets the scale of the doorSplach gameobject.
+                doorSplash.scaleDownB = true;       //Bool is set to true. This causes the gameobject to scale down in size.
+                InvokeSplash();                     //An invoke method - Sets the scaleDown to be false after x seconds.
+                textPressE.SetActive(false);            //Deactivates text gameobject.
+                paintDispenser.buttonsUnlocked = true;
+                    //Unlocks the Buttons on the paint dispenser system.
+                GoGetPaint.SetActive(false);
 
 
-
-                gameObject.GetComponent<Renderer>().material = doorOne;
-                brushOne = false;
+                gameObject.GetComponent<Renderer>().material = doorOne;             //Changes the doors material to be = doorOne. 
+                brushOne = false;                                               //Sets bool to false = Removes the brush from the "inventory".
             }
 
-            if (brushTwo)
+            if (brushTwo)                                   //Same as above.
             {
                 audio_Clips.PlayAudioOne();
                 doorSplash.MaterialTwo();
@@ -87,7 +90,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 InvokeSplash();
                 textPressE.SetActive(false);
                 paintDispenser.buttonsUnlocked = true;
-
+                GoGetPaint.SetActive(false);
 
 
                 gameObject.GetComponent<Renderer>().material = doorTwo;
@@ -95,7 +98,7 @@ public class Mid_Puz_Door3 : MonoBehaviour
                 brushTwo = false;
             }
 
-            if (brushThree)
+            if (brushThree)                             //Same as above.
             {
                 audio_Clips.PlayAudioOne();
                 doorSplash.MaterialThree();
@@ -115,35 +118,40 @@ public class Mid_Puz_Door3 : MonoBehaviour
         }
     }
 
-    void TurnOnDoor()
+    void TurnOnDoor()                       //Calls the method "ChangeDoorMat()" after a three second delay.
     {
         Invoke("ChangeDoorMat", 3f);
     }
 
-    void ChangeDoorMat()
+    void ChangeDoorMat()                            //This is the final door material, which visualizes the door.
     {
-        audio_Clips.PlayAudioTwo();
-        gameObject.GetComponent<Renderer>().material = doorFour;
-        backWall.SetActive(false);
-        gameObject.GetComponent<BoxCollider>().enabled = false;
-        Invoke("RemoveDoorAndSplashMesh", 2f);
+        audio_Clips.PlayAudioTwo();                                     //Play audio.
+        gameObject.GetComponent<Renderer>().material = doorFour;        ///Changes the material.
+        backWall.SetActive(false);                                      //Turns off the backWall gameobject.
+        gameObject.GetComponent<BoxCollider>().enabled = false;         //Turns off the box collider of this gameobject.
+        Invoke("RemoveDoorAndSplashMesh", 2f);                          //Calls the method below after a 2 second delay.
 
     }
 
 
     void InvokeSplash()
     {
-        Invoke("TurnOffSplashScale", 2f);
+        Invoke("TurnOffSplashScale", 2f);           //Invokes method below.
     }
 
     void TurnOffSplashScale()
     {
-        doorSplash.scaleDownB = false;
+        doorSplash.scaleDownB = false;              //Sets the scaledown bool to be false - Turns off the scaling.
     }
-    void RemoveDoorAndSplashMesh()
+    void RemoveDoorAndSplashMesh()                  //Disables the mesh renderer for both the door and the splash gameobject.
     {
         doorMat.enabled = false;
         doorSplashMesh.enabled = false;
+        
+        QuestManager.SetNormalQuestStatus(7,true);
+        
+        QuestManager.SetNormalQuestStatus(7,true);
+        
     }
 
 
@@ -157,7 +165,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
 
             if ((brushOne) || (brushTwo) || (brushThree))
             {
-                textPressE.SetActive(true);
+                textPressE.SetActive(true);             //When the player is close enough and has collected one of the brushes
+                                                        //- The text gameobject is activated.
             }
                 
         }
@@ -168,7 +177,8 @@ public class Mid_Puz_Door3 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            inContactWithPlayer = false;
+            inContactWithPlayer = false;                //When the player exits the trigger, the bool is set to false,
+                                                        //and the text gameobject is deactivated.
             textPressE.SetActive(false);
 
         }

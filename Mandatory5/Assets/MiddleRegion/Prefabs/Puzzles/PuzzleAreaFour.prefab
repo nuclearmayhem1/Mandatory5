@@ -38,6 +38,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3306752640812150740}
     m_Modifications:
+    - target: {fileID: 1526244344724729228, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526244344724729228, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526244344724729228, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1526244345434204151, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
       propertyPath: midBoat
       value: 
@@ -125,6 +137,51 @@ PrefabInstance:
     - target: {fileID: 7368242439074510578, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0072429
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102649, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 97.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102649, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 21.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Text
+      value: You left more foxes than chickens on one of the shores :( Your chickens
+        are eaten.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295290106967102650, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656ab2c5b3298384cbf850cd084a97c9, type: 3}

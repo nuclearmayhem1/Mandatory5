@@ -37,12 +37,14 @@ public class LongClickButton_Marra : MonoBehaviour, IPointerDownHandler, IPointe
 		//GetComponent<Button>().enabled = false;
 		if (!IsC)
         {
-			transform.parent.GetComponent<CanvasGroup>().alpha = 0;
-			transform.parent.GetComponent<CanvasGroup>().interactable = false;
+			transform.parent.transform.parent.GetComponent<CanvasGroup>().alpha = 0;
+			transform.parent.transform.parent.GetComponent<CanvasGroup>().interactable = false;
+			transform.parent.transform.parent.GetComponent<CanvasGroup>().blocksRaycasts = false;
 			if (MovementControls)
 			{
 				MovementControls.interactable = true;
 				MovementControls.alpha = 1;
+				Debug.Log("Movement controls should spawn");
 			}
         }
 		
