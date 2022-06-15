@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DecoyShroomController : MonoBehaviour
 {
+    //sets a respawnlocation and resets the falling shroom to that location if it hits a deathplane
     private Vector3 startLocation;
 
     private void Start()

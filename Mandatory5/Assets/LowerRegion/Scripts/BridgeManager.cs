@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class BridgeManager : MonoBehaviour
 {
-
+    //this script contains 2 arrays of bridges one array of gameobjects is active when the player is in a spore zone
+    //and the other is active when the player isn't in a spore zone.
     public GameObject[] sporeBridge;
     public GameObject[] normBridge;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (PlayerDrugChecker.isHigh == true)
