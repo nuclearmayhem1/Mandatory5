@@ -84,7 +84,7 @@ public class ClawMachine : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         //lerpDuration = 3;
-        startingPos = new Vector3(0, 1.5f, 0);
+        startingPos = new Vector3(0, 1f, 0);
         //Debug.Log(startingPos);
         //float timeElapsed = 0;
         while (ClawArm.transform.localPosition != startingPos)

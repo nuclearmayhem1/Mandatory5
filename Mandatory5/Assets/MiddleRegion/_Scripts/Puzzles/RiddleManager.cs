@@ -20,7 +20,7 @@ public class RiddleManager : MonoBehaviour
    public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on, and which talking bird is active
    private void Awake() => Instance = this; //Sets this script as the Instance
 
-   public uint CurrentQuest;
+   [HideInInspector] public uint CurrentQuest; //the integer that the quest assigns. Is later used to complete the quest
 
    private void Start()
    {
