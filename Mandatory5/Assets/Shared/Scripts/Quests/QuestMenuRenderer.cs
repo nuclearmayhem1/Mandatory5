@@ -25,7 +25,7 @@ namespace Quests
             if (currentWorld != world && currentWorld != Quest.World.Invalid)
             {
                 world = currentWorld;
-                UpdateQuests();
+                UpdateQuests("");
             }
         }
         #endregion
@@ -36,7 +36,7 @@ namespace Quests
         [SerializeField] private Quests.QuestTabToggle questTabToggle;
         [SerializeField] private List<QuestTemplate> questTemplates = new List<QuestTemplate>();
 
-        private void UpdateQuests()
+        private void UpdateQuests(string UpdateType) // Add | Update | Remove
         {
             questTabTitleText.text = WorldText(world);
             Quest[] quests = QuestManager.GetQuests(world);
@@ -82,7 +82,7 @@ namespace Quests
                 case Quest.World.LowerWorld:
                     return "Lower-World quests";
 
-                case Quest.World.ChickRepublic:
+                case Quest.World.MiddleWorld:
                     return "Chick Republic quests";
 
                 case Quest.World.UpperWorld:

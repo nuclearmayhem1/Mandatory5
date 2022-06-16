@@ -34,7 +34,7 @@ public class RiddleManager : MonoBehaviour
       
       characters[0].SetActive(true);
       
-      QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic; //Sets the world, so the correct quests show up
+      QuestMenuRenderer.currentWorld = Quest.World.MiddleWorld; //Sets the world, so the correct quests show up
       currentRiddle = 0;
       currentRiddlemaster = 0;
    }
@@ -53,9 +53,9 @@ public class RiddleManager : MonoBehaviour
       /* riddleHintUI.GetComponent<TMP_Text>().text = "- " + hint;                //makes screen say the hint you wrote in the inspector
          riddleHintUI.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f); THIS CODE WAS REPLACED BY NEW QUEST SYSTEM */
       
-      if (QuestManager.GetQuests(Quest.World.ChickRepublic).Length < currentRiddle + 1) // Checks if the quest is already added
+      if (QuestManager.GetQuests(Quest.World.MiddleWorld).Length < currentRiddle + 1) // Checks if the quest is already added
       {
-         QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, quests[spawnObject])); //adds a new quest
+         QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, quests[spawnObject])); //adds a new quest
 
          if (currentRiddle > 0)
          {
@@ -136,8 +136,10 @@ public class RiddleManager : MonoBehaviour
         PaintDispenser.GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
         
         Debug.Log("LAST PUZZLE");
-
-        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Combine colors to paint the door to the volcano."));
+      
+        
+        
+        uint questID = QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
         
 
     }

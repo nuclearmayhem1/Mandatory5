@@ -12,7 +12,7 @@ public class ShroomQuestCompletion : MonoBehaviour
         {
             shroomQuestObjectiveComplete = true;
             Destroy(gameObject,0.5f);
-            PlayerPrefs.SetInt("Mushroom", 1);
+            GameManager.Instance.SetItem("Mushroom");
         }
     }
 }
