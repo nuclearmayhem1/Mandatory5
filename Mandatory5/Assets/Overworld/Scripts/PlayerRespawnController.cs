@@ -1,6 +1,8 @@
 using UnityEngine;
 
 //Made by: Stig Andr� R�yland.
+
+//An edit was done by Tor to exclude Null as the default value and instead use CheckPoint01 so that an error would stopp occuring.
 public class PlayerRespawnController : MonoBehaviour
 {
     public GameObject player;
