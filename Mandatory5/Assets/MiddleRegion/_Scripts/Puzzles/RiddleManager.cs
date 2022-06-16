@@ -136,8 +136,10 @@ public class RiddleManager : MonoBehaviour
         PaintDispenser.GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
         
         Debug.Log("LAST PUZZLE");
-
-        QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
+      
+        
+        
+        uint questID = QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
         
 
     }
