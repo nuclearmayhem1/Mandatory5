@@ -9,7 +9,7 @@ namespace Quests
     public class QuestManager : MonoBehaviour
     {
         private static Dictionary<uint, Quest> Quests = new Dictionary<uint, Quest>();
-        public static System.Action UpdateQuests = () => { };
+        public static System.Action<string> UpdateQuests = (String) => { };
 
         public static uint AddQuest(Quest QuestTemplate)
         {
@@ -20,7 +20,7 @@ namespace Quests
 
             uint ID = GenerateUniqueID();
             Quests.Add(ID, new Quest(QuestTemplate));
-            UpdateQuests.Invoke();
+            UpdateQuests.Invoke("Add");
             Debug.Log("Added quest with ID: " + ID);
             return ID;
         }
@@ -40,7 +40,7 @@ namespace Quests
             }
 
             Quests[QuestID].normalProgress = State;
-            UpdateQuests.Invoke();
+            UpdateQuests.Invoke("Update");
         }
         public static bool GetNormalQuestStatus(uint QuestID)
         {
@@ -74,7 +74,7 @@ namespace Quests
             }
 
             Quests[QuestID].RadialProgress = State;
-            UpdateQuests.Invoke();
+            UpdateQuests.Invoke("Update");
         }
         public static int GetRadialQuestStatus(uint QuestID)
         {
@@ -98,7 +98,7 @@ namespace Quests
             if (Quests.ContainsKey(QuestID))
             {
                 Quests.Remove(QuestID);
-                UpdateQuests.Invoke();
+                UpdateQuests.Invoke("Remove");
                 Debug.Log("Removed quest with ID: " + QuestID);
             }
             else

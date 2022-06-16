@@ -9,9 +9,9 @@ public class TestQuest : MonoBehaviour
 
     void Start()
     {
-        QuestMenuRenderer.currentWorld = Quest.World.ChickRepublic;
+        QuestMenuRenderer.currentWorld = Quest.World.MiddleWorld;
 
-        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Find a rock", 3));
+        QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Find a rock", 3));
     }
 
     // Update is called once per frame
