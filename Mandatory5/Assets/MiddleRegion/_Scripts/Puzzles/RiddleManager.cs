@@ -137,7 +137,7 @@ public class RiddleManager : MonoBehaviour
         
         Debug.Log("LAST PUZZLE");
 
-        QuestManager.AddQuest(new Quest(Quest.World.ChickRepublic, "Combine colors to paint the door to the volcano."));
+        QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
         
 
     }
