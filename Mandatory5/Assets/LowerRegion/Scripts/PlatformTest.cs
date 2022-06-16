@@ -5,35 +5,21 @@ using UnityEngine;
 
 public class PlatformTest : MonoBehaviour
 {
-    Vector3 startPosition;
     public Transform targetPosition, targetPosition2;
     public Vector3 targetPoint;
     public float moveSpeed = 1, waitTime;
-    private float elapsedTime;
-    
+    public float elapsedTime;
+    private bool hasWaited = true;
 
-    public Vector3 currentTarget;
-    
     void Start()
     {
-        startPosition = transform.position;
-        targetPoint = targetPosition.position;
+        targetPoint = targetPosition.position; //Makes the current destination easily viewable in Unity editor.
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        /*if (other.CompareTag("SporeZone"))
-        {
-            Debug.Log("SPORE TRIGGER ENTER");
-            targetPoint = targetPosition.position;
-        }#1#
-    }*/
-
-
+    
     void OnTriggerEnter(Collider Other)
     {   
-        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom"))
-        {
+        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom")) //Checks for Player and Pushroom and then parents 
+        {                                                                //them under this object so they can inherit transforms.  
             if (Other.GetComponent<Rigidbody>())
             {
                 Other.GetComponent<Rigidbody>().useGravity = false;
@@ -41,17 +27,12 @@ public class PlatformTest : MonoBehaviour
             }
 
             Other.transform.SetParent(transform);
-            
-            /*Other.transform.localScale = new Vector3(Other.transform.lossyScale.x / transform.localScale.x,
-                Other.transform.lossyScale.y / transform.localScale.y,
-                Other.transform.lossyScale.z / transform.localScale.z);*/
-
         }
     }
 
     void OnTriggerExit(Collider Other)
     {
-        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom"))
+        if(Other.CompareTag("Player") || Other.CompareTag("PushShroom"))    //When Player and Pushroom leaves they are now parentless.
         {
             if (Other.GetComponent<Rigidbody>())
                 Other.GetComponent<Rigidbody>().useGravity = true;
@@ -63,35 +44,37 @@ public class PlatformTest : MonoBehaviour
 
     void Update()
     {
-        if(PlayerDrugChecker.isHigh == true)
+        if(PlayerDrugChecker.isHigh == true) //Activates code if Player is under spore conditions.
         {
-            Vector3 direction = targetPoint - transform.position;
-            transform.Translate(direction.normalized * Time.deltaTime * moveSpeed);
-
-            if (Vector3.Distance(transform.position, targetPosition2.position) < 0.1f)
+            if (hasWaited == true)  //Sets and moves platform if it doesn't need to wait.
             {
-                elapsedTime += Time.deltaTime;
+                Vector3 direction = targetPoint - transform.position;
+                transform.Translate(direction.normalized * Time.deltaTime * moveSpeed);   
+            }
+
+            if (Vector3.Distance(transform.position, targetPosition2.position) < 0.001f) //Sets new target position.
+            {
+                hasWaited = false;              //Makes the platform have to wait
+                elapsedTime += Time.deltaTime;  //Waits however long you set the time in Unity editor.
                 if (elapsedTime > waitTime)
                 {
                     targetPoint = targetPosition.position;
                     elapsedTime = 0;
+                    hasWaited = true;
                 }
             }
 
-            if (Vector3.Distance(transform.position, targetPosition.position) < 0.1f)
+            if (Vector3.Distance(transform.position, targetPosition.position) < 0.001f) //Sets and moves to second position, otherwise same as above.
             {
+                hasWaited = false;
                 elapsedTime += Time.deltaTime;
                 if (elapsedTime > waitTime)
                 {
                     targetPoint = targetPosition2.position;
                     elapsedTime = 0;
+                    hasWaited = true;
                 }
             }
         }
-        /*else
-        {
-            transform.position = startPosition;
-            targetPoint = startPosition;
-        }*/
     }
 }

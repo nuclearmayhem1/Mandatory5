@@ -11,9 +11,9 @@ public class MazeZone : MonoBehaviour
     private float elapsedTime = 0;
     public GameObject mazeCam;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)     //Checks for player, saves its current scale and flips a bool to confirm it.
     {
-        Debug.Log("Player ENTER");
+        if(other.CompareTag("Player"))
         startScale = other.transform.localScale;
         standardScaleSet = true;
     }
@@ -22,8 +22,7 @@ public class MazeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player STAY");
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime;          //Waits one second to make sure the standardscale gets to set.
             if (elapsedTime > 1f)
             {
                 if (standardScaleSet == true && newScaleSet == false)
@@ -32,7 +31,8 @@ public class MazeZone : MonoBehaviour
                         other.transform.localScale.z * 0.1f);
 
                     newScaleSet = true;
-                    mazeCam.SetActive(true);
+                    mazeCam.SetActive(true);        //Sets new small scale and activates the maze camera.
+                                                    //Flips a bool to make sure it only happens once.
                 }
             }
         }
@@ -42,15 +42,14 @@ public class MazeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player EXIT");
-            if (standardScaleSet == true && newScaleSet == true)
+            if (standardScaleSet == true && newScaleSet == true)    //Reverses back to the original saved scale when exiting.
             {
                 other.transform.localScale = startScale;
                 standardScaleSet = false;
                 newScaleSet = false;
                 elapsedTime = 0f;
             }
-            mazeCam.SetActive(false);
+            mazeCam.SetActive(false);                               //Disables camera when exiting.
         }
     }
 }

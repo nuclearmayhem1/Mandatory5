@@ -26,6 +26,7 @@ public class ExitToMainMenu : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Escape) && exitToMain == true)
         {
             exitToMain = false;
+            exitToMainMenuCanvas.SetActive(false);
             SceneManager.LoadScene(0);
         }
         else if (Input.GetKeyUp(KeyCode.Return) && exitToMain == true)

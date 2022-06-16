@@ -33,7 +33,7 @@ public class LowerPuzzleThreeManager : MonoBehaviour
 
     private void Update()
     {
-        if (PushShroom.transform.position.y < -4)
+        if (PushShroom.transform.position.y < 28)
         {
             //Respawn PushShroom when y coord is under the map
             RespawnPushShroom();

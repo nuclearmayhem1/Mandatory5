@@ -20,10 +20,11 @@ public class Mid_LowerBridge : MonoBehaviour
     {
         if (playerHasEntered == false)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))                      //When player touches collider, the bridge animation gets activated.
             {
                 bridgeAnim.SetBool("BridgeActivated", true);
-                playerHasEntered = true;
+                playerHasEntered = true;                                // Bool is set to true, so that if statement doesn't run again
+                                                                        // and the animation doesn't play more than once.
             }
         }
         

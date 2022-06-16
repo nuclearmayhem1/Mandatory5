@@ -5,8 +5,7 @@ public class PuzzleManagerEdvart : MonoBehaviour
 {
     [Header("References")]
     public Text timerText;
-    public Text print;
-    public Animator messageAnim;
+    public WinMessage solvedMessage;
     public Respawn abyss;
     [HideInInspector] public bool puzzleDone;
 
@@ -45,12 +44,6 @@ public class PuzzleManagerEdvart : MonoBehaviour
     }
     public void Message(string message)
     {
-        print.text = message;
-        messageAnim.SetBool("IsActive", true);
-        Invoke("MessageDone", 2f);
-    }
-    private void MessageDone()
-    {
-        messageAnim.SetBool("IsActive", false);
+        solvedMessage.Message(message);
     }
 }

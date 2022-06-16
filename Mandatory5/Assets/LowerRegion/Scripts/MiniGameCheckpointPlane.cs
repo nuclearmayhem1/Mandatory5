@@ -6,13 +6,15 @@ public class MiniGameCheckpointPlane : MonoBehaviour
 {
    public Transform checkpointPos;
    private bool fightingTheMovement;
+   private GameObject player;
 
    private void OnTriggerEnter(Collider other) 
    {
        if(other.CompareTag("Player"))
        {
            ColorMiniGameController.cMGC.restartWholeGame = true;  
-           ColorMiniGameController.cMGC.minigameHasEnded = true;    
+           ColorMiniGameController.cMGC.minigameHasEnded = true;
+           player = other.gameObject;
 
            fightingTheMovement = true;
        }         
@@ -20,11 +22,12 @@ public class MiniGameCheckpointPlane : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Vector3.Distance(GameObject.Find("PlayerArmature").transform.position, checkpointPos.position) < 1f) fightingTheMovement = false;
+        if(player)
+        if (Vector3.Distance(player.transform.position, checkpointPos.position) < 1f) fightingTheMovement = false;
         
         if (fightingTheMovement)
         {
-            GameObject.Find("PlayerArmature").transform.position = checkpointPos.position;
+            player.transform.position = checkpointPos.position;
         }
     }
 }

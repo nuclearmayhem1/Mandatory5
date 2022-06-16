@@ -13,10 +13,10 @@ public class ChickenCanvasController : MonoBehaviour
     {
         if (!initiateIcon)
         {
-            initiateIcon = gameObject.transform.Find("SpeechIcon").gameObject;
+            initiateIcon = gameObject.transform.Find("SpeechIcon").gameObject; //searches within this gameobject for the icon
         }
         
-        initiateIcon.SetActive(true);
+        initiateIcon.SetActive(true); //enalbes it
     }
 
     public void StartTalking()
@@ -24,7 +24,7 @@ public class ChickenCanvasController : MonoBehaviour
         resetting = false;
         initiateIcon.SetActive(false);
         
-        speechBubble.GetComponent<Animator>().SetBool("StartAnim", true);
+        speechBubble.GetComponent<Animator>().SetBool("StartAnim", true); //starts the talking animation
         
         //speechBubble.SetActive(true);
     }
@@ -36,7 +36,7 @@ public class ChickenCanvasController : MonoBehaviour
         {
             initiateIcon.SetActive(true);
             resetting = true;
-            Invoke("ExternalInvokeResetDialogue", 2f );
+            Invoke("ExternalInvokeResetDialogue", 2f ); //Adds a delay to the reset, to allow for the animation to finish
         }
 
     }

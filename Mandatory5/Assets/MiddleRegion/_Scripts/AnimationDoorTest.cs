@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AnimationDoorTest : MonoBehaviour
 {
-    /*public Animator doorAnimator;
+    public Animator doorAnimator;
     private bool open;
+    private bool closingDoorNow;
 
     private void Start()
     {
@@ -15,38 +16,54 @@ public class AnimationDoorTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        // if (Input.GetKeyDown(KeyCode.U))
+        // {
+        //     OpenCloseDoor();
+        // }
+
+        if (RiddleManager.Instance.currentRiddle == 7)
         {
-            OpenCloseDoor();
-        }
+            CloseDoor();
+        } 
     }
 
-    private void OpenCloseDoor()
+    // private void OpenCloseDoor()
+    // {
+    //     //if(doorAnimator.GetBool("Open") == false)
+    //     //{
+    //     if (open == false)
+    //     {
+    //         doorAnimator.SetBool("Open", true);
+    //
+    //     }
+    //     else
+    //     {
+    //         doorAnimator.SetBool("Open", false);
+    //     }
+    //
+    //     
+    //     if (doorAnimator.GetBool("Open") == true)
+    //     {
+    //         doorAnimator.SetBool("Open", false);
+    //     }
+    //
+    //     open = !open;
+    //
+    //         doorAnimator.SetBool("Open", open);
+    //
+    //
+    //
+    //
+    // }
+
+
+    private void CloseDoor()
     {
-        //if(doorAnimator.GetBool("Open") == false)
-        //{
-        /*if (open == false)
+        if (!closingDoorNow)
         {
-            doorAnimator.SetBool("Open", true);
-
-        }
-        else
-        {
+            closingDoorNow = true;
             doorAnimator.SetBool("Open", false);
         }
 
-        //}
-        /*if (doorAnimator.GetBool("Open") == true)
-        {
-            doorAnimator.SetBool("Open", false);
-        }*/
-
-        /*open = !open;
-
-            doorAnimator.SetBool("Open", open);
-
-
-
-
-    }*/
+    }
 }

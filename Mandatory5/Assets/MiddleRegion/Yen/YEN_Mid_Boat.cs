@@ -16,9 +16,9 @@ public class YEN_Mid_Boat : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
-        boatAnimator = gameObject.GetComponentInParent<Animator>();
+        boatAnimator = gameObject.GetComponentInParent<Animator>(); //Assign the position for the animals on the boat
         seatOneFilled = false;
 
         startPosition = transform.position;
@@ -33,7 +33,7 @@ public class YEN_Mid_Boat : MonoBehaviour
     }
 
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other) //The boat con only go when it is filled by animals
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -118,7 +118,7 @@ public class YEN_Mid_Boat : MonoBehaviour
 
     }
 
-    public void MoveAnimalToBoat()
+    public void MoveAnimalToBoat() //Move the touched animal into the boat
     {
         if (!seatOneFilled)
         {

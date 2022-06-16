@@ -20,6 +20,11 @@ public class PlayerSpawn : MonoBehaviour
         SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
     }
 
+    public void ClearAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void ExitGame()
     {
         #if UNITY_EDITOR
