@@ -36,6 +36,12 @@ namespace Quests
         [SerializeField] private Quests.QuestTabToggle questTabToggle;
         [SerializeField] private List<QuestTemplate> questTemplates = new List<QuestTemplate>();
 
+        [SerializeField] private AudioSource questAudioSource;
+
+        [SerializeField] private AudioClip questAddSound;
+        [SerializeField] private AudioClip questProgressSound;
+        [SerializeField] private AudioClip questRemoveSound;
+
         private void UpdateQuests(string UpdateType) // Add | Update | Remove
         {
             questTabTitleText.text = WorldText(world);
@@ -66,6 +72,22 @@ namespace Quests
                 {
                     questTemplates[i].UpdateQuestTemplate(quests[i].questTitle, (float)quests[i].RadialProgress / (float)quests[i].RadialMaxValue);
                 }
+            }
+
+            if (UpdateType == "Add")
+            {
+                questAudioSource.clip = questAddSound;
+                questAudioSource.Play();
+            }
+            else if (UpdateType == "Update")
+            {
+                questAudioSource.clip = questProgressSound;
+                questAudioSource.Play();
+            }
+            else if (UpdateType == "Remove")
+            {
+                questAudioSource.clip = questRemoveSound;
+                questAudioSource.Play();
             }
         }
 
