@@ -8,7 +8,7 @@ public class PlatformTest : MonoBehaviour
     public Transform targetPosition, targetPosition2;
     public Vector3 targetPoint;
     public float moveSpeed = 1, waitTime;
-    public float elapsedTime;
+    public float elapsedTime, stoppingDistance = 0.1f;
     private bool hasWaited = true;
 
     void Start()
@@ -52,7 +52,7 @@ public class PlatformTest : MonoBehaviour
                 transform.Translate(direction.normalized * Time.deltaTime * moveSpeed);   
             }
 
-            if (Vector3.Distance(transform.position, targetPosition2.position) < 0.001f) //Sets new target position.
+            if (Vector3.Distance(transform.position, targetPosition2.position) < stoppingDistance) //Sets new target position.
             {
                 hasWaited = false;              //Makes the platform have to wait
                 elapsedTime += Time.deltaTime;  //Waits however long you set the time in Unity editor.
@@ -64,7 +64,7 @@ public class PlatformTest : MonoBehaviour
                 }
             }
 
-            if (Vector3.Distance(transform.position, targetPosition.position) < 0.001f) //Sets and moves to second position, otherwise same as above.
+            if (Vector3.Distance(transform.position, targetPosition.position) < stoppingDistance) //Sets and moves to second position, otherwise same as above.
             {
                 hasWaited = false;
                 elapsedTime += Time.deltaTime;
