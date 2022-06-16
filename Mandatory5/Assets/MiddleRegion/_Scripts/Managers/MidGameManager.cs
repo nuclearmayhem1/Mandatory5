@@ -25,7 +25,7 @@ public class MidGameManager : MonoBehaviour
 
     private static GameObject Instance;
     
-    private void Awake() => Instance = this.gameObject; //Sets this script as the Instance
+    private void Awake() => Instance = this.gameObject; //Sets this gameObject as the Instance
     
     private void Update()
     {
