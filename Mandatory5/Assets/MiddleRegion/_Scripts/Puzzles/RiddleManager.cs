@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 
 public class RiddleManager : MonoBehaviour
 {
-   public static RiddleManager Instance;
+   public static RiddleManager Instance; //For having the RiddleManager accesible easily anywhere in the scene, by using RiddleManager.Instance
    private bool finiiished; //For activating the final puzzle
 
    public GameObject prefabToSpawn, spawnedPrefab, PaintDispenser; //Related to the final puzzle of this region
@@ -17,8 +17,8 @@ public class RiddleManager : MonoBehaviour
    public GameObject[] characters, /*The yellow bird is changed each riddle*/ spawnedObject; //If riddle needs an object spawned, this is it
    //public GameObject riddleHintUI; // On-screen instructions to the riddle (obsolete)
    public String[] quests;
-   public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on
-   private void Awake() => Instance = this;
+   public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on, and which talking bird is active
+   private void Awake() => Instance = this; //Sets this script as the Instance
 
 
    private void Start()
@@ -72,7 +72,7 @@ public class RiddleManager : MonoBehaviour
          
          if (currentRiddle == 7)
          {
-            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
+            GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn(); //Respawns the player
             LastPuzzle();
          }
       }
@@ -107,7 +107,7 @@ public class RiddleManager : MonoBehaviour
       }
       
    }
-   public void RiddleSolved() //Lets the player know they're done and changes to next bird
+   public void RiddleSolved() //Lets the player know they're done and changes to next bird (new dialogue)
    {
       /*riddleHintUI.GetComponent<TMP_Text>().text = "Solved! Return to the riddlemaster.";
       riddleHintUI.GetComponent<TMP_Text>().color = Color.green; THIS CODE WAS REPLACED BY NEW QUEST SYSTEM*/
@@ -120,7 +120,7 @@ public class RiddleManager : MonoBehaviour
       
       if (currentRiddle > 3)
       {
-         Mid_PuzzleMapSwitch.Instance.OpenPuzzleDoor();
+         Mid_PuzzleMapSwitch.Instance.OpenPuzzleDoor(); //Only opens the door to the new area when the player has completed the first 3 riddles
       }
       
       SpawnCharacter(currentRiddlemaster+1);
@@ -178,7 +178,8 @@ public class RiddleManager : MonoBehaviour
       
    }
 
-   private void SuperLateSpawn()
+   private void SuperLateSpawn() //A delay was added as reinstantiating on the same frame had some funky bugs (like Start() not running in the instantiated prefab on the second spawn)
+
    {
       GameObject newGameObject = Instantiate(prefabToSpawn);
       newGameObject.transform.parent = newGameObject.transform.parent;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Quests;
 using UnityEditor;
 using UnityEngine;
 
@@ -22,23 +23,16 @@ public class MidGameManager : MonoBehaviour
     //     DontDestroyOnLoad(this.gameObject);
     // }
 
-    private static GameObject instance;
-    void Start() 
-    {
-        DontDestroyOnLoad(gameObject);
-        if (instance == null)
-            instance = gameObject;
-        else
-            Destroy(gameObject);
-    }
-
-
+    private static GameObject Instance;
+    
+    private void Awake() => Instance = this.gameObject; //Sets this script as the Instance
+    
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        // if (Input.GetKey(KeyCode.Escape))
+        // {
+        //     Application.Quit();
+        // }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {

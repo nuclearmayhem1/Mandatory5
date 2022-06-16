@@ -18,10 +18,16 @@ public class MidPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     Respawn();
+        // }
+
+        if (gameObject.transform.position.y < -15) //Checks if the player has fallen off the map
         {
-            Respawn();
+            Respawn(); //Resets the player to the position that they spawned at
         }
+        
     }
 
 

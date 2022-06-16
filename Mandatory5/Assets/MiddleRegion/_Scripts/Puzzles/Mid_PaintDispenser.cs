@@ -22,6 +22,7 @@ public class Mid_PaintDispenser : MonoBehaviour
 
     private Animator dispenserAnim;
     public GameObject GoPaintDoor;
+    public GameObject buttonPrompts;
 
     
 
@@ -60,11 +61,13 @@ public class Mid_PaintDispenser : MonoBehaviour
         {
             paintButtonOne.dispenserActive = true;
             paintButtonTwo.dispenserActive = true;
+            buttonPrompts.SetActive(true);
         }
         if (!buttonsUnlocked)
         {
             paintButtonOne.dispenserActive = false;
             paintButtonTwo.dispenserActive = false;
+            buttonPrompts.SetActive(false);
         }
 
         if (colorOne) //Yellow + Blue = Green               //colorOne(Two and Three) is two seperate the if statements
