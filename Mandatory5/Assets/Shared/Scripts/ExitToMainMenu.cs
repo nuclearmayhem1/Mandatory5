@@ -23,10 +23,12 @@ public class ExitToMainMenu : MonoBehaviour
             exitToMain = true;
             exitToMainMenuCanvas.SetActive(true);
         }
-        else if (Input.GetKeyUp(KeyCode.Escape) && exitToMain == true)
+        else if (Input.GetKeyUp(KeyCode.Escape) && exitToMain == true) //Exit to main menu
         {
             exitToMain = false;
             exitToMainMenuCanvas.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
         else if (Input.GetKeyUp(KeyCode.Return) && exitToMain == true)

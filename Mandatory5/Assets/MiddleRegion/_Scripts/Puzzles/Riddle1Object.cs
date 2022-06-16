@@ -12,7 +12,7 @@ public class Riddle1Object : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             RiddleManager.Instance.RiddleSolved();
-            QuestManager.SetNormalQuestStatus(0,true);
+            QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
             gameObject.SetActive(false);
         }
     }

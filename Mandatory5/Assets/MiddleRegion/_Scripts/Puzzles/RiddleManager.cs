@@ -20,9 +20,11 @@ public class RiddleManager : MonoBehaviour
    public int currentRiddle = 0, currentRiddlemaster = 0; //What riddle we are on, and which talking bird is active
    private void Awake() => Instance = this; //Sets this script as the Instance
 
+   public uint CurrentQuest;
 
    private void Start()
    {
+      
       // foreach (GameObject i in spawnedObject)     //Obsolete code that was used to set every puzzle to inactive on Start
       // {
       //    i.SetActive(false);
@@ -53,9 +55,11 @@ public class RiddleManager : MonoBehaviour
       /* riddleHintUI.GetComponent<TMP_Text>().text = "- " + hint;                //makes screen say the hint you wrote in the inspector
          riddleHintUI.GetComponent<TMP_Text>().color = new Color(1f, 1f, 1f, 1f); THIS CODE WAS REPLACED BY NEW QUEST SYSTEM */
       
-      if (QuestManager.GetQuests(Quest.World.MiddleWorld).Length < currentRiddle + 1) // Checks if the quest is already added
+      if (QuestManager.GetQuests(Quest.World.MiddleWorld).Length < currentRiddle + 30) // Checks if the quest is already added
       {
-         QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, quests[spawnObject])); //adds a new quest
+         //MidQuests =  Convert.ToUInt32(currentRiddle) + 30;
+         CurrentQuest = QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, quests[spawnObject])); //adds a new quest
+         
 
          if (currentRiddle > 0)
          {
@@ -114,7 +118,7 @@ public class RiddleManager : MonoBehaviour
 
       if (currentRiddle == 1)
       {
-         QuestManager.SetNormalQuestStatus(1,true);
+         QuestManager.SetNormalQuestStatus(CurrentQuest,true);
       }
       
       
@@ -136,10 +140,11 @@ public class RiddleManager : MonoBehaviour
         PaintDispenser.GetComponent<Mid_PaintDispenser>().buttonsUnlocked = true;
         
         Debug.Log("LAST PUZZLE");
-      
+
+        //MidQuests =  Convert.ToUInt32(currentRiddle) + 30;
         
-        
-        uint questID = QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
+        CurrentQuest = QuestManager.AddQuest(new Quest(Quest.World.MiddleWorld, "Combine colors to paint the door to the volcano."));
+
         
 
     }

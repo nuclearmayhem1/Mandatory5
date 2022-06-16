@@ -24,6 +24,7 @@ public class MidClawWin : MonoBehaviour
             other.transform.eulerAngles = new Vector3(0, 0, 0);
             other.transform.position = new Vector3(player.transform.position.x+1, player.transform.position.y,
                 player.transform.position.z);
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 
             ClawWin();
         }
@@ -38,6 +39,7 @@ public class MidClawWin : MonoBehaviour
             other.transform.eulerAngles = new Vector3(0, 0, 0);
             other.transform.position = new Vector3(player.transform.position.x+1, player.transform.position.y,
                 player.transform.position.z);
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             
             ClawWin();
         }
@@ -47,10 +49,10 @@ public class MidClawWin : MonoBehaviour
     {
         turnFOn.SetActive(true);
         clawMachineConsole.gameObject.SetActive(false);
-        QuestManager.SetNormalQuestStatus(5,true);
+        QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
+        QuestManager.RemoveQuest(RiddleManager.Instance.CurrentQuest-3);
         RiddleManager.Instance.RiddleSolved();
-        QuestManager.SetNormalQuestStatus(5,true);
-        QuestManager.RemoveQuest(2);
+        
         gameObject.SetActive(false);
         
         

@@ -85,12 +85,13 @@ public class ChooseCup : MonoBehaviour
                 transform.parent.transform.parent.GetComponent<MidJeff>().correct = true;
             
                 Debug.Log("YOU WINNED ");
-                RiddleManager.Instance.RiddleSolved();
+                
                 Debug.Log("Solved Marte's cup puzzle");
                 
-                QuestManager.SetNormalQuestStatus(4,true);
-                QuestManager.RemoveQuest(0);
-                QuestManager.SetNormalQuestStatus(4,true);
+                QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
+                QuestManager.RemoveQuest(RiddleManager.Instance.CurrentQuest-3);
+                RiddleManager.Instance.RiddleSolved();
+                
             }
             
 

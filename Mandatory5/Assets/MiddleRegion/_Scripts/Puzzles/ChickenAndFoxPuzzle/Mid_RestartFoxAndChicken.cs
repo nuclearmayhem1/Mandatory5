@@ -35,9 +35,9 @@ public class Mid_RestartFoxAndChicken : MonoBehaviour
             player.GetComponent<ThirdPersonController>().LockCameraPosition = false;
         
         
-            QuestManager.SetNormalQuestStatus(3,true);
+            QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
+            QuestManager.RemoveQuest(RiddleManager.Instance.CurrentQuest-3);
             RiddleManager.Instance.RiddleSolved();
-            QuestManager.SetNormalQuestStatus(3,true);
             won = true;
         }
         

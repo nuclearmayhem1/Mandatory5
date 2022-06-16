@@ -89,8 +89,8 @@ public class MidBed : MonoBehaviour
             }
         }
         //activated = true;
+        QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
         RiddleManager.Instance.RiddleSolved();
-        QuestManager.SetNormalQuestStatus(2,true);
         worldCanvasGroup.alpha = 0;
         yield break;
         

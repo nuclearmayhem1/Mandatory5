@@ -31,10 +31,9 @@ public class MarraWin : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         
-        QuestManager.SetNormalQuestStatus(6,true);
+        QuestManager.SetNormalQuestStatus(RiddleManager.Instance.CurrentQuest,true);
         RiddleManager.Instance.RiddleSolved();
-        QuestManager.SetNormalQuestStatus(6,true);
-        QuestManager.RemoveQuest(4);
+        QuestManager.RemoveQuest(RiddleManager.Instance.CurrentQuest - 3);
         GameObject.FindWithTag("Player").GetComponent<MidPlayerController>().Respawn();
     }
 }
