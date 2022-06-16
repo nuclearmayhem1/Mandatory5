@@ -19,14 +19,12 @@ public class LandingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Starts the animation of the airship coming in to land.
+        // Invokes "PlayerSpawn" when the animation ends.
         clipInfos = shipAnimator.GetCurrentAnimatorClipInfo(0);
         landingTime = clipInfos[0].clip.length;
 
         landingCamera = transform.parent.Find("Landing Platform Camera");
-        /*mainCamera.parent = transform;
-        mainCamera.localPosition = new Vector3(0f, 3f, 10f);
-        mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);*/
-
 
         playerGeometry.transform.parent.gameObject.SetActive(false);
         Invoke("PlayerSpawn", landingTime);
@@ -35,6 +33,7 @@ public class LandingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the player is close to the landing tower door and presses F, Invoke "LeaveRegion".
         if (plActive == true && playerGeometry != null && Vector3.Distance(transform.position, playerGeometry.transform.position) < 3f)
         {
             exitText.SetActive(true);
@@ -49,48 +48,31 @@ public class LandingPlatform : MonoBehaviour
             exitText.SetActive(false);
         }
         
+        // If the entry or exit animation is playing, the landing towers own camera will be active and should be pointing at the airship.
         if (landingCamera.gameObject.activeSelf)
         {
             landingCamera.LookAt(shipAnimator.transform);
         }
-
     }
 
     private void PlayerSpawn()
     {
-        /*pl = GameObject.FindGameObjectWithTag("Player");
-        if (pl == null)
-        {
-            pl = GameObject.Instantiate(plPrefab, transform.position + transform.forward * 3.5f, Quaternion.identity);
-        }
-        else
-        {
-            pl.transform.localPosition = transform.forward * 3f;
-        }
-        plModel = pl.transform.Find("PlayerArmature").gameObject;
-        pl.transform.rotation = transform.root.rotation;*/
-        /*mainCamera.parent = pl.transform;
-        mainCamera.localPosition = new Vector3(0f, 3f, 5f);
-        mainCamera.LookAt(pl.transform);*/
-        
+        // Activates the player and deactives the landing tower camera, so the third person camera is active instead.
         plActive = true;
         landingCamera.gameObject.SetActive(false);
         playerGeometry.transform.parent.gameObject.SetActive(true);
-        //exitText.transform.parent.GetComponent<Canvas>().worldCamera = pl.transform.Find("MainCamera").GetComponent<Camera>();
     }
 
     private void LeaveRegion()
     {
-        /*mainCamera.parent = transform;
-        mainCamera.localPosition = new Vector3(0f, 3f, 10f);
-        mainCamera.localRotation = new Quaternion(0f, 1f, 0f, 0f);*/
+        // Deactivates the player, reactives the landing tower camera, and starts the airship take-off animation.
         playerGeometry.transform.parent.gameObject.SetActive(false);
         landingCamera.gameObject.SetActive(true);
         
-        //Destroy(pl);
         shipAnimator.SetBool("LeaveRegion", true);
         clipInfos = shipAnimator.GetCurrentAnimatorClipInfo(0);
         takeOffTime = clipInfos[0].clip.length;
+        // Leave the scene when the take-off animation ends.
         Invoke("ChangeScene", takeOffTime);
     }
 

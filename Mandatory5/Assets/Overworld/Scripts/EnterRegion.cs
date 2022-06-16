@@ -22,15 +22,15 @@ public class EnterRegion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (GameObject.FindGameObjectWithTag("Airship"))
-        //{airship = GameObject.FindGameObjectWithTag("Airship").transform;}
-        //Debug.Log(connectedRegion.ToString());
+        // Sets the child UI text to reflect which region this Overworld landing tower is connected to.
         landingText.transform.GetChild(0).GetComponent<Text>().text = "Press F to enter " + connectedRegion.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // This script is responsible for moving the player from the Overworld scene to one of the region scenes.
+        // The player just needs to get close enough to the landing tower in their airship and press F.
         if (airship && Vector3.Distance(airship.position, transform.position) < interactRange)
         {
             landingText.SetActive(true);
@@ -38,7 +38,6 @@ public class EnterRegion : MonoBehaviour
             {
                 PlayerPrefs.SetInt("plLoc", (int)connectedRegion);
                 PlayerPrefs.SetInt("lastActiveRegion", (int)connectedRegion);
-                //Debug.Log(PlayerPrefs.GetInt("plLoc", 1));
                 SceneManager.LoadScene(((int)connectedRegion), LoadSceneMode.Single);
             }
         }

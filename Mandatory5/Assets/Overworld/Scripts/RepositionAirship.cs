@@ -11,9 +11,9 @@ public class RepositionAirship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //airship.position = Lower_Region_Platform.position + new Vector3(0f, 100f, 0f);
+        // This script moves the airship to be next to whatever Overworld landing tower the player used to get to the region scene they are now coming back from.
+        // It preserves immersion by remembering previous actions.
         location = PlayerPrefs.GetInt("lastActiveRegion", 1);
-        //Debug.Log(location);
 
         if (location == 2)
         {
